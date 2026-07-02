@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balaji Durai — Senior EUC &amp; Azure Platform Engineer</title>
+<meta name="description" content="Balaji Durai — Senior EUC & Azure Platform Engineer. 16+ Jahre Enterprise-Erfahrung: Citrix DaaS, Azure, AVD, AI Platform, NetScaler, IaC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090c; --card:rgba(255,255,255,.035); --border:rgba(255,255,255,.09);
+  --text:#f2f4f8; --muted:#939aa8; --blue:#2f7bff; --sky:#7db4ff; --amber:#4d9fff; --amber2:#2f7bff;
+  --grad:linear-gradient(120deg,#ffffff,#9cc4ff 45%,#2f7bff);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;cursor:default}
+h1,h2,h3,.stat b,.bento b{font-family:'Sora',sans-serif}
+.mono{font-family:'JetBrains Mono',monospace}
+::selection{background:rgba(47,123,255,.4)}
+
+/* particle canvas + spotlight */
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+#spot{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(600px at 50% 30%,rgba(59,130,246,.10),transparent 70%)}
+
+/* scroll progress */
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:99;box-shadow:0 0 12px rgba(77,159,255,.6)}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(4,7,15,.7);border-bottom:1px solid var(--border)}
+.navin{max-width:1100px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-family:'Sora';font-weight:800;font-size:1.1rem}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.navlinks{display:flex;gap:6px;font-size:.88rem}
+.navlinks a{color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:999px;transition:.2s}
+.navlinks a:hover{color:var(--text)}
+.navlinks a.active{color:#fff;background:rgba(59,130,246,.18);border:1px solid rgba(59,130,246,.35)}
+.langbtn{background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:999px;padding:7px 16px;cursor:pointer;font-size:.85rem;font-weight:600;transition:.2s}
+.langbtn:hover{border-color:var(--amber);box-shadow:0 0 18px rgba(77,159,255,.35)}
+@media(max-width:760px){.navlinks{display:none}}
+
+/* hero */
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:80px 0 40px}
+.herogrid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.pwrap{display:flex;justify-content:center}
+.pring{position:relative;width:320px;height:320px;border-radius:50%;padding:6px;
+  background:linear-gradient(135deg,#ffffff,#9cc4ff 40%,#2f7bff);
+  box-shadow:0 0 70px rgba(47,123,255,.35),0 24px 60px rgba(0,0,0,.5);
+  animation:float 6s ease-in-out infinite}
+.pring img{width:100%;height:100%;object-fit:cover;object-position:center 18%;border-radius:50%;display:block;
+  filter:grayscale(.25) contrast(1.1) brightness(.94) saturate(.85)}
+.pring::after{content:"";position:absolute;inset:6px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 35% 28%,transparent 52%,rgba(4,10,25,.55)),
+             linear-gradient(160deg,rgba(47,123,255,.20),rgba(8,9,12,.30))}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media(max-width:860px){.herogrid{grid-template-columns:1fr;gap:34px}.pwrap{order:-1;justify-content:flex-start}.pring{width:200px;height:200px}}
+.avail{display:inline-flex;width:fit-content;align-items:center;gap:8px;background:rgba(77,159,255,.07);border:1px solid rgba(77,159,255,.35);color:var(--amber);border-radius:999px;padding:6px 16px;font-size:.8rem;font-weight:600;margin-bottom:28px}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero .mono.small{color:var(--sky);font-size:.95rem;margin-bottom:10px}
+.hero h1{font-size:clamp(2.6rem,7.5vw,5rem);font-weight:800;line-height:1.04;letter-spacing:-2px}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rolewrap{margin-top:18px;font-size:clamp(1.1rem,2.6vw,1.6rem);font-weight:600;color:var(--muted)}
+#typed{color:#fff;border-right:2px solid var(--amber);padding-right:4px}
+.hero p.lead{margin-top:24px;max-width:620px;color:var(--muted);font-size:1.05rem}
+.cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{border-radius:14px;padding:14px 28px;font-weight:600;font-size:.95rem;text-decoration:none;transition:.25s;display:inline-flex;align-items:center;gap:8px}
+.btn.primary{background:var(--grad);color:#0a1220;box-shadow:0 8px 34px rgba(47,123,255,.35)}
+.btn.primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 44px rgba(47,123,255,.5)}
+.btn.ghost{border:1px solid var(--border);color:var(--text);background:var(--card);backdrop-filter:blur(6px)}
+.btn.ghost:hover{border-color:var(--sky);transform:translateY(-3px)}
+.scrollhint{margin-top:60px;color:var(--muted);font-size:.8rem;display:flex;align-items:center;gap:10px;opacity:.7}
+.scrollhint .m{width:22px;height:34px;border:2px solid var(--muted);border-radius:12px;position:relative}
+.scrollhint .m::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:3px;background:var(--amber);animation:wheel 1.6s infinite}
+@keyframes wheel{0%{transform:translateY(0);opacity:1}100%{transform:translateY(12px);opacity:0}}
+
+/* marquee */
+.marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:22px 0;position:relative;background:rgba(255,255,255,.015)}
+.mtrack{display:flex;gap:64px;width:max-content;animation:scroll 28s linear infinite}
+.marquee:hover .mtrack{animation-play-state:paused}
+.mtrack span{font-family:'Sora';font-weight:700;font-size:1.15rem;color:#b9c6de;opacity:.75;white-space:nowrap;transition:.2s}
+.mtrack span:hover{opacity:1;color:var(--amber)}
+.mtrack i{color:var(--amber);font-style:normal;opacity:.5}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:90px 0 10px}
+.kicker{color:var(--amber);font-family:'JetBrains Mono';font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;margin-bottom:10px}
+.sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:36px}
+.sechead h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;letter-spacing:-1px}
+.sechead::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+
+/* bento */
+.bentogrid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:130px;gap:16px}
+.bento{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;position:relative;overflow:hidden;transition:.3s;display:flex;flex-direction:column;justify-content:flex-end}
+.bento:hover{border-color:rgba(77,159,255,.5);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.bento .glowline{position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad);opacity:0;transition:.3s}
+.bento:hover .glowline{opacity:1}
+.bento .ico{font-size:1.6rem;margin-bottom:auto}
+.bento b{font-size:1.15rem;line-height:1.3;margin-top:2px}
+.bento b.big{font-size:2.4rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bento span{color:var(--muted);font-size:.85rem;margin-top:4px}
+.b1{grid-column:span 2;grid-row:span 2}
+.b2{grid-column:span 1;grid-row:span 1}
+.b3{grid-column:span 1;grid-row:span 2}
+.b4{grid-column:span 1}
+.b5{grid-column:span 2}
+@media(max-width:820px){.bentogrid{grid-template-columns:repeat(2,1fr)}.b1{grid-column:span 2}.b3{grid-row:span 1}.b5{grid-column:span 2}}
+
+/* skills */
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px;perspective:1200px}
+.skillcard{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;transition:transform .15s ease,border-color .3s,box-shadow .3s;position:relative;overflow:hidden;transform-style:preserve-3d;will-change:transform}
+.skillcard::after{content:"";position:absolute;inset:0;background:radial-gradient(420px at var(--mx,50%) var(--my,50%),rgba(59,130,246,.12),transparent 60%);opacity:0;transition:.3s;pointer-events:none}
+.skillcard:hover::after{opacity:1}
+.skillcard:hover{border-color:rgba(77,159,255,.45);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.skillcard h3{font-size:1.05rem;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+.skillcard .ico{font-size:1.35rem}
+.skillcard .sub{color:var(--muted);font-size:.82rem;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:.84rem;color:#cdd8ec;transition:.2s;cursor:default}
+.chip:hover{border-color:var(--sky);color:#fff;transform:scale(1.06)}
+.chip.hi{background:linear-gradient(120deg,rgba(47,123,255,.32),rgba(125,180,255,.18));border-color:rgba(77,159,255,.6);color:#fff;font-weight:600}
+.legend{color:var(--muted);font-size:.82rem;margin-top:20px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--grad);margin-right:6px;vertical-align:-1px}
+.chip.dim{opacity:.25;filter:saturate(.3)}
+
+/* hire-me role switcher */
+.hireme{margin:-6px 0 30px;padding:22px;border:1px solid var(--border);border-radius:20px;background:rgba(47,123,255,.05)}
+.hlabel{display:block;color:var(--sky);font-size:.78rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.pbar{display:flex;gap:10px;flex-wrap:wrap}
+.pbtn{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted);border-radius:999px;padding:9px 22px;font-size:.9rem;font-weight:600;cursor:pointer;transition:.25s;font-family:'Sora'}
+.pbtn:hover{color:#fff;border-color:var(--sky);transform:translateY(-2px)}
+.pbtn.active{background:var(--grad);color:#0a1220;border-color:transparent;box-shadow:0 6px 24px rgba(47,123,255,.4)}
+.pline{margin-top:16px;color:var(--sky);font-size:.92rem;min-height:1.5em}
+
+/* experience */
+.timeline{position:relative;margin-left:10px}
+.timeline::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--blue),var(--amber2))}
+.job{position:relative;padding:0 0 34px 36px}
+.job::before{content:"";position:absolute;left:-6px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--amber);box-shadow:0 0 14px rgba(77,159,255,.6);transition:.3s}
+.job:hover::before{transform:scale(1.4)}
+.job .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;transition:.25s}
+.job .card:hover{border-color:rgba(59,130,246,.5);transform:translateX(6px)}
+.job h3{font-size:1.1rem}
+.job .org{color:var(--amber);font-weight:600;font-size:.93rem;margin-top:2px}
+.job .period{display:inline-block;margin-top:8px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:999px;padding:3px 12px;font-size:.76rem;color:var(--muted);font-family:'JetBrains Mono'}
+.job ul{margin:12px 0 0 18px;color:var(--muted);font-size:.92rem}
+
+/* certs */
+.certgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.cert{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;display:flex;gap:14px;align-items:center;transition:.25s}
+.cert:hover{transform:translateY(-5px) rotate(-.5deg);border-color:rgba(77,159,255,.5);box-shadow:0 14px 36px rgba(0,0,0,.45)}
+.cert .badge{min-width:48px;height:48px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 4px 18px rgba(47,123,255,.35)}
+.cert b{font-size:.95rem}
+.cert span{display:block;color:var(--muted);font-size:.79rem}
+
+/* contact */
+.contactcard{background:linear-gradient(120deg,rgba(47,123,255,.14),rgba(125,180,255,.07));border:1px solid rgba(47,123,255,.35);border-radius:26px;padding:56px 40px;text-align:center;position:relative;overflow:hidden}
+.contactcard::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(47,123,255,.18);filter:blur(90px);top:-120px;right:-80px}
+.contactcard h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+.contactcard h2 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.contactcard p{color:var(--muted);max-width:540px;margin:0 auto 30px}
+.clinks{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+
+footer{color:var(--muted);font-size:.82rem;text-align:center;padding:48px 0;border-top:1px solid var(--border);margin-top:90px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div id="spot"></div>
+<div id="prog"></div>
+
+<nav>
+  <div class="navin">
+    <div class="logo">Balaji<span>.dev</span></div>
+    <div class="navlinks" id="navlinks">
+      <a href="#impact" data-i18n="n_impact"></a>
+      <a href="#skills" data-i18n="n_skills"></a>
+      <a href="#experience" data-i18n="n_exp"></a>
+      <a href="#certs" data-i18n="n_certs"></a>
+      <a href="#contact" data-i18n="n_contact"></a>
+    </div>
+    <button class="langbtn" id="langToggle" onclick="toggleLang()">EN</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="herogrid">
+    <div>
+      <div class="avail" data-i18n="avail"></div>
+      <div class="mono small">// AI · Cloud · EUC — Platform Enablement</div>
+      <h1><span data-i18n="hi"></span> <span class="grad">Balaji Durai</span></h1>
+      <div class="rolewrap"><span id="typed"></span></div>
+      <p class="lead" data-i18n="lead"></p>
+      <div class="cta">
+        <a class="btn primary" href="#contact"><span data-i18n="cta1"></span> →</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/bhalajid/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="pwrap" id="pwrap">
+      <div class="pring">
+        <img src="profile.jpg" alt="Balaji Durai" onerror="document.getElementById('pwrap').style.display='none'">
+      </div>
+    </div>
+  </div>
+  <div class="scrollhint"><div class="m"></div><span data-i18n="scroll"></span></div>
+</header>
+</div>
+
+<div class="marquee"><div class="mtrack" id="mtrack"></div></div>
+
+<div class="wrap">
+
+<section id="impact" class="reveal">
+  <div class="kicker" data-i18n="k_impact"></div>
+  <div class="sechead"><h2 data-i18n="h_impact"></h2></div>
+  <div class="bentogrid">
+    <div class="bento b1"><div class="glowline"></div><div class="ico">🧠</div>
+      <b class="big">GenAI</b><b data-i18n="bt6"></b><span data-i18n="bs6"></span></div>
+    <div class="bento b2"><div class="glowline"></div><b class="big">−60%</b><span data-i18n="bs3"></span></div>
+    <div class="bento b3"><div class="glowline"></div><div class="ico">🚀</div>
+      <b class="big">80.000+</b><b data-i18n="bt1"></b><span data-i18n="bs1"></span></div>
+    <div class="bento b2"><div class="glowline"></div><b class="big" data-i18n="bt2"></b><span data-i18n="bs2"></span></div>
+    <div class="bento b5"><div class="glowline"></div><div class="ico">🏗️</div>
+      <b data-i18n="bt5"></b><span data-i18n="bs5"></span></div>
+    <div class="bento b4"><div class="glowline"></div><b class="big" data-count="16">0</b><span data-i18n="s_years"></span></div>
+    <div class="bento b4"><div class="glowline"></div><b class="big" data-count="8">0</b><span data-i18n="s_certs"></span></div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="kicker" data-i18n="k_skills"></div>
+  <div class="sechead"><h2 data-i18n="h_skills"></h2></div>
+  <div class="hireme">
+    <span class="hlabel mono" data-i18n="hireme"></span>
+    <div class="pbar" id="pbar"></div>
+    <p class="pline mono" id="pline"></p>
+  </div>
+  <div class="skillgrid" id="skillsContainer"></div>
+  <p class="legend"><i></i><span data-i18n="legend"></span></p>
+</section>
+
+<section id="experience" class="reveal">
+  <div class="kicker" data-i18n="k_exp"></div>
+  <div class="sechead"><h2 data-i18n="h_exp"></h2></div>
+  <div class="timeline" id="expContainer"></div>
+</section>
+
+<section id="certs" class="reveal">
+  <div class="kicker" data-i18n="k_certs"></div>
+  <div class="sechead"><h2 data-i18n="h_certs"></h2></div>
+  <div class="certgrid" id="certContainer"></div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="contactcard">
+    <h2><span data-i18n="c_head1"></span> <span class="grad" data-i18n="c_head2"></span></h2>
+    <p data-i18n="c_text"></p>
+    <div class="clinks">
+      <a class="btn primary" href="mailto:bhalaji.d@hotmail.com">✉️ bhalaji.d@hotmail.com</a>
+      <a class="btn ghost" href="tel:+4915256433329">📞 +49 152 56433329</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/bhalajid/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <p style="margin-top:24px;color:var(--muted);font-size:.88rem;position:relative;z-index:1">📍 Bad Friedrichshall, Deutschland</p>
+  </div>
+</section>
+
+<footer><span data-i18n="footer"></span></footer>
+</div>
+
+<script>
+/* =====================================================================
+   ✏️  SKILL INVENTORY — EDIT HERE FOR EACH NEW APPLICATION
+   ---------------------------------------------------------------------
+   • Only real skills — never invent.
+   • hi: true  → glowing highlight chip (match to the job's keywords)
+   Groups: citrix | avd | ai | azplat | auto | infra | method
+   ===================================================================== */
+const SKILLS = [
+  // AI Platform Engineering
+  { cat:"ai",    name:"Azure AI Foundry", hi:true, tags:["ai","cloud","platform"] },
+  { cat:"ai",    name:"Azure OpenAI Service", hi:true, tags:["ai","cloud"] },
+  { cat:"ai",    name:"AI Infrastructure · GPU Compute", hi:true, tags:["ai","platform","cloud"] },
+  { cat:"ai",    name:"AI-assisted Automation (LLM Tooling · Copilot)", hi:false, tags:["ai","devops","sre"] },
+  // Cloud Platform Engineering (Azure · GCP)
+  { cat:"azplat", name:"Azure IaaS · Compute · Storage (AZ-104/AZ-300)", hi:true, tags:["cloud","platform"] },
+  { cat:"azplat", name:"Google Cloud Platform (GCP)", hi:true, tags:["cloud","devops","platform"] },
+  { cat:"azplat", name:"Azure Networking · VNet · NSG · Peering", hi:false, tags:["cloud","platform"] },
+  { cat:"azplat", name:"Entra ID / Azure AD · RBAC", hi:false, tags:["cloud","euc"] },
+  { cat:"azplat", name:"Azure Monitor · Log Analytics", hi:false, tags:["cloud","sre"] },
+  { cat:"azplat", name:"Azure Governance · Policy · Cost Mgmt", hi:false, tags:["cloud","platform"] },
+  { cat:"azplat", name:"Landing Zones · Subscription Design", hi:false, tags:["cloud","platform"] },
+  // DevOps & SRE
+  { cat:"devops", name:"Terraform (IaC)", hi:true, tags:["devops","cloud","platform","sre"] },
+  { cat:"devops", name:"Kubernetes", hi:true, tags:["devops","platform","cloud"] },
+  { cat:"devops", name:"Docker", hi:true, tags:["devops","platform"] },
+  { cat:"devops", name:"GitHub · GitHub Actions", hi:true, tags:["devops"] },
+  { cat:"devops", name:"CI/CD · Azure DevOps Pipelines", hi:false, tags:["devops","sre"] },
+  { cat:"devops", name:"SRE · Observability · Automation", hi:true, tags:["sre","devops"] },
+  { cat:"devops", name:"PowerShell Automation", hi:false, tags:["devops","sre","euc"] },
+  // Azure Virtual Desktop
+  { cat:"avd",   name:"Azure Virtual Desktop (AZ-140)", hi:true, tags:["euc","cloud","platform"] },
+  { cat:"avd",   name:"FSLogix Profile Container", hi:true, tags:["euc"] },
+  { cat:"avd",   name:"Host Pools · Autoscaling", hi:false, tags:["euc","cloud","sre"] },
+  { cat:"avd",   name:"Image Management (Golden Images)", hi:false, tags:["euc","devops"] },
+  // Citrix & EUC
+  { cat:"citrix", name:"Citrix DaaS / CVAD", hi:true, tags:["euc","platform"] },
+  { cat:"citrix", name:"Citrix Cloud · Connectors · MCS", hi:false, tags:["euc","cloud"] },
+  { cat:"citrix", name:"NetScaler / Citrix ADC (CCP-N)", hi:false, tags:["euc","platform"] },
+  { cat:"citrix", name:"StoreFront / Workspace", hi:false, tags:["euc"] },
+  { cat:"citrix", name:"Citrix Policies · Profile Mgmt", hi:false, tags:["euc"] },
+  // Platform & Infrastructure
+  { cat:"infra", name:"Windows Server", hi:false, tags:["euc","platform"] },
+  { cat:"infra", name:"Active Directory · GPO", hi:false, tags:["euc"] },
+  { cat:"infra", name:"Enterprise EUC Operations", hi:false, tags:["euc","sre"] },
+  // Leadership & Presales
+  { cat:"method", name:"Presales & Solution Consulting", hi:true, tags:["platform","cloud"] },
+  { cat:"method", name:"Technical Leadership · Stakeholder Mgmt", hi:false, tags:["platform"] },
+  { cat:"method", name:"ITIL v4 · Incident/Change/Problem", hi:false, tags:["sre","euc"] },
+  { cat:"method", name:"Scrum · Certified Scrum Master", hi:false, tags:["devops"] },
+];
+
+const CATS = {
+  ai:    { ico:"🧠", de:"AI Platform Engineering", en:"AI Platform Engineering", subde:"Ich bringe Intelligenz in den Betrieb", suben:"I bring intelligence into operations" },
+  azplat:{ ico:"⚙️", de:"Cloud Platform Engineering — Azure · GCP", en:"Cloud Platform Engineering — Azure · GCP", subde:"Cloud-Fundamente, die skalieren", suben:"Cloud foundations that scale" },
+  devops:{ ico:"🔁", de:"DevOps & SRE", en:"DevOps & SRE", subde:"Alles als Code — nichts von Hand", suben:"Everything as code — nothing by hand" },
+  avd:   { ico:"☁️", de:"Azure Virtual Desktop", en:"Azure Virtual Desktop", subde:"Der Arbeitsplatz, der überall funktioniert", suben:"The workplace that works everywhere" },
+  citrix:{ ico:"🖥️", de:"Citrix & EUC", en:"Citrix & EUC", subde:"Virtualisierung im Enterprise-Maßstab", suben:"Enterprise-scale virtualization" },
+  infra: { ico:"🏗️", de:"Plattform & Infrastruktur", en:"Platform & Infrastructure", subde:"Das solide Fundament", suben:"The solid foundation" },
+  method:{ ico:"🧭", de:"Leadership & Presales", en:"Leadership & Presales", subde:"Ich verkaufe, was ich baue — und baue, was ich verkaufe", suben:"I sell what I build — and build what I sell" },
+};
+
+/* "Hire me as..." personas — the role switcher */
+const PERSONAS = {
+  all:     { label:["Alle","All"], line:["Ein Profil, sechs Rollen — wählen Sie Ihre.","One profile, six roles — pick yours."] },
+  devops:  { label:["DevOps","DevOps"], line:["Terraform · GitHub Actions · Docker · Kubernetes — Infrastruktur, die sich selbst baut.","Terraform · GitHub Actions · Docker · Kubernetes — infrastructure that builds itself."] },
+  sre:     { label:["SRE","SRE"], line:["−60 % Betriebskosten bei der Deutschen Bank. Zuverlässigkeit ist mein Produkt.","−60% operations cost at Deutsche Bank. Reliability is my product."] },
+  cloud:   { label:["Cloud","Cloud"], line:["Azure-zertifiziert (AZ-104 · 300 · 140), GCP im Alltag — von Landing Zone bis Governance.","Azure certified (AZ-104 · 300 · 140), GCP daily — from landing zones to governance."] },
+  ai:      { label:["AI","AI"], line:["GenAI im Betriebsalltag — auf dem Weg zu Autonomous Operations.","GenAI in daily operations — en route to autonomous operations."] },
+  platform:{ label:["Platform","Platform"], line:["Plattformen für 80.000+ Menschen — von Null gebaut, im Maßstab betrieben.","Platforms for 80,000+ people — built from zero, run at scale."] },
+  euc:     { label:["EUC","EUC"], line:["Citrix DaaS · AVD · FSLogix — der Arbeitsplatz, der einfach funktioniert.","Citrix DaaS · AVD · FSLogix — the workplace that just works."] },
+};
+let persona = "all";
+
+const EXPERIENCE = [
+  { period:"2025 – heute|2025 – present", role:"Technology Lead EUC",
+    org:"HCLTech GmbH — Kunde: Deutsche Bank|HCLTech GmbH — Client: Deutsche Bank",
+    points:["Technische Leitung der EUC-/Virtualisierungsplattformen im regulierten Bankenumfeld|Technical lead for EUC / virtualization platforms in a regulated banking environment",
+            "SRE Automation Lead — Betriebskosten um 60 % gesenkt|SRE Automation Lead — reduced operations cost by 60%",
+            "GenAI-Evangelist: Integration von Gen AI in den Betriebsalltag Richtung Autonomous Operations|GenAI evangelist: integrating Gen AI into daily operations, driving towards autonomous operations",
+            "Täglich im Einsatz: Terraform, Kubernetes, Docker, GitHub Actions, CI/CD|Daily drivers: Terraform, Kubernetes, Docker, GitHub Actions, CI/CD"] },
+  { period:"2019 – 2025|2019 – 2025", role:"Virtual Platform Consultant",
+    org:"Schwarz Digital — Kunden: LIDL, Kaufland, PreZero|Schwarz Digital — Clients: LIDL, Kaufland, PreZero",
+    points:["Platform Enablement Engineering für 80.000+ Nutzer — eine der größten Virtual-Workplace-Landschaften Europas|Platform enablement engineering for 80,000+ users — one of Europe's largest virtual workplace estates",
+            "AVD-Plattform von Null aufgebaut · Citrix DaaS Cloud-Migration · EUC-Betriebsmodell etabliert|Built AVD platform from zero · Citrix DaaS cloud migration · established EUC operations model",
+            "7-stellige Kosteneinsparungen durch Plattform-Optimierung|7-figure cost savings through platform optimization",
+            "Presales & Solution Consulting: Workshops, PoCs und Lösungsdesign für Konzernkunden|Presales & solution consulting: workshops, PoCs and solution design for enterprise clients"] },
+  { period:"2012 – 2019|2012 – 2019", role:"Infrastructure Engineer",
+    org:"Tata Consultancy Services — Kunden: Olympus Europa, Marks & Spencer|Tata Consultancy Services — Clients: Olympus Europa, Marks & Spencer",
+    points:["Enterprise-Infrastruktur- und EUC-Projekte für europäische Großkunden|Enterprise infrastructure and EUC projects for major European clients"] },
+  { period:"2009 – 2012|2009 – 2012", role:"System Engineer",
+    org:"HCL Technologies (Indien) — Kunde: Micron Industries (USA)|HCL Technologies (India) — Client: Micron Industries (USA)",
+    points:["Betrieb und Support von Windows-/Infrastrukturumgebungen|Operations and support of Windows / infrastructure environments"] },
+  { period:"2008|2008", role:"Engineer", org:"Yahoo R&D, Indien|Yahoo R&D, India", points:[] },
+];
+
+const CERTIFICATIONS = [
+  ["🎓","AZ-140","Azure Virtual Desktop Specialty"],
+  ["🎓","AZ-104","Azure Administrator Associate"],
+  ["🎓","AZ-300","Azure Architect Technologies"],
+  ["🏅","CCP-V","Citrix Certified Professional – Virtualization"],
+  ["🏅","CCP-N","Citrix Certified Professional – Networking"],
+  ["🎓","MCP","Microsoft Certified Professional"],
+  ["📘","ITIL v4","IT Service Management"],
+  ["🌀","CSM","Certified Scrum Master"],
+];
+
+const T = {
+  n_impact:["Impact","Impact"], n_skills:["Kompetenzen","Skills"], n_exp:["Erfahrung","Experience"], n_certs:["Zertifikate","Certifications"], n_contact:["Kontakt","Contact"],
+  avail:["Offen für neue Herausforderungen","Open to new opportunities"],
+  hi:["Hallo, ich bin","Hi, I'm"],
+  lead:["Ich betreibe keine Server — ich sorge dafür, dass 80.000 Menschen jeden Morgen einfach arbeiten können. Ich spare Millionen, bevor der CFO danach fragt. Und ich bringe GenAI dorthin, wo echte Arbeit passiert.",
+        "I don't run servers — I make sure 80,000 people can simply start working every morning. I save millions before the CFO has to ask. And I bring GenAI to where real work happens."],
+  cta1:["Kontakt aufnehmen","Get in touch"],
+  scroll:["Scrollen zum Entdecken","Scroll to explore"],
+  k_impact:["Meine Geschichte in Zahlen","My story in numbers"], h_impact:["Was ich für Menschen bewege","What I make possible"],
+  bt1:["Menschen arbeiten täglich auf meinen Plattformen","people run their business on my platforms — daily"],
+  bs1:["Platform Enablement Engineering für LIDL, Kaufland & PreZero — eine der größten Virtual-Workplace-Landschaften Europas","Platform enablement engineering for LIDL, Kaufland & PreZero — one of Europe's largest virtual workplace estates"],
+  bt2:["7-stellig","7-figure"],
+  bs2:["Einsparungen, die im Vorstand ankamen — durch Plattform-Optimierung","Savings the board actually noticed — through platform optimization"],
+  bt3:["Betriebskosten","Operations cost"],
+  bs3:["Ich mache CFOs glücklich: −60 % Betriebskosten durch SRE-Automatisierung @ Deutsche Bank","I make CFOs smile: −60% operations cost through SRE automation @ Deutsche Bank"],
+  bt5:["Ich baue Plattformen, wo vorher nichts war","I build platforms where there was nothing"],
+  bs5:["AVD von Null · Citrix DaaS Cloud-Migration · EUC-Betriebsmodelle & Teams etabliert","AVD from zero · Citrix DaaS cloud migration · EUC operating models & teams established"],
+  bt6:["Ich mache KI zum Arbeitskollegen","I turn AI into a colleague"],
+  bs6:["GenAI-Transformation-Evangelist @ Deutsche Bank — GenAI im Betriebsalltag, unterwegs zu Autonomous Operations","GenAI transformation evangelist @ Deutsche Bank — GenAI in daily operations, en route to autonomous operations"],
+  s_years:["Jahre Erfahrung","Years experience"], s_certs:["Zertifizierungen","Certifications"],
+  k_skills:["Was ich mitbringe","What I bring"], h_skills:["Kompetenzen","Skills"],
+  hireme:["Stellen Sie mich ein als …","Hire me as …"],
+  legend:["Klicken Sie eine Rolle — die Seite zeigt Ihnen genau die Skills, die Sie suchen.","Click a role — the page highlights exactly the skills you're hiring for."],
+  k_exp:["Der Weg hierher","The road here"], h_exp:["Berufserfahrung","Experience"],
+  k_certs:["Schwarz auf Weiß","In black and white"], h_certs:["Zertifizierungen","Certifications"],
+  c_head1:["Lassen Sie uns","Let's build"], c_head2:["etwas bauen.","something."],
+  c_text:["Ob AI-Plattform, Kubernetes-Landschaft, SRE-Transformation, Cloud-Design oder der Arbeitsplatz für 80.000 Menschen — ich freue mich auf Ihre Nachricht.",
+          "Whether it's an AI platform, a Kubernetes estate, an SRE transformation, cloud design or the workplace for 80,000 people — I'd love to hear from you."],
+  footer:["© 2026 Balaji Durai — Alle Angaben entsprechen meinem tatsächlichen Werdegang.",
+          "© 2026 Balaji Durai — All information reflects my actual career history."],
+};
+
+const ROLES = [
+  ["AI & Cloud Platform Engineer","AI & Cloud Platform Engineer"],
+  ["DevOps & SRE Engineer","DevOps & SRE Engineer"],
+  ["GenAI Transformation Evangelist","GenAI Transformation Evangelist"],
+  ["Platform Enablement Engineer","Platform Enablement Engineer"],
+  ["Citrix DaaS & AVD Experte","Citrix DaaS & AVD Expert"],
+  ["Technology Lead","Technology Lead"],
+];
+
+const CLIENTS = ["Deutsche Bank","LIDL","Kaufland","PreZero","Olympus","Marks & Spencer","Micron","Yahoo","Schwarz Digital"];
+
+let lang = 0;
+
+function render(){
+  document.documentElement.lang = lang===0?"de":"en";
+  document.getElementById("langToggle").textContent = lang===0?"EN":"DE";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k=el.getAttribute("data-i18n"); if(T[k]) el.textContent=T[k][lang];
+  });
+
+  // marquee (duplicate for seamless loop)
+  const mt=document.getElementById("mtrack");
+  const seq=CLIENTS.map(c=>"<span>"+c+"</span><i>✦</i>").join("");
+  mt.innerHTML=seq+seq;
+
+  // skills
+  const sc=document.getElementById("skillsContainer"); sc.innerHTML="";
+  Object.keys(CATS).forEach(cat=>{
+    const items=SKILLS.filter(s=>s.cat===cat); if(!items.length) return;
+    const c=CATS[cat];
+    const card=document.createElement("div"); card.className="skillcard tilt";
+    card.innerHTML='<h3><span class="ico">'+c.ico+'</span>'+(lang===0?c.de:c.en)+'</h3><div class="sub">'+(lang===0?c.subde:c.suben)+'</div>';
+    const chips=document.createElement("div"); chips.className="chips";
+    items.forEach(s=>{
+      const ch=document.createElement("span");
+      let cls="chip";
+      if(persona==="all"){ if(s.hi) cls+=" hi"; }
+      else { if((s.tags||[]).includes(persona)) cls+=" hi"; else cls+=" dim"; }
+      ch.className=cls; ch.textContent=s.name; chips.appendChild(ch);
+    });
+    card.appendChild(chips); sc.appendChild(card);
+  });
+  bindTilt();
+
+  // persona bar
+  const pb=document.getElementById("pbar"); pb.innerHTML="";
+  Object.keys(PERSONAS).forEach(k=>{
+    const b=document.createElement("button");
+    b.className="pbtn"+(persona===k?" active":"");
+    b.textContent=PERSONAS[k].label[lang];
+    b.onclick=()=>{ persona=k; render(); };
+    pb.appendChild(b);
+  });
+  document.getElementById("pline").textContent="› "+PERSONAS[persona].line[lang];
+
+  // experience
+  const ec=document.getElementById("expContainer"); ec.innerHTML="";
+  EXPERIENCE.forEach(j=>{
+    const d=document.createElement("div"); d.className="job";
+    const pts=j.points.map(p=>"<li>"+p.split("|")[lang]+"</li>").join("");
+    d.innerHTML='<div class="card"><h3>'+j.role+'</h3><div class="org">'+j.org.split("|")[lang]+
+      '</div><span class="period">'+j.period.split("|")[lang]+'</span>'+(pts?"<ul>"+pts+"</ul>":"")+'</div>';
+    ec.appendChild(d);
+  });
+
+  // certs
+  const cc=document.getElementById("certContainer"); cc.innerHTML="";
+  CERTIFICATIONS.forEach(([ico,code,name])=>{
+    const d=document.createElement("div"); d.className="cert";
+    d.innerHTML='<div class="badge">'+ico+'</div><div><b>'+code+'</b><span>'+name+'</span></div>';
+    cc.appendChild(d);
+  });
+}
+function toggleLang(){ lang=1-lang; render(); startTyping(); }
+
+/* typing */
+let tIdx=0,tChar=0,tDel=false,tTimer;
+function startTyping(){ clearTimeout(tTimer); tIdx=0;tChar=0;tDel=false; typeTick(); }
+function typeTick(){
+  const el=document.getElementById("typed"), word=ROLES[tIdx][lang];
+  el.textContent=word.slice(0,tChar);
+  if(!tDel){ tChar++; if(tChar>word.length){ tDel=true; tTimer=setTimeout(typeTick,1900); return; } }
+  else { tChar--; if(tChar===0){ tDel=false; tIdx=(tIdx+1)%ROLES.length; } }
+  tTimer=setTimeout(typeTick, tDel?30:60);
+}
+
+/* counters (run when visible) */
+let counted=false;
+function animateCounters(){
+  if(counted) return; counted=true;
+  document.querySelectorAll("[data-count]").forEach(el=>{
+    const target=+el.getAttribute("data-count"); let cur=0;
+    const step=()=>{ cur+=Math.max(1,Math.ceil(target/40));
+      if(cur>=target){ el.textContent=target+"+"; } else { el.textContent=cur; requestAnimationFrame(step);} };
+    step();
+  });
+}
+
+/* reveal + counters + nav highlight */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){ e.target.classList.add("on"); if(e.target.id==="impact") animateCounters(); }
+}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const secObs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    document.querySelectorAll("#navlinks a").forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id));
+  }
+}),{threshold:.4});
+document.querySelectorAll("section[id]").forEach(s=>secObs.observe(s));
+
+/* scroll progress */
+addEventListener("scroll",()=>{
+  const h=document.documentElement;
+  document.getElementById("prog").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+},{passive:true});
+
+/* spotlight follows mouse */
+addEventListener("mousemove",e=>{
+  document.getElementById("spot").style.background=
+    "radial-gradient(600px at "+e.clientX+"px "+e.clientY+"px, rgba(59,130,246,.10), transparent 70%)";
+},{passive:true});
+
+/* 3D tilt + inner glow on skill cards */
+function bindTilt(){
+  document.querySelectorAll(".tilt").forEach(card=>{
+    card.onmousemove=e=>{
+      const r=card.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top;
+      card.style.setProperty("--mx",(x/r.width*100)+"%");
+      card.style.setProperty("--my",(y/r.height*100)+"%");
+      const rx=((y/r.height)-.5)*-7, ry=((x/r.width)-.5)*7;
+      card.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg) translateZ(0)";
+    };
+    card.onmouseleave=()=>{ card.style.transform="rotateX(0) rotateY(0)"; };
+  });
+}
+
+/* particle constellation */
+const cv=document.getElementById("stars"), ctx=cv.getContext("2d");
+let W,H,pts=[],mouse={x:-999,y:-999};
+function resize(){ W=cv.width=innerWidth; H=cv.height=innerHeight;
+  const n=Math.min(90,Math.floor(W*H/22000));
+  pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.4}));
+}
+addEventListener("resize",resize); resize();
+addEventListener("mousemove",e=>{mouse.x=e.clientX;mouse.y=e.clientY;},{passive:true});
+(function loop(){
+  ctx.clearRect(0,0,W,H);
+  pts.forEach(p=>{
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
+    const dm=Math.hypot(p.x-mouse.x,p.y-mouse.y);
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7);
+    ctx.fillStyle=dm<160?"rgba(255,255,255,.95)":"rgba(125,180,255,.5)"; ctx.fill();
+    if(dm<160){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y);
+      ctx.strokeStyle="rgba(77,159,255,"+(0.3*(1-dm/160))+")"; ctx.stroke(); }
+  });
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+    const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+    if(d<110){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+      ctx.strokeStyle="rgba(125,180,255,"+(0.14*(1-d/110))+")"; ctx.stroke(); }
+  }
+  requestAnimationFrame(loop);
+})();
+
+render(); startTyping();
+</script>
+</body>
+</html>
