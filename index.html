@@ -95,14 +95,14 @@ section{padding:90px 0 10px}
 
 /* bento */
 .bentogrid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:130px;gap:16px}
-.bento{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;position:relative;overflow:hidden;transition:.3s;display:flex;flex-direction:column;justify-content:flex-end}
+.bento{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px;position:relative;overflow:hidden;transition:.3s;display:flex;flex-direction:column;justify-content:flex-end;gap:3px}
 .bento:hover{border-color:rgba(77,159,255,.5);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5)}
 .bento .glowline{position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad);opacity:0;transition:.3s}
 .bento:hover .glowline{opacity:1}
-.bento .ico{font-size:1.6rem;margin-bottom:auto}
-.bento b{font-size:1.15rem;line-height:1.3;margin-top:2px}
-.bento b.big{font-size:2.4rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.bento span{color:var(--muted);font-size:.85rem;margin-top:4px}
+.bento .ico{font-size:1.5rem;line-height:1;margin-bottom:auto;padding-bottom:14px}
+.bento b{font-size:1rem;line-height:1.35;overflow-wrap:break-word}
+.bento b.big{font-size:clamp(1.7rem,3.4vw,2.3rem);line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bento span{color:var(--muted);font-size:.82rem;line-height:1.45}
 .b1{grid-column:span 2;grid-row:span 2}
 .b2{grid-column:span 1;grid-row:span 1}
 .b3{grid-column:span 1;grid-row:span 2}
@@ -170,6 +170,35 @@ footer{color:var(--muted);font-size:.82rem;text-align:center;padding:48px 0;bord
 /* reveal */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
 .reveal.on{opacity:1;transform:none}
+
+/* ===== PREMIUM LIGHT THEME ===== */
+html[data-theme="light"]{
+  --bg:#f6f7f9; --card:#ffffff; --border:rgba(13,18,32,.10);
+  --text:#0d1220; --muted:#5b6474; --blue:#1e4fd8; --sky:#1e4fd8; --amber:#1e4fd8;
+  --grad:linear-gradient(120deg,#0d1220,#1e4fd8 60%,#4f7df0);
+}
+html[data-theme="light"] body{background:var(--bg)}
+html[data-theme="light"] nav{background:rgba(255,255,255,.78)}
+html[data-theme="light"] .navlinks a.active{background:rgba(30,79,216,.10);color:#0d1220}
+html[data-theme="light"] .btn.primary{color:#fff;box-shadow:0 8px 28px rgba(30,79,216,.28)}
+html[data-theme="light"] .pbtn.active{color:#fff}
+html[data-theme="light"] .chip{background:rgba(13,18,32,.04);color:#333d52}
+html[data-theme="light"] .chip.hi{background:rgba(30,79,216,.10);border-color:rgba(30,79,216,.5);color:#0d1220}
+html[data-theme="light"] .bento,
+html[data-theme="light"] .skillcard,
+html[data-theme="light"] .cert,
+html[data-theme="light"] .job .card{box-shadow:0 8px 30px rgba(13,18,32,.06)}
+html[data-theme="light"] .mtrack span{color:#3a4356}
+html[data-theme="light"] .marquee{background:rgba(13,18,32,.02)}
+html[data-theme="light"] .hireme{background:rgba(30,79,216,.04)}
+html[data-theme="light"] .contactcard{background:linear-gradient(120deg,rgba(30,79,216,.08),rgba(79,125,240,.05));border-color:rgba(30,79,216,.25)}
+html[data-theme="light"] #typed{color:#0d1220}
+html[data-theme="light"] .job::before{background:var(--bg)}
+html[data-theme="light"] .avail{background:rgba(30,79,216,.06);border-color:rgba(30,79,216,.3)}
+html[data-theme="light"] .avail::before{background:#0ca678;box-shadow:0 0 10px #0ca678}
+html[data-theme="light"] .cert .badge{box-shadow:0 4px 14px rgba(30,79,216,.25)}
+html[data-theme="light"] .pring{box-shadow:0 0 60px rgba(30,79,216,.22),0 20px 50px rgba(13,18,32,.18)}
+html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 28%,transparent 55%,rgba(240,243,248,.4)),linear-gradient(160deg,rgba(30,79,216,.10),rgba(246,247,249,.15))}
 </style>
 </head>
 <body>
@@ -187,7 +216,10 @@ footer{color:var(--muted);font-size:.82rem;text-align:center;padding:48px 0;bord
       <a href="#certs" data-i18n="n_certs"></a>
       <a href="#contact" data-i18n="n_contact"></a>
     </div>
-    <button class="langbtn" id="langToggle" onclick="toggleLang()">EN</button>
+    <div style="display:flex;gap:8px">
+      <button class="langbtn" id="themeToggle" onclick="toggleTheme()" title="Theme">☀️</button>
+      <button class="langbtn" id="langToggle" onclick="toggleLang()">EN</button>
+    </div>
   </div>
 </nav>
 
@@ -208,7 +240,7 @@ footer{color:var(--muted);font-size:.82rem;text-align:center;padding:48px 0;bord
     </div>
     <div class="pwrap" id="pwrap">
       <div class="pring">
-        <img src="profile.jpg" alt="Balaji Durai" onerror="document.getElementById('pwrap').style.display='none'">
+        <img id="ppic" src="profile.jpg" alt="Balaji Durai" onerror="picErr(this)">
       </div>
     </div>
   </div>
@@ -491,6 +523,25 @@ function render(){
 }
 function toggleLang(){ lang=1-lang; render(); startTyping(); }
 
+/* theme toggle (dark ⇄ light) */
+function applyTheme(t){
+  document.documentElement.dataset.theme=t;
+  document.getElementById("themeToggle").textContent = t==="light" ? "🌙" : "☀️";
+}
+function toggleTheme(){
+  const t=document.documentElement.dataset.theme==="light"?"dark":"light";
+  applyTheme(t); try{localStorage.setItem("theme",t);}catch(e){}
+}
+try{ applyTheme(localStorage.getItem("theme")||"dark"); }catch(e){ applyTheme("dark"); }
+
+/* photo fallback: tries common filenames before hiding the frame */
+const PICS=["profile.jpeg","profile.png","profile.JPG","profile.JPEG","profile.PNG","me.jpg","me.jpeg","me.png"];
+let picIdx=0;
+function picErr(img){
+  if(picIdx<PICS.length){ img.src=PICS[picIdx++]; }
+  else document.getElementById("pwrap").style.display="none";
+}
+
 /* typing */
 let tIdx=0,tChar=0,tDel=false,tTimer;
 function startTyping(){ clearTimeout(tTimer); tIdx=0;tChar=0;tDel=false; typeTick(); }
@@ -533,10 +584,11 @@ addEventListener("scroll",()=>{
   document.getElementById("prog").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
 },{passive:true});
 
-/* spotlight follows mouse */
+/* spotlight follows mouse (theme-aware) */
 addEventListener("mousemove",e=>{
+  const light=document.documentElement.dataset.theme==="light";
   document.getElementById("spot").style.background=
-    "radial-gradient(600px at "+e.clientX+"px "+e.clientY+"px, rgba(59,130,246,.10), transparent 70%)";
+    "radial-gradient(600px at "+e.clientX+"px "+e.clientY+"px, "+(light?"rgba(30,79,216,.06)":"rgba(59,130,246,.10)")+", transparent 70%)";
 },{passive:true});
 
 /* 3D tilt + inner glow on skill cards */
@@ -564,19 +616,24 @@ addEventListener("resize",resize); resize();
 addEventListener("mousemove",e=>{mouse.x=e.clientX;mouse.y=e.clientY;},{passive:true});
 (function loop(){
   ctx.clearRect(0,0,W,H);
+  const light=document.documentElement.dataset.theme==="light";
+  const nearDot=light?"rgba(30,79,216,.85)":"rgba(255,255,255,.95)";
+  const farDot=light?"rgba(30,79,216,.30)":"rgba(125,180,255,.5)";
+  const lineRGB=light?"30,79,216":"77,159,255";
+  const linkRGB=light?"30,79,216":"125,180,255";
   pts.forEach(p=>{
     p.x+=p.vx; p.y+=p.vy;
     if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
     const dm=Math.hypot(p.x-mouse.x,p.y-mouse.y);
     ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7);
-    ctx.fillStyle=dm<160?"rgba(255,255,255,.95)":"rgba(125,180,255,.5)"; ctx.fill();
+    ctx.fillStyle=dm<160?nearDot:farDot; ctx.fill();
     if(dm<160){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y);
-      ctx.strokeStyle="rgba(77,159,255,"+(0.3*(1-dm/160))+")"; ctx.stroke(); }
+      ctx.strokeStyle="rgba("+lineRGB+","+(0.3*(1-dm/160))+")"; ctx.stroke(); }
   });
   for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
     const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
     if(d<110){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
-      ctx.strokeStyle="rgba(125,180,255,"+(0.14*(1-d/110))+")"; ctx.stroke(); }
+      ctx.strokeStyle="rgba("+linkRGB+","+((light?0.10:0.14)*(1-d/110))+")"; ctx.stroke(); }
   }
   requestAnimationFrame(loop);
 })();
