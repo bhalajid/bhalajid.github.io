@@ -99,6 +99,14 @@ section{padding:90px 0 10px}
 .bento:hover{border-color:rgba(77,159,255,.5);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5)}
 .bento .glowline{position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad);opacity:0;transition:.3s}
 .bento:hover .glowline{opacity:1}
+/* hover background art */
+.bgart{position:absolute;right:-8px;bottom:-8px;width:52%;max-width:150px;color:var(--sky);opacity:0;transform:scale(.7) rotate(-8deg);transition:.45s ease;pointer-events:none}
+.bento:hover .bgart{opacity:.15;transform:scale(1) rotate(0deg)}
+.bgemoji{position:absolute;right:2px;bottom:-10px;font-size:6.5rem;line-height:1;opacity:0;transform:scale(.6) rotate(-12deg);transition:.45s ease;pointer-events:none;filter:grayscale(.5)}
+.skillcard:hover .bgemoji{opacity:.10;transform:scale(1) rotate(0deg)}
+.cert{position:relative;overflow:hidden}
+.cert .bgemoji{font-size:4.2rem;bottom:-6px}
+.cert:hover .bgemoji{opacity:.13;transform:scale(1) rotate(0deg)}
 .bento .ico{font-size:1.5rem;line-height:1;margin-bottom:auto;padding-bottom:14px}
 .bento b{font-size:1rem;line-height:1.35;overflow-wrap:break-word}
 .bento b.big{font-size:clamp(1.7rem,3.4vw,2.3rem);line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -167,6 +175,43 @@ section{padding:90px 0 10px}
 .job .period{display:inline-block;margin-top:8px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:999px;padding:3px 12px;font-size:.76rem;color:var(--muted);font-family:'JetBrains Mono'}
 .job ul{margin:12px 0 0 18px;color:var(--muted);font-size:.92rem}
 
+/* case studies */
+.casegrid{display:grid;gap:18px}
+.case{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;transition:.25s}
+.case:hover{border-color:rgba(77,159,255,.45);transform:translateY(-3px);box-shadow:0 16px 44px rgba(0,0,0,.4)}
+.case h3{font-size:1.12rem;margin-bottom:14px}
+.ctag{display:inline-block;font-family:'JetBrains Mono';font-size:.72rem;color:var(--amber);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.crow{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--border);font-size:.93rem;align-items:baseline}
+.crow b{color:var(--sky);font-size:.74rem;text-transform:uppercase;letter-spacing:1.5px;font-family:'JetBrains Mono';font-weight:600}
+.crow span{color:var(--muted)}
+.crow .cres{color:var(--text);font-weight:600}
+@media(max-width:560px){.crow{grid-template-columns:1fr;gap:3px}}
+html[data-theme="light"] .case{box-shadow:0 8px 30px rgba(13,18,32,.06)}
+/* about */
+.aboutgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+
+/* projects */
+.projectcard{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:32px;transition:.25s}
+.projectcard:hover{border-color:rgba(77,159,255,.4)}
+.ptitle{font-size:1.4rem;font-weight:800;margin:10px 0 6px;font-family:'Sora'}
+.ptagline{color:var(--muted);font-size:1rem;max-width:680px;margin-bottom:6px}
+.pshort{color:var(--muted);font-size:.95rem;white-space:pre-line;max-width:760px;margin-bottom:18px}
+.pbtn2{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--sky);border-radius:999px;padding:10px 22px;font-size:.85rem;font-weight:600;cursor:pointer;transition:.25s}
+.pbtn2:hover{border-color:var(--sky);background:rgba(77,159,255,.08)}
+.pdetails{max-height:0;overflow:hidden;transition:max-height .5s ease;margin-top:0}
+.pdetails.open{max-height:6000px;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+.pdetails h4{color:var(--sky);font-size:.95rem;text-transform:uppercase;letter-spacing:1.5px;font-family:'JetBrains Mono';margin:26px 0 10px}
+.pdetails h4:first-child{margin-top:0}
+.pdetails p{color:var(--muted);font-size:.93rem;max-width:780px;white-space:pre-line}
+.pdecision{margin:14px 0}
+.pdecision b{display:block;color:var(--text);font-size:.96rem;margin-bottom:4px}
+.pdecision p{margin:0;max-width:780px}
+.plimits{margin:0 0 20px 20px;color:var(--muted);font-size:.93rem}
+.plimits li{margin-bottom:8px;max-width:760px}
+.pstackline{color:var(--muted);font-size:.82rem;margin:10px 0 16px;line-height:1.6}
+.pnote{color:var(--muted);font-size:.85rem;font-style:italic;opacity:.8}
+html[data-theme="light"] .projectcard{box-shadow:0 8px 30px rgba(13,18,32,.06)}
+
 /* certs */
 .certgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
 .cert{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;display:flex;gap:14px;align-items:center;transition:.25s}
@@ -229,6 +274,8 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
     <div class="logo">Balaji<span>.dev</span></div>
     <div class="navlinks" id="navlinks">
       <a href="#impact" data-i18n="n_impact"></a>
+      <a href="#cases" data-i18n="n_cases"></a>
+      <a href="#projects" data-i18n="n_projects"></a>
       <a href="#skills" data-i18n="n_skills"></a>
       <a href="#experience" data-i18n="n_exp"></a>
       <a href="#certs" data-i18n="n_certs"></a>
@@ -274,16 +321,87 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
   <div class="kicker" data-i18n="k_impact"></div>
   <div class="sechead"><h2 data-i18n="h_impact"></h2></div>
   <div class="bentogrid">
-    <div class="bento b1"><div class="glowline"></div><div class="ico">🧠</div>
+    <div class="bento b1"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="20" r="6"/><circle cx="18" cy="50" r="6"/><circle cx="18" cy="80" r="6"/><circle cx="54" cy="34" r="6"/><circle cx="54" cy="66" r="6"/><circle cx="86" cy="50" r="7"/><path d="M24 20 48 34M24 50 48 34M24 50 48 66M24 80 48 66M60 34 79 48M60 66 79 52"/></svg></div>
+      <div class="ico">🧠</div>
       <b class="big">GenAI</b><b data-i18n="bt6"></b><span data-i18n="bs6"></span></div>
-    <div class="bento b2"><div class="glowline"></div><b class="big">−60%</b><span data-i18n="bs3"></span></div>
-    <div class="bento b3"><div class="glowline"></div><div class="ico">🚀</div>
+    <div class="bento b2"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="currentColor"><rect x="8" y="34" width="14" height="52" rx="2"/><rect x="30" y="48" width="14" height="38" rx="2"/><rect x="52" y="60" width="14" height="26" rx="2"/><rect x="74" y="70" width="14" height="16" rx="2"/><path d="M10 16 Q48 26 80 52" stroke="currentColor" stroke-width="4" fill="none"/><path d="M84 56 l-13 -2 7 -10 z"/></svg></div>
+      <b class="big">−60%</b><span data-i18n="bs3"></span></div>
+    <div class="bento b3"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="currentColor"><circle cx="20" cy="22" r="8"/><path d="M8 46q12-15 24 0v6H8z"/><circle cx="50" cy="22" r="8"/><path d="M38 46q12-15 24 0v6H38z"/><circle cx="80" cy="22" r="8"/><path d="M68 46q12-15 24 0v6H68z"/><circle cx="35" cy="64" r="8"/><path d="M23 88q12-15 24 0v6H23z"/><circle cx="65" cy="64" r="8"/><path d="M53 88q12-15 24 0v6H53z"/></svg></div>
+      <div class="ico">🚀</div>
       <b class="big">80.000+</b><b data-i18n="bt1"></b><span data-i18n="bs1"></span></div>
-    <div class="bento b2"><div class="glowline"></div><b class="big" data-i18n="bt2"></b><span data-i18n="bs2"></span></div>
-    <div class="bento b5"><div class="glowline"></div><div class="ico">🏗️</div>
+    <div class="bento b2"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><circle cx="50" cy="50" r="34"/><path d="M63 36a18 18 0 100 28M27 44h24M27 56h24"/></svg></div>
+      <b class="big" data-i18n="bt2"></b><span data-i18n="bs2"></span></div>
+    <div class="bento b5"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M50 12 86 30 50 48 14 30z"/><path d="M14 50l36 18 36-18M14 68l36 18 36-18"/></svg></div>
+      <div class="ico">🏗️</div>
       <b data-i18n="bt5"></b><span data-i18n="bs5"></span></div>
-    <div class="bento b4"><div class="glowline"></div><b class="big" data-count="16">0</b><span data-i18n="s_years"></span></div>
-    <div class="bento b4"><div class="glowline"></div><b class="big" data-count="8">0</b><span data-i18n="s_certs"></span></div>
+    <div class="bento b4"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><circle cx="50" cy="50" r="35"/><path d="M50 28v24l16 10"/></svg></div>
+      <b class="big" data-count="16">0</b><span data-i18n="s_years"></span></div>
+    <div class="bento b4"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><circle cx="50" cy="38" r="20"/><circle cx="50" cy="38" r="11"/><path d="M42 56 33 88l17-10 17 10-9-32"/></svg></div>
+      <b class="big" data-count="8">0</b><span data-i18n="s_certs"></span></div>
+  </div>
+</section>
+
+<section id="cases" class="reveal">
+  <div class="kicker" data-i18n="k_cases"></div>
+  <div class="sechead"><h2 data-i18n="h_cases"></h2></div>
+  <div class="casegrid">
+    <div class="case"><span class="ctag" data-i18n="c1tag"></span><h3 data-i18n="c1t"></h3>
+      <div class="crow"><b data-i18n="l_chal"></b><span data-i18n="c1c"></span></div>
+      <div class="crow"><b data-i18n="l_act"></b><span data-i18n="c1a"></span></div>
+      <div class="crow"><b data-i18n="l_res"></b><span class="cres" data-i18n="c1r"></span></div>
+    </div>
+    <div class="case"><span class="ctag" data-i18n="c2tag"></span><h3 data-i18n="c2t"></h3>
+      <div class="crow"><b data-i18n="l_chal"></b><span data-i18n="c2c"></span></div>
+      <div class="crow"><b data-i18n="l_act"></b><span data-i18n="c2a"></span></div>
+      <div class="crow"><b data-i18n="l_res"></b><span class="cres" data-i18n="c2r"></span></div>
+    </div>
+    <div class="case"><span class="ctag" data-i18n="c3tag"></span><h3 data-i18n="c3t"></h3>
+      <div class="crow"><b data-i18n="l_chal"></b><span data-i18n="c3c"></span></div>
+      <div class="crow"><b data-i18n="l_act"></b><span data-i18n="c3a"></span></div>
+      <div class="crow"><b data-i18n="l_res"></b><span class="cres" data-i18n="c3r"></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <div class="kicker" data-i18n="k_projects"></div>
+  <div class="sechead"><h2 data-i18n="h_projects"></h2></div>
+  <div class="projectcard">
+    <span class="ctag" data-i18n="p_tag"></span>
+    <h3 class="ptitle">BR Assist</h3>
+    <p class="ptagline" data-i18n="p_tagline"></p>
+    <div class="chips" id="pStackChips" style="margin:16px 0"></div>
+    <p class="pshort" data-i18n="p_short"></p>
+    <button class="pbtn2 mono" id="pToggleBtn" onclick="toggleProject()"></button>
+    <div class="pdetails" id="pDetails">
+      <h4 data-i18n="p_h_problem"></h4>
+      <p data-i18n="p_b_problem"></p>
+      <h4 data-i18n="p_h_approach"></h4>
+      <p data-i18n="p_b_approach"></p>
+      <h4 data-i18n="p_h_decisions"></h4>
+      <div class="pdecision"><b data-i18n="p_d1t"></b><p data-i18n="p_d1b"></p></div>
+      <div class="pdecision"><b data-i18n="p_d2t"></b><p data-i18n="p_d2b"></p></div>
+      <div class="pdecision"><b data-i18n="p_d3t"></b><p data-i18n="p_d3b"></p></div>
+      <div class="pdecision"><b data-i18n="p_d4t"></b><p data-i18n="p_d4b"></p></div>
+      <h4 data-i18n="p_h_testing"></h4>
+      <p data-i18n="p_b_testing"></p>
+      <h4 data-i18n="p_h_limits"></h4>
+      <ul class="plimits">
+        <li data-i18n="p_l1"></li>
+        <li data-i18n="p_l2"></li>
+        <li data-i18n="p_l3"></li>
+        <li data-i18n="p_l4"></li>
+      </ul>
+      <p class="pstackline mono" data-i18n="p_stackline"></p>
+      <p class="pnote" data-i18n="p_note"></p>
+    </div>
   </div>
 </section>
 
@@ -309,6 +427,28 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
   <div class="kicker" data-i18n="k_certs"></div>
   <div class="sechead"><h2 data-i18n="h_certs"></h2></div>
   <div class="certgrid" id="certContainer"></div>
+</section>
+
+<section id="aboutme" class="reveal">
+  <div class="kicker" data-i18n="k_about"></div>
+  <div class="sechead"><h2 data-i18n="h_aboutme"></h2></div>
+  <div class="aboutgrid">
+    <div class="skillcard"><h3><span class="ico">🌍</span><span data-i18n="a_lang"></span></h3>
+      <div class="chips" style="margin-top:12px">
+        <span class="chip" data-i18n="a_l1"></span>
+        <span class="chip" data-i18n="a_l2"></span>
+        <span class="chip" data-i18n="a_l3"></span>
+      </div>
+    </div>
+    <div class="skillcard"><h3><span class="ico">💬</span><span data-i18n="a_ask"></span></h3>
+      <div class="chips" style="margin-top:12px">
+        <span class="chip" data-i18n="a_a1"></span>
+        <span class="chip" data-i18n="a_a2"></span>
+        <span class="chip" data-i18n="a_a3"></span>
+        <span class="chip" data-i18n="a_a4"></span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="contact" class="reveal">
@@ -341,6 +481,8 @@ const SKILLS = [
   { cat:"ai",    name:"Azure OpenAI Service", hi:true, tags:["ai","cloud"] },
   { cat:"ai",    name:"AI Infrastructure · GPU Compute", hi:true, tags:["ai","platform","cloud"] },
   { cat:"ai",    name:"AI-assisted Automation (LLM Tooling · Copilot)", hi:false, tags:["ai","devops","sre"] },
+  { cat:"ai",    name:"Retrieval-Augmented Generation (RAG)", hi:true, tags:["ai","platform","devops"] },
+  { cat:"ai",    name:"Multi-provider LLM Inference (Gemini, OpenAI, Claude)", hi:true, tags:["ai","devops"] },
   // Cloud Platform Engineering (Azure · GCP)
   { cat:"azplat", name:"Azure IaaS · Compute · Storage (AZ-104/AZ-300)", hi:true, tags:["cloud","platform"] },
   { cat:"azplat", name:"Google Cloud Platform (GCP)", hi:true, tags:["cloud","devops","platform"] },
@@ -356,6 +498,8 @@ const SKILLS = [
   { cat:"devops", name:"GitHub · GitHub Actions", hi:true, tags:["devops"] },
   { cat:"devops", name:"CI/CD · Azure DevOps Pipelines", hi:false, tags:["devops","sre"] },
   { cat:"devops", name:"SRE · Observability · Automation", hi:true, tags:["sre","devops"] },
+  { cat:"devops", name:"PostgreSQL · pgvector", hi:true, tags:["devops","ai","cloud"] },
+  { cat:"devops", name:"Supabase Edge Functions (Deno·TS)", hi:false, tags:["devops","ai","cloud"] },
   { cat:"devops", name:"PowerShell Automation", hi:false, tags:["devops","sre","euc"] },
   // Azure Virtual Desktop
   { cat:"avd",   name:"Azure Virtual Desktop (AZ-140)", hi:true, tags:["euc","cloud","platform"] },
@@ -401,6 +545,15 @@ const PERSONAS = {
 };
 let persona = "all";
 
+/* BR Assist project */
+const PSTACK = ["PostgreSQL","pgvector","Supabase Edge Functions","RAG","PWA","Multi-provider LLM"];
+let projectOpen = false;
+function toggleProject(){
+  projectOpen = !projectOpen;
+  document.getElementById("pDetails").classList.toggle("open", projectOpen);
+  document.getElementById("pToggleBtn").textContent = T[projectOpen?"p_less":"p_more"][lang] + (projectOpen?" ▴":" ▾");
+}
+
 const EXPERIENCE = [
   { period:"2025 – heute|2025 – present", role:"Technology Lead EUC",
     org:"HCLTech GmbH — Kunde: Deutsche Bank|HCLTech GmbH — Client: Deutsche Bank",
@@ -435,7 +588,75 @@ const CERTIFICATIONS = [
 ];
 
 const T = {
-  n_impact:["Impact","Impact"], n_skills:["Kompetenzen","Skills"], n_exp:["Erfahrung","Experience"], n_certs:["Zertifikate","Certifications"], n_contact:["Kontakt","Contact"],
+  n_impact:["Impact","Impact"], n_cases:["Projekte","Case studies"], n_skills:["Kompetenzen","Skills"],
+  k_cases:["Tiefe statt Breite","Depth over breadth"], h_cases:["Case Studies","Case studies"],
+  l_chal:["Ausgangslage","Challenge"], l_act:["Mein Beitrag","What I did"], l_res:["Ergebnis","Result"],
+  c1tag:["Deutsche Bank · 2025 – heute","Deutsche Bank · 2025 – present"],
+  c1t:["SRE & Automatisierung im regulierten Bankenumfeld","SRE & automation in a regulated banking environment"],
+  c1c:["Hoher manueller Betriebsaufwand in einer stark regulierten Enterprise-EUC-Landschaft.","High manual operations effort across a heavily regulated enterprise EUC estate."],
+  c1a:["SRE-Prinzipien eingeführt; Automatisierung mit Terraform, Kubernetes, Docker, GitHub Actions und LLM-Tooling aufgebaut.","Introduced SRE principles; built automation with Terraform, Kubernetes, Docker, GitHub Actions and LLM tooling."],
+  c1r:["−60 % Betriebskosten — und der Weg zu Autonomous Operations ist geebnet.","−60% operations cost — and the road to autonomous operations is paved."],
+  c2tag:["Schwarz Gruppe · 2019 – 2025","Schwarz Group · 2019 – 2025"],
+  c2t:["Platform Enablement für 80.000+ Menschen","Platform enablement for 80,000+ people"],
+  c2c:["Europas größte Handelsgruppe brauchte einen skalierbaren, sicheren virtuellen Arbeitsplatz für LIDL, Kaufland & PreZero.","Europe's largest retail group needed a scalable, secure virtual workplace for LIDL, Kaufland & PreZero."],
+  c2a:["Citrix-DaaS- und Azure-Plattformen konzipiert, migriert und betrieben — inklusive AVD-Aufbau von Null und Presales-Workshops/PoCs.","Designed, migrated and operated Citrix DaaS and Azure platforms — including building AVD from zero and presales workshops/PoCs."],
+  c2r:["80.000+ Menschen arbeiten täglich auf den Plattformen — bei 7-stelligen Einsparungen.","80,000+ people work on the platforms every day — with 7-figure savings."],
+  c3tag:["Laufend","Ongoing"],
+  c3t:["GenAI in den Betriebsalltag bringen","Bringing GenAI into daily operations"],
+  c3c:["KI-Potenzial im IT-Betrieb bleibt in den meisten Unternehmen ungenutzt.","AI potential in IT operations goes unused in most organizations."],
+  c3a:["Als Evangelist GenAI-Workflows (Azure AI Foundry, OpenAI, Copilot) in Incident- und Automatisierungsprozesse integriert.","As evangelist, integrating GenAI workflows (Azure AI Foundry, OpenAI, Copilot) into incident and automation processes."],
+  c3r:["GenAI ist Teil des täglichen Betriebs — Schritt für Schritt Richtung Autonomous Operations.","GenAI is part of daily operations — step by step towards autonomous operations."],
+  n_projects:["Projekte","Projects"],
+  k_projects:["Was ich aus eigenem Antrieb baue","What I build on my own initiative"],
+  h_projects:["Projekte","Projects"],
+  p_tag:["Eigenprojekt · 2026","Personal Project · 2026"],
+  p_tagline:["Ein Retrieval-Augmented-Assistent, der Fragen zum deutschen Betriebsverfassungsrecht auf Englisch oder Deutsch beantwortet — jede Aussage ist mit der Gesetzesstelle verknüpft, aus der sie stammt.",
+    "A retrieval-augmented assistant that answers German works council law questions in English or German, with every claim tied to the statutory section it came from."],
+  p_short:["Betriebsratsmitglieder haben echte gesetzliche Befugnisse — aber selten eine juristische Ausbildung. Das Gesetz ist öffentlich, aber unübersichtlich, und für fünf der zwölf relevanten Gesetze gibt es keine offizielle englische Übersetzung.\n\nBR Assist indexiert rund 1.200 Gesetzesvorschriften aus zwölf Bundesgesetzen sowie rund 700 Entscheidungen des Bundesarbeitsgerichts in Postgres mit pgvector. Eine Frage wird eingebettet und mit diesem Korpus abgeglichen — nur die gefundenen Textstellen werden dem Modell übergeben. So entstehen Antworten aus dem Gesetzestext statt aus dem Trainingswissen, und jede Quellenangabe verlinkt auf den Originaltext zur Überprüfung.\n\nGebaut als PWA auf Supabase Edge Functions, mit semantischem Antwort-Cache und einer Fünf-Provider-Inferenzkette. Getestet mit einem aktiven Betriebsratsmitglied, dessen Feedback zwei Fehler aufdeckte, die automatisierte Tests nicht gefunden hatten.",
+    "Works council members have real legal powers and rarely any legal training. The statute is public but dense, and five of the twelve relevant acts have no official English translation at all.\n\nBR Assist indexes ~1,200 statutory provisions across twelve federal acts and ~700 Federal Labour Court decisions in Postgres with pgvector. A question is embedded, matched against that corpus, and only the retrieved passages are given to the model — so answers are written from the law rather than recalled from training, and every citation links back to the official text for the reader to check.\n\nBuilt as a PWA on Supabase edge functions, with a semantic answer cache and a five-provider inference chain. Tested with a serving works council member, whose feedback found two defects that automated testing had not."],
+  p_more:["Vollständige Case Study lesen","Read the full case study"],
+  p_less:["Weniger anzeigen","Show less"],
+  p_h_problem:["Das Problem","The problem"],
+  p_b_problem:["Ein deutscher Betriebsrat hat echte gesetzliche Mitbestimmungsrechte — bei Arbeitszeit, Überwachungstechnik, Versetzungen und Kündigungen. Die Mitglieder, die diese Rechte ausüben, sind meist von Kolleg:innen gewählte Angestellte ohne juristische Ausbildung und mit einem eigenen Vollzeitjob.\n\nDas Gesetz ist öffentlich, aber sperrig. Allein das Betriebsverfassungsgesetz umfasst 130 Paragraphen; §87 Abs. 1 listet vierzehn einzeln mitbestimmungspflichtige Themen auf. Die falsche Vorschrift zu erwischen ist kein akademischer Fehler — die Frist zur Anfechtung einer Kündigung beträgt drei Wochen, und wird sie versäumt, ist der Anspruch verwirkt.\n\nEine allgemeine Chat-KI zu fragen ist schlimmer als nutzlos: Sie liefert flüssiges, selbstbewusstes deutsches Arbeitsrecht, das stimmen kann oder auch nicht — und die Leserin hat keine Möglichkeit, das zu erkennen.",
+    "A German works council has genuine statutory power — co-determination over working hours, monitoring technology, transfers and dismissals. The members exercising it are usually employees elected by colleagues, with no legal training and a full-time job elsewhere.\n\nThe law is public but unfriendly. The Works Constitution Act alone runs to 130 sections; §87 (1) has fourteen separately co-determined subjects. Getting the wrong provision is not an academic error — the deadline to challenge a dismissal is three weeks, and missing it forfeits the claim.\n\nAsking a general chatbot is worse than useless: it produces fluent, confident German labour law that may or may not be real, and the reader has no way to tell."],
+  p_h_approach:["Der Ansatz","The approach"],
+  p_b_approach:["Retrieval statt Erinnerung. Das Modell antwortet nie aus dem, was es im Training gelernt hat.\n\nGesetzestexte werden aus den offiziellen XML-Feeds des Bundes eingelesen, auf Absatzebene zerlegt, eingebettet und in Postgres mit pgvector gespeichert. Bei einer Anfrage wird die Frage eingebettet und mit diesem Korpus abgeglichen; nur die gefundenen Textstellen erreichen das Modell — mit der Anweisung, keine Vorschrift zu zitieren, die ihm nicht vorgelegt wurde.\n\nJede Antwort trägt ihre Fundstellen, und jede Fundstelle verlinkt auf den Originaltext. Das Versprechen ist nicht, dass das Modell recht hat — sondern dass sich jede Aussage mit einem Klick überprüfen lässt.",
+    "Retrieval, not recall. The model never answers from what it learned in training.\n\nStatutory text is ingested from the federal government's own XML feeds, chunked at paragraph level, embedded, and stored in Postgres with pgvector. At query time the question is embedded and matched against that corpus; only the retrieved passages reach the model, with instructions that it may not cite a section it was not given.\n\nEvery answer carries its sections, and every section links to the official text. The guarantee offered is not that the model is right — it is that any claim can be checked in one click."],
+  p_h_decisions:["Entscheidungen, die eine Erklärung wert sind","Decisions worth explaining"],
+  p_d1t:["Zerlegung auf Absatzebene — ausgelöst durch einen echten Fehler.","Paragraph-level chunking, driven by a real defect."],
+  p_d1b:["Paragraphen wurden zunächst vollständig gespeichert. Ein Betriebsratsmitglied meldete, dass Fragen zu Fortbildungsansprüchen §37 Abs. 3 lieferten, aber Abs. 6 und 7 fehlten — genau die Ansprüche, um die es eigentlich ging. Der Paragraph war lang, das Ende wurde vor Erreichen des Modells abgeschnitten, und die Vorschrift wurde nie gesehen. Die Zerlegung nach Absätzen — und bei langen nummerierten Listen nach einzelnen Punkten — behob das. Der Splitter prüft die Reihenfolge statt nach Mustern zu suchen, weil juristische Texte voller Querverweise sind, die ein einfacher regulärer Ausdruck fälschlich als Absatzmarker liest.",
+    "Sections were first stored whole. A works council member reported that questions about training rights returned §37 (3) and missed §37 (6) and (7) — the entitlements that actually mattered. The section was long, the tail was truncated before it reached the model, and the provision was never seen. Splitting by paragraph, and splitting long numbered lists per item, fixed it. The splitter validates sequence rather than pattern-matching, because legal text is dense with cross-references that a naive regex mistakes for paragraph markers."],
+  p_d2t:["Rechtsprechung in einer eigenen Tabelle.","Case law in a separate table."],
+  p_d2b:["Der naheliegende Ansatz ist eine Tabelle mit einer Typ-Spalte. Er scheitert konkret daran, dass Gerichtsurteile den Gesetzestext oft ausführlich zitieren — in einem gemeinsamen Vektorraum kann ein Urteil dadurch die zitierte Vorschrift selbst verdrängen. Die Nutzerin fragt nach §87 und erhält stattdessen drei Urteile, die §87 diskutieren. Zwei Tabellen geben zwei getrennte Kontingente, sodass die gesetzliche Grundlage immer vorhanden ist und Rechtsprechung sie nur ergänzen kann.",
+    "The obvious design is one table with a type column. It fails specifically: court decisions quote the statute at length, so in a single vector space a ruling can outrank the section it is quoting and displace it — the user asks about §87 and receives three cases discussing §87 instead. Two tables give two budgets, so the statutory foundation is always present and case law can only supplement it."],
+  p_d3t:["Herkunft als eigenständige Spalte.","Provenance as a first-class column."],
+  p_d3b:["Sieben Gesetze haben eine offizielle englische Übersetzung, fünf nicht. Für diese fünf wird das deutsche Original gespeichert und zur Antwortzeit übersetzt — gekennzeichnet als Arbeitsübersetzung, wobei der deutsche Text als verbindlich benannt wird. Das wird auf drei Wegen erzwungen, weil eine reine Prompt-Anweisung nicht ausreichte: Der Hinweis ist an jede Textstelle angehängt, der Prompt verbietet das Wort „offiziell\", und eine serverseitige Prüfung ergänzt den Hinweis, falls das Modell ihn weglässt. Es hat einmal seine eigene maschinelle Übersetzung einer Einspruchsfrist als offiziell bezeichnet — das gefährlichste, was dieses System tun könnte.",
+    "Seven acts have official English translations; five do not. For those five the German original is stored and translated at answer time — and labelled as a working translation, with the German text named as binding. This is enforced three ways, because a prompt instruction alone failed: the warning is attached to each passage, the prompt forbids the word \"official\", and a server-side check appends the caveat if the model omits it. It once described its own machine translation of a filing deadline as official, which is the single most dangerous thing this system could do."],
+  p_d4t:["Kein ANN-Index.","No ANN index."],
+  p_d4b:["Bei dieser Korpusgröße ist ein exakter Scan schnell und exakt. Ein approximativer Index würde Genauigkeit gegen eine Ersparnis eintauschen, die es gar nicht gibt. Dazu eine Lehre aus der Praxis: Ein IVFFlat-Index, der auf einer leeren Tabelle erstellt wurde, liefert für jede Anfrage stillschweigend null Ergebnisse — das kostete einen halben Tag Fehlersuche bei einer korrekten Abfrage auf korrekt geladenen Daten.",
+    "At this corpus size exact scan is fast and exact. An approximate index would trade correctness for a saving that does not exist. There is also a scar: an IVFFlat index built on an empty table returns zero rows for every query, silently, which cost half a day of debugging a correct query against correctly loaded data."],
+  p_h_testing:["Tests","Testing"],
+  p_b_testing:["Eine automatisierte Testsuite mit 23 Fragen prüft erwartete Fundstellen, Kernfakten, Antwortsprache und — wichtig — dass das Tool bei Fragen außerhalb seines Abdeckungsbereichs ablehnt, statt zu improvisieren. Ein zweites Skript stellt allen Inferenz-Anbietern dieselben Fragen und vergleicht die Zitatüberschneidung — so wurden Unterschiede zwischen den Modellen sichtbar.\n\nDie beiden nützlichsten Fehler fand keines von beiden. Sie kamen von einem aktiven Betriebsratsmitglied mit Testing-Hintergrund: die fehlenden Fortbildungsvorschriften, und später, dass §37 Abs. 7 vor Abs. 6 angezeigt wurde, weil das Retrieval nach Ähnlichkeit statt nach gesetzlicher Reihenfolge sortierte.",
+    "An automated suite of 23 questions checks expected sections, key facts, answer language, and — importantly — that the tool refuses questions outside its coverage rather than improvising. A second script asks every inference provider the same questions and reports citation overlap, which is how model-to-model variation became visible.\n\nNeither found the two most useful defects. Those came from a serving works council member with a testing background: the missing training provisions, and later that §37 (7) was being presented before §37 (6) because retrieval ranked by similarity rather than statutory order."],
+  p_h_limits:["Ehrliche Grenzen","Honest limitations"],
+  p_l1:["Rechtsprechung nur vom Bundesarbeitsgericht, ab 2010. Keine Landesarbeitsgerichte oder untere Instanzen — dort spielt sich aber ein Großteil der praktischen Betriebsrats-Streitfälle ab.",
+    "Case law is Federal Labour Court only, from 2010. No state or local court rulings, which is where much practical works council litigation sits."],
+  p_l2:["Keine Änderungsverfolgung. Gesetzestexte werden als Momentaufnahme eingelesen; nichts erkennt bislang, wenn der gespeicherte Text veraltet ist.",
+    "No amendment tracking. Statutes are ingested as a snapshot; nothing yet detects that the stored text has gone stale."],
+  p_l3:["Die Antwortqualität schwankt je nachdem, welcher Inferenz-Anbieter die Anfrage bedient hat.",
+    "Answer quality varies with which inference provider served the request."],
+  p_l4:["Läuft auf kostenlosen Kontingenten — ausreichend für die Größe eines Gremiums, aber nicht tragfähig, wenn es ohne bezahlte Inferenz einer ganzen Belegschaft geöffnet würde.",
+    "Runs on free tiers, which is sufficient at committee scale and would not survive being opened to a whole workforce without paying for inference."],
+  p_stackline:["Stack: Postgres 15 mit pgvector und pg_cron (Supabase, EU/Frankfurt) · Supabase Edge Functions in Deno/TypeScript · Python-Ingestion gegen XML-Feeds des Bundes · installierbare PWA in Vanilla JS · Gemini-Embeddings, Multi-Provider-LLM-Inferenz mit automatischem Fallback",
+    "Stack: Postgres 15 with pgvector and pg_cron (Supabase, EU/Frankfurt) · Supabase Edge Functions in Deno/TypeScript · Python ingestion against federal XML feeds · vanilla-JS installable PWA · Gemini embeddings, multi-provider LLM inference with automatic fallback"],
+  p_note:["Mit intensiver KI-Unterstützung entwickelt. Die beiden wertvollsten Fehler wurden von einem menschlichen Tester gefunden, nicht durch automatisierte Prüfung.",
+    "Built with heavy AI assistance. The two most valuable defects were found by a human tester, not by any automated check."],
+  k_about:["Der Mensch dahinter","The person behind it"], h_aboutme:["Über mich","About me"],
+  a_lang:["Sprachen","Languages"],
+  a_l1:["Deutsch — B2","German — B2"], a_l2:["Englisch — verhandlungssicher","English — fluent"], a_l3:["Tamil — Muttersprache","Tamil — native"],
+  a_ask:["Fragen Sie mich nach …","Ask me about …"],
+  a_a1:["GenAI im IT-Betrieb","GenAI in IT operations"], a_a2:["Citrix-zu-AVD-Migrationen","Citrix-to-AVD migrations"],
+  a_a3:["Cloud-Kostenoptimierung","Cloud cost optimization"], a_a4:["SRE & Automatisierung","SRE & automation"], n_exp:["Erfahrung","Experience"], n_certs:["Zertifikate","Certifications"], n_contact:["Kontakt","Contact"],
   avail:["Offen für neue Herausforderungen","Open to new opportunities"],
   hi:["Hallo, ich bin","Hi, I'm"],
   lead:["Ich betreibe keine Server — ich sorge dafür, dass 80.000 Menschen jeden Morgen einfach arbeiten können. Ich spare Millionen, bevor der CFO danach fragt. Und ich bringe GenAI dorthin, wo echte Arbeit passiert.",
@@ -486,6 +707,11 @@ function render(){
     const k=el.getAttribute("data-i18n"); if(T[k]) el.textContent=T[k][lang];
   });
 
+  // BR Assist project chips + toggle label
+  const psc=document.getElementById("pStackChips"); psc.innerHTML="";
+  PSTACK.forEach(s=>{ const c=document.createElement("span"); c.className="chip hi"; c.textContent=s; psc.appendChild(c); });
+  document.getElementById("pToggleBtn").textContent = T[projectOpen?"p_less":"p_more"][lang] + (projectOpen?" ▴":" ▾");
+
   // marquee (duplicate for seamless loop)
   const mt=document.getElementById("mtrack");
   const seq=CLIENTS.map(c=>"<span>"+c+"</span><i>✦</i>").join("");
@@ -497,7 +723,7 @@ function render(){
     const items=SKILLS.filter(s=>s.cat===cat); if(!items.length) return;
     const c=CATS[cat];
     const card=document.createElement("div"); card.className="skillcard tilt";
-    card.innerHTML='<h3><span class="ico">'+c.ico+'</span>'+(lang===0?c.de:c.en)+'</h3><div class="sub">'+(lang===0?c.subde:c.suben)+'</div>';
+    card.innerHTML='<span class="bgemoji">'+c.ico+'</span><h3><span class="ico">'+c.ico+'</span>'+(lang===0?c.de:c.en)+'</h3><div class="sub">'+(lang===0?c.subde:c.suben)+'</div>';
     const chips=document.createElement("div"); chips.className="chips";
     items.forEach(s=>{
       const ch=document.createElement("span");
@@ -534,7 +760,7 @@ function render(){
   const cc=document.getElementById("certContainer"); cc.innerHTML="";
   CERTIFICATIONS.forEach(([ico,code,name])=>{
     const d=document.createElement("div"); d.className="cert";
-    d.innerHTML='<div class="badge">'+ico+'</div><div><b>'+code+'</b><span>'+name+'</span></div>';
+    d.innerHTML='<span class="bgemoji">'+ico+'</span><div class="badge">'+ico+'</div><div><b>'+code+'</b><span>'+name+'</span></div>';
     cc.appendChild(d);
   });
 }
