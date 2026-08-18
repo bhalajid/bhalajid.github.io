@@ -271,7 +271,7 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
 
 <nav>
   <div class="navin">
-    <div class="logo">Balaji<span>.dev</span></div>
+    <div class="logo">Balaji <span>Durai</span></div>
     <div class="navlinks" id="navlinks">
       <a href="#impact" data-i18n="n_impact"></a>
       <a href="#cases" data-i18n="n_cases"></a>
@@ -279,6 +279,7 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
       <a href="#skills" data-i18n="n_skills"></a>
       <a href="#experience" data-i18n="n_exp"></a>
       <a href="#certs" data-i18n="n_certs"></a>
+      <a href="#aboutme" data-i18n="n_aboutme"></a>
       <a href="#contact" data-i18n="n_contact"></a>
     </div>
     <div style="display:flex;gap:8px">
@@ -588,8 +589,8 @@ const CERTIFICATIONS = [
 ];
 
 const T = {
-  n_impact:["Impact","Impact"], n_cases:["Projekte","Case studies"], n_skills:["Kompetenzen","Skills"],
-  k_cases:["Tiefe statt Breite","Depth over breadth"], h_cases:["Case Studies","Case studies"],
+  n_impact:["Impact","Impact"], n_cases:["Fallstudien","Case studies"], n_skills:["Kompetenzen","Skills"],
+  k_cases:["Tiefe statt Breite","Depth over breadth"], h_cases:["Fallstudien","Case studies"],
   l_chal:["Ausgangslage","Challenge"], l_act:["Mein Beitrag","What I did"], l_res:["Ergebnis","Result"],
   c1tag:["Deutsche Bank · 2025 – heute","Deutsche Bank · 2025 – present"],
   c1t:["SRE & Automatisierung im regulierten Bankenumfeld","SRE & automation in a regulated banking environment"],
@@ -606,9 +607,10 @@ const T = {
   c3c:["KI-Potenzial im IT-Betrieb bleibt in den meisten Unternehmen ungenutzt.","AI potential in IT operations goes unused in most organizations."],
   c3a:["Als Evangelist GenAI-Workflows (Azure AI Foundry, OpenAI, Copilot) in Incident- und Automatisierungsprozesse integriert.","As evangelist, integrating GenAI workflows (Azure AI Foundry, OpenAI, Copilot) into incident and automation processes."],
   c3r:["GenAI ist Teil des täglichen Betriebs — Schritt für Schritt Richtung Autonomous Operations.","GenAI is part of daily operations — step by step towards autonomous operations."],
-  n_projects:["Projekte","Projects"],
+  n_projects:["Eigenprojekte","Projects"],
   k_projects:["Was ich aus eigenem Antrieb baue","What I build on my own initiative"],
-  h_projects:["Projekte","Projects"],
+  h_projects:["Eigenprojekte","Projects"],
+  n_aboutme:["Über mich","About"],
   p_tag:["Eigenprojekt · 2026","Personal Project · 2026"],
   p_tagline:["Ein Retrieval-Augmented-Assistent, der Fragen zum deutschen Betriebsverfassungsrecht auf Englisch oder Deutsch beantwortet — jede Aussage ist mit der Gesetzesstelle verknüpft, aus der sie stammt.",
     "A retrieval-augmented assistant that answers German works council law questions in English or German, with every claim tied to the statutory section it came from."],
@@ -617,7 +619,7 @@ const T = {
   p_more:["Vollständige Case Study lesen","Read the full case study"],
   p_less:["Weniger anzeigen","Show less"],
   p_h_problem:["Das Problem","The problem"],
-  p_b_problem:["Ein deutscher Betriebsrat hat echte gesetzliche Mitbestimmungsrechte — bei Arbeitszeit, Überwachungstechnik, Versetzungen und Kündigungen. Die Mitglieder, die diese Rechte ausüben, sind meist von Kolleg:innen gewählte Angestellte ohne juristische Ausbildung und mit einem eigenen Vollzeitjob.\n\nDas Gesetz ist öffentlich, aber sperrig. Allein das Betriebsverfassungsgesetz umfasst 130 Paragraphen; §87 Abs. 1 listet vierzehn einzeln mitbestimmungspflichtige Themen auf. Die falsche Vorschrift zu erwischen ist kein akademischer Fehler — die Frist zur Anfechtung einer Kündigung beträgt drei Wochen, und wird sie versäumt, ist der Anspruch verwirkt.\n\nEine allgemeine Chat-KI zu fragen ist schlimmer als nutzlos: Sie liefert flüssiges, selbstbewusstes deutsches Arbeitsrecht, das stimmen kann oder auch nicht — und die Leserin hat keine Möglichkeit, das zu erkennen.",
+  p_b_problem:["Ein deutscher Betriebsrat hat echte gesetzliche Mitbestimmungsrechte — bei Arbeitszeit, Überwachungstechnik, Versetzungen und Kündigungen. Die Mitglieder, die diese Rechte ausüben, sind meist von Kolleg:innen gewählte Angestellte ohne juristische Ausbildung und mit einem eigenen Vollzeitjob.\n\nDas Gesetz ist öffentlich, aber sperrig. Allein das Betriebsverfassungsgesetz umfasst 130 Paragraphen; §87 Abs. 1 listet vierzehn einzeln mitbestimmungspflichtige Themen auf. Die falsche Vorschrift zu erwischen ist kein akademischer Fehler — die Frist zur Anfechtung einer Kündigung beträgt drei Wochen, und wird sie versäumt, ist der Anspruch verwirkt.\n\nEine allgemeine Chat-KI zu fragen ist schlimmer als nutzlos: Sie liefert flüssiges, selbstbewusstes deutsches Arbeitsrecht, das stimmen kann oder auch nicht — und wer es liest, hat keine Möglichkeit, das zu erkennen.",
     "A German works council has genuine statutory power — co-determination over working hours, monitoring technology, transfers and dismissals. The members exercising it are usually employees elected by colleagues, with no legal training and a full-time job elsewhere.\n\nThe law is public but unfriendly. The Works Constitution Act alone runs to 130 sections; §87 (1) has fourteen separately co-determined subjects. Getting the wrong provision is not an academic error — the deadline to challenge a dismissal is three weeks, and missing it forfeits the claim.\n\nAsking a general chatbot is worse than useless: it produces fluent, confident German labour law that may or may not be real, and the reader has no way to tell."],
   p_h_approach:["Der Ansatz","The approach"],
   p_b_approach:["Retrieval statt Erinnerung. Das Modell antwortet nie aus dem, was es im Training gelernt hat.\n\nGesetzestexte werden aus den offiziellen XML-Feeds des Bundes eingelesen, auf Absatzebene zerlegt, eingebettet und in Postgres mit pgvector gespeichert. Bei einer Anfrage wird die Frage eingebettet und mit diesem Korpus abgeglichen; nur die gefundenen Textstellen erreichen das Modell — mit der Anweisung, keine Vorschrift zu zitieren, die ihm nicht vorgelegt wurde.\n\nJede Antwort trägt ihre Fundstellen, und jede Fundstelle verlinkt auf den Originaltext. Das Versprechen ist nicht, dass das Modell recht hat — sondern dass sich jede Aussage mit einem Klick überprüfen lässt.",
@@ -627,10 +629,10 @@ const T = {
   p_d1b:["Paragraphen wurden zunächst vollständig gespeichert. Ein Betriebsratsmitglied meldete, dass Fragen zu Fortbildungsansprüchen §37 Abs. 3 lieferten, aber Abs. 6 und 7 fehlten — genau die Ansprüche, um die es eigentlich ging. Der Paragraph war lang, das Ende wurde vor Erreichen des Modells abgeschnitten, und die Vorschrift wurde nie gesehen. Die Zerlegung nach Absätzen — und bei langen nummerierten Listen nach einzelnen Punkten — behob das. Der Splitter prüft die Reihenfolge statt nach Mustern zu suchen, weil juristische Texte voller Querverweise sind, die ein einfacher regulärer Ausdruck fälschlich als Absatzmarker liest.",
     "Sections were first stored whole. A works council member reported that questions about training rights returned §37 (3) and missed §37 (6) and (7) — the entitlements that actually mattered. The section was long, the tail was truncated before it reached the model, and the provision was never seen. Splitting by paragraph, and splitting long numbered lists per item, fixed it. The splitter validates sequence rather than pattern-matching, because legal text is dense with cross-references that a naive regex mistakes for paragraph markers."],
   p_d2t:["Rechtsprechung in einer eigenen Tabelle.","Case law in a separate table."],
-  p_d2b:["Der naheliegende Ansatz ist eine Tabelle mit einer Typ-Spalte. Er scheitert konkret daran, dass Gerichtsurteile den Gesetzestext oft ausführlich zitieren — in einem gemeinsamen Vektorraum kann ein Urteil dadurch die zitierte Vorschrift selbst verdrängen. Die Nutzerin fragt nach §87 und erhält stattdessen drei Urteile, die §87 diskutieren. Zwei Tabellen geben zwei getrennte Kontingente, sodass die gesetzliche Grundlage immer vorhanden ist und Rechtsprechung sie nur ergänzen kann.",
+  p_d2b:["Der naheliegende Ansatz ist eine Tabelle mit einer Typ-Spalte. Er scheitert konkret daran, dass Gerichtsurteile den Gesetzestext oft ausführlich zitieren — in einem gemeinsamen Vektorraum kann ein Urteil dadurch die zitierte Vorschrift selbst verdrängen. Gefragt wird nach §87 — geliefert werden stattdessen drei Urteile, die §87 diskutieren. Zwei Tabellen geben zwei getrennte Kontingente, sodass die gesetzliche Grundlage immer vorhanden ist und Rechtsprechung sie nur ergänzen kann.",
     "The obvious design is one table with a type column. It fails specifically: court decisions quote the statute at length, so in a single vector space a ruling can outrank the section it is quoting and displace it — the user asks about §87 and receives three cases discussing §87 instead. Two tables give two budgets, so the statutory foundation is always present and case law can only supplement it."],
   p_d3t:["Herkunft als eigenständige Spalte.","Provenance as a first-class column."],
-  p_d3b:["Sieben Gesetze haben eine offizielle englische Übersetzung, fünf nicht. Für diese fünf wird das deutsche Original gespeichert und zur Antwortzeit übersetzt — gekennzeichnet als Arbeitsübersetzung, wobei der deutsche Text als verbindlich benannt wird. Das wird auf drei Wegen erzwungen, weil eine reine Prompt-Anweisung nicht ausreichte: Der Hinweis ist an jede Textstelle angehängt, der Prompt verbietet das Wort „offiziell\", und eine serverseitige Prüfung ergänzt den Hinweis, falls das Modell ihn weglässt. Es hat einmal seine eigene maschinelle Übersetzung einer Einspruchsfrist als offiziell bezeichnet — das gefährlichste, was dieses System tun könnte.",
+  p_d3b:["Sieben Gesetze haben eine offizielle englische Übersetzung, fünf nicht. Für diese fünf wird das deutsche Original gespeichert und zur Antwortzeit übersetzt — gekennzeichnet als Arbeitsübersetzung, wobei der deutsche Text als verbindlich benannt wird. Das wird auf drei Wegen erzwungen, weil eine reine Prompt-Anweisung nicht ausreichte: Der Hinweis ist an jede Textstelle angehängt, der Prompt verbietet das Wort „offiziell“, und eine serverseitige Prüfung ergänzt den Hinweis, falls das Modell ihn weglässt. Es hat einmal seine eigene maschinelle Übersetzung einer Einspruchsfrist als offiziell bezeichnet — das gefährlichste, was dieses System tun könnte.",
     "Seven acts have official English translations; five do not. For those five the German original is stored and translated at answer time — and labelled as a working translation, with the German text named as binding. This is enforced three ways, because a prompt instruction alone failed: the warning is attached to each passage, the prompt forbids the word \"official\", and a server-side check appends the caveat if the model omits it. It once described its own machine translation of a filing deadline as official, which is the single most dangerous thing this system could do."],
   p_d4t:["Kein ANN-Index.","No ANN index."],
   p_d4b:["Bei dieser Korpusgröße ist ein exakter Scan schnell und exakt. Ein approximativer Index würde Genauigkeit gegen eine Ersparnis eintauschen, die es gar nicht gibt. Dazu eine Lehre aus der Praxis: Ein IVFFlat-Index, der auf einer leeren Tabelle erstellt wurde, liefert für jede Anfrage stillschweigend null Ergebnisse — das kostete einen halben Tag Fehlersuche bei einer korrekten Abfrage auf korrekt geladenen Daten.",
@@ -668,7 +670,6 @@ const T = {
   bs1:["Platform Enablement Engineering für LIDL, Kaufland & PreZero — eine der größten Virtual-Workplace-Landschaften Europas","Platform enablement engineering for LIDL, Kaufland & PreZero — one of Europe's largest virtual workplace estates"],
   bt2:["7-stellig","7-figure"],
   bs2:["Einsparungen, die im Vorstand ankamen — durch Plattform-Optimierung","Savings the board actually noticed — through platform optimization"],
-  bt3:["Betriebskosten","Operations cost"],
   bs3:["Ich mache CFOs glücklich: −60 % Betriebskosten durch SRE-Automatisierung @ Deutsche Bank","I make CFOs smile: −60% operations cost through SRE automation @ Deutsche Bank"],
   bt5:["Ich baue Plattformen, wo vorher nichts war","I build platforms where there was nothing"],
   bs5:["AVD von Null · Citrix DaaS Cloud-Migration · EUC-Betriebsmodelle & Teams etabliert","AVD from zero · Citrix DaaS cloud migration · EUC operating models & teams established"],
