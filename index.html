@@ -57,50 +57,32 @@ nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(
              linear-gradient(160deg,rgba(47,123,255,.20),rgba(8,9,12,.30))}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
-/* orbiting tech stack */
-.orbitstage{position:relative;width:520px;height:520px;display:flex;align-items:center;justify-content:center}
-.orbitring{position:absolute;border-radius:50%;border:1px solid rgba(125,180,255,.13);pointer-events:none}
-.orbitring.o1{width:400px;height:400px}
-.orbitring.o2{width:512px;height:512px;border-style:dashed;border-color:rgba(125,180,255,.09)}
-.orbit{position:absolute;inset:0;pointer-events:none}
-.orbit-a{animation:spin 34s linear infinite}
-.orbit-b{animation:spin 46s linear infinite reverse}
-@keyframes spin{to{transform:rotate(360deg)}}
-.opos{position:absolute;top:50%;left:50%}
-.cs-a{animation:spin 34s linear infinite reverse}
-.cs-b{animation:spin 46s linear infinite}
-.opill{display:flex;align-items:center;gap:7px;
-  background:rgba(12,18,32,.88);border:1px solid rgba(125,180,255,.28);border-radius:999px;
-  padding:7px 15px;font-size:.82rem;font-weight:600;color:#dbe6f8;white-space:nowrap;
-  backdrop-filter:blur(6px);box-shadow:0 6px 22px rgba(0,0,0,.45);pointer-events:auto;
-  transition:border-color .25s, box-shadow .25s, color .25s}
-.opill:hover{border-color:var(--sky);color:#fff;box-shadow:0 6px 26px rgba(47,123,255,.45)}
-.opill .odot{width:7px;height:7px;border-radius:50%;background:var(--grad);flex:none}
-.orbitstage:hover .orbit-a,.orbitstage:hover .orbit-b{animation-play-state:paused}
-html[data-theme="light"] .opill{background:rgba(255,255,255,.94);color:#25304a;border-color:rgba(30,79,216,.25);box-shadow:0 6px 20px rgba(13,18,32,.10)}
-html[data-theme="light"] .orbitring{border-color:rgba(30,79,216,.14)}
+/* portrait stage — calm concentric halo */
+.orbitstage{position:relative;width:480px;height:480px;display:flex;align-items:center;justify-content:center}
+.haloring{position:absolute;border-radius:50%;pointer-events:none}
+.haloring.h1{width:400px;height:400px;border:1px solid rgba(125,180,255,.12)}
+.haloring.h2{width:474px;height:474px;border:1px solid rgba(125,180,255,.06)}
+html[data-theme="light"] .haloring.h1{border-color:rgba(30,79,216,.14)}
+html[data-theme="light"] .haloring.h2{border-color:rgba(30,79,216,.07)}
 
 @media(max-width:1000px){
-  .orbitstage{width:430px;height:430px}
-  .orbitring.o1{width:330px;height:330px}.orbitring.o2{width:420px;height:420px}
-  .opill{font-size:.75rem;padding:6px 12px}
+  .orbitstage{width:400px;height:400px}
+  .haloring.h1{width:330px;height:330px}.haloring.h2{width:394px;height:394px}
 }
 @media(max-width:860px){
   .herogrid{grid-template-columns:1fr;gap:34px}
   .pwrap{order:-1;justify-content:center}
   .pring{width:200px;height:200px}
-  .orbitstage{width:330px;height:330px}
-  .orbitring.o1{width:255px;height:255px}.orbitring.o2{width:322px;height:322px}
-  .opill{font-size:.7rem;padding:5px 10px;gap:5px}
+  .orbitstage{width:300px;height:300px}
+  .haloring.h1{width:250px;height:250px}.haloring.h2{width:296px;height:296px}
 }
 @media(max-width:560px){
-  .orbitstage{width:290px;height:290px}
-  .orbitring.o1{width:224px;height:224px}.orbitring.o2{width:284px;height:284px}
+  .orbitstage{width:250px;height:250px}
+  .haloring.h1{width:206px;height:206px}.haloring.h2{width:246px;height:246px}
   .pring{width:170px;height:170px}
 }
 @media(prefers-reduced-motion:reduce){
-  .orbit-a,.orbit-b,.pring{animation:none}
-  .opill{animation:none}
+  .pring{animation:none}
 }
 .avail{display:inline-flex;width:fit-content;align-items:center;gap:8px;background:rgba(77,159,255,.07);border:1px solid rgba(77,159,255,.35);color:var(--amber);border-radius:999px;padding:6px 16px;font-size:.8rem;font-weight:600;margin-bottom:28px}
 .avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:pulse 1.8s infinite}
@@ -117,6 +99,11 @@ html[data-theme="light"] .orbitring{border-color:rgba(30,79,216,.14)}
 .btn.primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 44px rgba(47,123,255,.5)}
 .btn.ghost{border:1px solid var(--border);color:var(--text);background:var(--card);backdrop-filter:blur(6px)}
 .btn.ghost:hover{border-color:var(--sky);transform:translateY(-3px)}
+.herofacts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;padding-top:22px;
+  border-top:1px solid var(--border);max-width:640px}
+.herofacts>span{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:.86rem}
+.herofacts i{font-style:normal;opacity:.75;font-size:.95rem}
+@media(max-width:560px){.herofacts{gap:8px 18px;font-size:.8rem}}
 .scrollhint{margin-top:34px;color:var(--muted);font-size:.8rem;display:flex;align-items:center;gap:10px;opacity:.7}
 .scrollhint .m{width:22px;height:34px;border:2px solid var(--muted);border-radius:12px;position:relative}
 .scrollhint .m::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:3px;background:var(--amber);animation:wheel 1.6s infinite}
@@ -348,16 +335,20 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
         <a class="btn primary" href="#contact"><span data-i18n="cta1"></span> →</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/bhalajid/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
+      <div class="herofacts">
+        <span><i>📍</i><span data-i18n="f_loc"></span></span>
+        <span><i>🗓️</i><span data-i18n="f_exp"></span></span>
+        <span><i>🎓</i><span data-i18n="f_certs"></span></span>
+        <span><i>🌍</i><span data-i18n="f_lang"></span></span>
+      </div>
     </div>
     <div class="pwrap" id="pwrap">
       <div class="orbitstage">
-        <div class="orbitring o1"></div>
-        <div class="orbitring o2"></div>
+        <div class="haloring h1"></div>
+        <div class="haloring h2"></div>
         <div class="pring">
           <img id="ppic" src="profile.jpg" alt="Balaji Durai" onerror="picErr(this)">
         </div>
-        <div class="orbit orbit-a" id="orbitA"></div>
-        <div class="orbit orbit-b" id="orbitB"></div>
       </div>
     </div>
   </div>
@@ -597,30 +588,6 @@ const PERSONAS = {
 };
 let persona = "all";
 
-/* orbiting tech stack around the portrait */
-const ORBIT_A = ["Azure","Citrix DaaS","Kubernetes","Terraform","GenAI"];
-const ORBIT_B = ["Azure Virtual Desktop","GCP","PostgreSQL · pgvector","GitHub Actions","SRE"];
-function buildOrbits(){
-  const stage=document.querySelector(".orbitstage"); if(!stage) return;
-  const size=stage.offsetWidth||520;
-  const mk=(el,items,radius,cls)=>{
-    el.innerHTML="";
-    items.forEach((label,i)=>{
-      const ang=(360/items.length)*i;
-      const pos=document.createElement("div");
-      pos.className="opos";
-      pos.style.transform="translate(-50%,-50%) rotate("+ang+"deg) translate("+radius+"px) rotate("+(-ang)+"deg)";
-      const pill=document.createElement("div");
-      pill.className="opill "+cls;
-      pill.innerHTML='<span class="odot"></span>'+label;
-      pos.appendChild(pill); el.appendChild(pos);
-    });
-  };
-  mk(document.getElementById("orbitA"), ORBIT_A, size*0.385, "cs-a");
-  mk(document.getElementById("orbitB"), ORBIT_B, size*0.492, "cs-b");
-}
-addEventListener("resize", buildOrbits, {passive:true});
-
 /* BR Assist project */
 const PSTACK = ["PostgreSQL","pgvector","Supabase Edge Functions","RAG","PWA","Multi-provider LLM"];
 let projectOpen = false;
@@ -739,6 +706,10 @@ const T = {
   lead:["Ich betreibe keine Server — ich sorge dafür, dass 80.000 Menschen jeden Morgen einfach arbeiten können. Ich spare Millionen, bevor der CFO danach fragt. Und ich bringe GenAI dorthin, wo echte Arbeit passiert.",
         "I don't run servers — I make sure 80,000 people can simply start working every morning. I save millions before the CFO has to ask. And I bring GenAI to where real work happens."],
   cta1:["Kontakt aufnehmen","Get in touch"],
+  f_loc:["Bad Friedrichshall · Deutschland","Bad Friedrichshall · Germany"],
+  f_exp:["16+ Jahre Enterprise-Erfahrung","16+ years enterprise experience"],
+  f_certs:["8 Zertifizierungen · Azure · Citrix · ITIL","8 certifications · Azure · Citrix · ITIL"],
+  f_lang:["Deutsch B2 · Englisch fließend","German B2 · English fluent"],
   scroll:["Scrollen zum Entdecken","Scroll to explore"],
   k_impact:["Meine Geschichte in Zahlen","My story in numbers"], h_impact:["Was ich für Menschen bewege","What I make possible"],
   bt1:["Menschen arbeiten täglich auf meinen Plattformen","people run their business on my platforms — daily"],
@@ -782,8 +753,6 @@ function render(){
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const k=el.getAttribute("data-i18n"); if(T[k]) el.textContent=T[k][lang];
   });
-
-  buildOrbits();
 
   // BR Assist project chips + toggle label
   const psc=document.getElementById("pStackChips"); psc.innerHTML="";
