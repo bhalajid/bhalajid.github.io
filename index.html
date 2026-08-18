@@ -27,11 +27,11 @@ h1,h2,h3,.stat b,.bento b{font-family:'Sora',sans-serif}
 /* scroll progress */
 #prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:99;box-shadow:0 0 12px rgba(77,159,255,.6)}
 
-.wrap{max-width:1100px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
 
 /* nav */
 nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(4,7,15,.7);border-bottom:1px solid var(--border)}
-.navin{max-width:1100px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.navin{max-width:1240px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{font-family:'Sora';font-weight:800;font-size:1.1rem}
 .logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .navlinks{display:flex;gap:6px;font-size:.88rem}
@@ -43,8 +43,8 @@ nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(
 @media(max-width:760px){.navlinks{display:none}}
 
 /* hero */
-.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:80px 0 40px}
-.herogrid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:36px 0 32px}
+.herogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
 .pwrap{display:flex;justify-content:center}
 .pring{position:relative;width:320px;height:320px;border-radius:50%;padding:6px;
   background:linear-gradient(135deg,#ffffff,#9cc4ff 40%,#2f7bff);
@@ -56,7 +56,52 @@ nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(
   background:radial-gradient(circle at 35% 28%,transparent 52%,rgba(4,10,25,.55)),
              linear-gradient(160deg,rgba(47,123,255,.20),rgba(8,9,12,.30))}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@media(max-width:860px){.herogrid{grid-template-columns:1fr;gap:34px}.pwrap{order:-1;justify-content:flex-start}.pring{width:200px;height:200px}}
+
+/* orbiting tech stack */
+.orbitstage{position:relative;width:520px;height:520px;display:flex;align-items:center;justify-content:center}
+.orbitring{position:absolute;border-radius:50%;border:1px solid rgba(125,180,255,.13);pointer-events:none}
+.orbitring.o1{width:400px;height:400px}
+.orbitring.o2{width:512px;height:512px;border-style:dashed;border-color:rgba(125,180,255,.09)}
+.orbit{position:absolute;inset:0;pointer-events:none}
+.orbit-a{animation:spin 34s linear infinite}
+.orbit-b{animation:spin 46s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.opos{position:absolute;top:50%;left:50%}
+.cs-a{animation:spin 34s linear infinite reverse}
+.cs-b{animation:spin 46s linear infinite}
+.opill{display:flex;align-items:center;gap:7px;
+  background:rgba(12,18,32,.88);border:1px solid rgba(125,180,255,.28);border-radius:999px;
+  padding:7px 15px;font-size:.82rem;font-weight:600;color:#dbe6f8;white-space:nowrap;
+  backdrop-filter:blur(6px);box-shadow:0 6px 22px rgba(0,0,0,.45);pointer-events:auto;
+  transition:border-color .25s, box-shadow .25s, color .25s}
+.opill:hover{border-color:var(--sky);color:#fff;box-shadow:0 6px 26px rgba(47,123,255,.45)}
+.opill .odot{width:7px;height:7px;border-radius:50%;background:var(--grad);flex:none}
+.orbitstage:hover .orbit-a,.orbitstage:hover .orbit-b{animation-play-state:paused}
+html[data-theme="light"] .opill{background:rgba(255,255,255,.94);color:#25304a;border-color:rgba(30,79,216,.25);box-shadow:0 6px 20px rgba(13,18,32,.10)}
+html[data-theme="light"] .orbitring{border-color:rgba(30,79,216,.14)}
+
+@media(max-width:1000px){
+  .orbitstage{width:430px;height:430px}
+  .orbitring.o1{width:330px;height:330px}.orbitring.o2{width:420px;height:420px}
+  .opill{font-size:.75rem;padding:6px 12px}
+}
+@media(max-width:860px){
+  .herogrid{grid-template-columns:1fr;gap:34px}
+  .pwrap{order:-1;justify-content:center}
+  .pring{width:200px;height:200px}
+  .orbitstage{width:330px;height:330px}
+  .orbitring.o1{width:255px;height:255px}.orbitring.o2{width:322px;height:322px}
+  .opill{font-size:.7rem;padding:5px 10px;gap:5px}
+}
+@media(max-width:560px){
+  .orbitstage{width:290px;height:290px}
+  .orbitring.o1{width:224px;height:224px}.orbitring.o2{width:284px;height:284px}
+  .pring{width:170px;height:170px}
+}
+@media(prefers-reduced-motion:reduce){
+  .orbit-a,.orbit-b,.pring{animation:none}
+  .opill{animation:none}
+}
 .avail{display:inline-flex;width:fit-content;align-items:center;gap:8px;background:rgba(77,159,255,.07);border:1px solid rgba(77,159,255,.35);color:var(--amber);border-radius:999px;padding:6px 16px;font-size:.8rem;font-weight:600;margin-bottom:28px}
 .avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:pulse 1.8s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
@@ -72,7 +117,7 @@ nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(
 .btn.primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 44px rgba(47,123,255,.5)}
 .btn.ghost{border:1px solid var(--border);color:var(--text);background:var(--card);backdrop-filter:blur(6px)}
 .btn.ghost:hover{border-color:var(--sky);transform:translateY(-3px)}
-.scrollhint{margin-top:60px;color:var(--muted);font-size:.8rem;display:flex;align-items:center;gap:10px;opacity:.7}
+.scrollhint{margin-top:34px;color:var(--muted);font-size:.8rem;display:flex;align-items:center;gap:10px;opacity:.7}
 .scrollhint .m{width:22px;height:34px;border:2px solid var(--muted);border-radius:12px;position:relative}
 .scrollhint .m::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:3px;background:var(--amber);animation:wheel 1.6s infinite}
 @keyframes wheel{0%{transform:translateY(0);opacity:1}100%{transform:translateY(12px);opacity:0}}
@@ -305,8 +350,14 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
       </div>
     </div>
     <div class="pwrap" id="pwrap">
-      <div class="pring">
-        <img id="ppic" src="profile.jpg" alt="Balaji Durai" onerror="picErr(this)">
+      <div class="orbitstage">
+        <div class="orbitring o1"></div>
+        <div class="orbitring o2"></div>
+        <div class="pring">
+          <img id="ppic" src="profile.jpg" alt="Balaji Durai" onerror="picErr(this)">
+        </div>
+        <div class="orbit orbit-a" id="orbitA"></div>
+        <div class="orbit orbit-b" id="orbitB"></div>
       </div>
     </div>
   </div>
@@ -546,6 +597,30 @@ const PERSONAS = {
 };
 let persona = "all";
 
+/* orbiting tech stack around the portrait */
+const ORBIT_A = ["Azure","Citrix DaaS","Kubernetes","Terraform","GenAI"];
+const ORBIT_B = ["Azure Virtual Desktop","GCP","PostgreSQL · pgvector","GitHub Actions","SRE"];
+function buildOrbits(){
+  const stage=document.querySelector(".orbitstage"); if(!stage) return;
+  const size=stage.offsetWidth||520;
+  const mk=(el,items,radius,cls)=>{
+    el.innerHTML="";
+    items.forEach((label,i)=>{
+      const ang=(360/items.length)*i;
+      const pos=document.createElement("div");
+      pos.className="opos";
+      pos.style.transform="translate(-50%,-50%) rotate("+ang+"deg) translate("+radius+"px) rotate("+(-ang)+"deg)";
+      const pill=document.createElement("div");
+      pill.className="opill "+cls;
+      pill.innerHTML='<span class="odot"></span>'+label;
+      pos.appendChild(pill); el.appendChild(pos);
+    });
+  };
+  mk(document.getElementById("orbitA"), ORBIT_A, size*0.385, "cs-a");
+  mk(document.getElementById("orbitB"), ORBIT_B, size*0.492, "cs-b");
+}
+addEventListener("resize", buildOrbits, {passive:true});
+
 /* BR Assist project */
 const PSTACK = ["PostgreSQL","pgvector","Supabase Edge Functions","RAG","PWA","Multi-provider LLM"];
 let projectOpen = false;
@@ -708,6 +783,8 @@ function render(){
     const k=el.getAttribute("data-i18n"); if(T[k]) el.textContent=T[k][lang];
   });
 
+  buildOrbits();
+
   // BR Assist project chips + toggle label
   const psc=document.getElementById("pStackChips"); psc.innerHTML="";
   PSTACK.forEach(s=>{ const c=document.createElement("span"); c.className="chip hi"; c.textContent=s; psc.appendChild(c); });
@@ -853,7 +930,7 @@ function bindTilt(){
 const cv=document.getElementById("stars"), ctx=cv.getContext("2d");
 let W,H,pts=[],mouse={x:-999,y:-999};
 function resize(){ W=cv.width=innerWidth; H=cv.height=innerHeight;
-  const n=Math.min(90,Math.max(38,Math.floor(W*H/16000)));
+  const n=Math.min(190,Math.max(42,Math.floor(W*H/11000)));
   pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.4}));
 }
 addEventListener("resize",resize); resize();
