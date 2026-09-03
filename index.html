@@ -49,14 +49,31 @@ nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(
 .navlinks a.active{color:#fff;background:rgba(59,130,246,.18);border:1px solid rgba(59,130,246,.35)}
 .langbtn{background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:999px;padding:7px 16px;cursor:pointer;font-size:.85rem;font-weight:600;transition:.2s}
 .langbtn:hover{border-color:var(--amber);box-shadow:0 0 18px rgba(77,159,255,.35)}
-@media(max-width:760px){.navlinks{display:none}}
+.menubtn{display:none;background:var(--card);border:1px solid var(--border);color:var(--text);
+  border-radius:12px;padding:8px 13px;font-size:1.05rem;line-height:1;cursor:pointer}
+.menubtn:hover{border-color:var(--sky)}
+@media(max-width:860px){
+  .menubtn{display:block}
+  .navlinks{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;gap:2px;
+    background:rgba(8,9,12,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);
+    padding:10px 20px 18px}
+  .navlinks.open{display:flex}
+  .navlinks a{padding:12px 14px;border-radius:10px;font-size:.95rem}
+  .navlinks a.active{background:rgba(47,123,255,.16)}
+  nav{position:sticky}
+  .navin{position:static}
+}
+html[data-theme="light"] .navlinks{background:rgba(255,255,255,.97)}
 
 /* hero */
 .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:36px 0 32px}
-.herogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.herogrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:center}
+.herogrid>*{min-width:0}
+img,svg,canvas{max-width:100%}
+.hero h1,.rtitle,.ptitle,.case h3{overflow-wrap:break-word;hyphens:auto}
 .pwrap{display:flex;justify-content:center}
 .pwrap{perspective:1100px}
-.pring{position:relative;width:320px;height:320px;border-radius:50%;padding:6px;
+.pring{position:relative;width:68%;aspect-ratio:1;border-radius:50%;padding:6px;
   background:transparent;
   box-shadow:0 0 70px rgba(47,123,255,.30),0 24px 60px rgba(0,0,0,.5);
   transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s;
@@ -79,28 +96,18 @@ nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(
 .orbitstage:hover .pring{box-shadow:0 0 90px rgba(47,123,255,.45),0 26px 70px rgba(0,0,0,.55)}
 
 /* portrait stage — calm concentric halo */
-.orbitstage{position:relative;width:480px;height:480px;display:flex;align-items:center;justify-content:center}
-.haloring{position:absolute;border-radius:50%;pointer-events:none}
-.haloring.h1{width:400px;height:400px;border:1px solid rgba(125,180,255,.12)}
-.haloring.h2{width:474px;height:474px;border:1px solid rgba(125,180,255,.06)}
+.orbitstage{position:relative;width:min(460px,100%);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.haloring{position:absolute;border-radius:50%;pointer-events:none;aspect-ratio:1}
+.haloring.h1{width:84%;border:1px solid rgba(125,180,255,.12)}
+.haloring.h2{width:99%;border:1px solid rgba(125,180,255,.06)}
 html[data-theme="light"] .haloring.h1{border-color:rgba(30,79,216,.14)}
 html[data-theme="light"] .haloring.h2{border-color:rgba(30,79,216,.07)}
 
-@media(max-width:1000px){
-  .orbitstage{width:400px;height:400px}
-  .haloring.h1{width:330px;height:330px}.haloring.h2{width:394px;height:394px}
-}
-@media(max-width:860px){
-  .herogrid{grid-template-columns:1fr;gap:34px}
-  .pwrap{order:-1;justify-content:center}
-  .pring{width:200px;height:200px}
-  .orbitstage{width:300px;height:300px}
-  .haloring.h1{width:250px;height:250px}.haloring.h2{width:296px;height:296px}
-}
-@media(max-width:560px){
-  .orbitstage{width:250px;height:250px}
-  .haloring.h1{width:206px;height:206px}.haloring.h2{width:246px;height:246px}
-  .pring{width:170px;height:170px}
+@media(max-width:940px){
+  .herogrid{grid-template-columns:1fr;gap:30px;justify-items:start}
+  .pwrap{order:-1;justify-content:flex-start}
+  .orbitstage{width:min(260px,60vw)}
+  .hero{min-height:auto;padding:40px 0 30px}
 }
 @media(prefers-reduced-motion:reduce){
   .pring,.pring::before{animation:none}
@@ -108,6 +115,16 @@ html[data-theme="light"] .haloring.h2{border-color:rgba(30,79,216,.07)}
 }
 .avail{display:inline-flex;width:fit-content;align-items:center;gap:8px;background:rgba(77,159,255,.07);border:1px solid rgba(77,159,255,.35);color:var(--amber);border-radius:999px;padding:6px 16px;font-size:.8rem;font-weight:600;margin-bottom:28px}
 .avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:pulse 1.8s infinite}
+.badgerow{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.badgerow .avail{margin-bottom:0}
+.credpill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  background:linear-gradient(120deg,rgba(47,123,255,.16),rgba(125,180,255,.08));
+  border:1px solid rgba(47,123,255,.45);color:var(--sky);border-radius:999px;
+  padding:6px 16px;font-size:.8rem;font-weight:600;transition:.25s}
+.credpill:hover{border-color:var(--sky);color:#fff;box-shadow:0 4px 20px rgba(47,123,255,.35);transform:translateY(-1px)}
+.credpill i{font-style:normal}
+html[data-theme="light"] .credpill{color:#1e4fd8;background:rgba(30,79,216,.08)}
+html[data-theme="light"] .credpill:hover{color:#0d1220}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .hero .mono.small{color:var(--sky);font-size:.95rem;margin-bottom:10px}
 .hero h1{font-size:clamp(2.6rem,7.5vw,5rem);font-weight:800;line-height:1.04;letter-spacing:-2px}
@@ -348,9 +365,10 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
       <a href="#aboutme" data-i18n="n_aboutme"></a>
       <a href="#contact" data-i18n="n_contact"></a>
     </div>
-    <div style="display:flex;gap:8px">
+    <div style="display:flex;gap:8px;align-items:center">
       <button class="langbtn" id="themeToggle" onclick="toggleTheme()" title="Theme">☀️</button>
       <button class="langbtn" id="langToggle" onclick="toggleLang()">EN</button>
+      <button class="menubtn" id="menuBtn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">☰</button>
     </div>
   </div>
 </nav>
@@ -360,7 +378,10 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
 <header class="hero">
   <div class="herogrid">
     <div>
-      <div class="avail" data-i18n="avail"></div>
+      <div class="badgerow">
+        <div class="avail" data-i18n="avail"></div>
+        <a class="credpill" href="#research"><i>🎓</i><span data-i18n="cred"></span></a>
+      </div>
       <div class="mono small">// AI · Cloud · EUC — Platform Enablement</div>
       <h1><span data-i18n="hi"></span> <span class="grad">Balaji Durai</span></h1>
       <div class="rolewrap"><span id="typed"></span></div>
@@ -374,6 +395,7 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
         <span><i>🗓️</i><span data-i18n="f_exp"></span></span>
         <span><i>🎓</i><span data-i18n="f_certs"></span></span>
         <span><i>🌍</i><span data-i18n="f_lang"></span></span>
+        <span><i>🔬</i><span data-i18n="f_research"></span></span>
       </div>
     </div>
     <div class="pwrap" id="pwrap">
@@ -780,6 +802,8 @@ const T = {
   f_exp:["16+ Jahre Enterprise-Erfahrung","16+ years enterprise experience"],
   f_certs:["8 Zertifizierungen · Azure · Citrix · ITIL","8 certifications · Azure · Citrix · ITIL"],
   f_lang:["Deutsch B2 · Englisch fließend","German B2 · English fluent"],
+  f_research:["Forschung: Deep Learning für Intrusion Detection","Research: deep learning for intrusion detection"],
+  cred:["Fellow Membership in AI · Forschung 2025","Fellow Membership in AI · Research 2025"],
   scroll:["Scrollen zum Entdecken","Scroll to explore"],
   k_impact:["Meine Geschichte in Zahlen","My story in numbers"], h_impact:["Was ich für Menschen bewege","What I make possible"],
   bt1:["Menschen arbeiten täglich auf meinen Plattformen","people run their business on my platforms — daily"],
@@ -882,6 +906,17 @@ function render(){
   });
 }
 function toggleLang(){ lang=1-lang; render(); startTyping(); }
+
+/* mobile menu */
+function toggleMenu(){
+  const nav=document.getElementById("navlinks"), btn=document.getElementById("menuBtn");
+  const open=nav.classList.toggle("open");
+  btn.setAttribute("aria-expanded", open?"true":"false");
+  btn.textContent = open ? "✕" : "☰";
+}
+document.getElementById("navlinks").addEventListener("click",e=>{
+  if(e.target.tagName==="A" && document.getElementById("navlinks").classList.contains("open")) toggleMenu();
+});
 
 /* theme toggle (dark ⇄ light) */
 function applyTheme(t){
