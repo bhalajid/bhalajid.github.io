@@ -41,10 +41,10 @@ h1,h2,h3,.stat b,.bento b{font-family:'Sora',sans-serif}
 /* nav */
 nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(4,7,15,.7);border-bottom:1px solid var(--border)}
 .navin{max-width:1240px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-family:'Sora';font-weight:800;font-size:1.1rem}
+.logo{font-family:'Sora';font-weight:800;font-size:1.1rem;white-space:nowrap;flex:none}
 .logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.navlinks{display:flex;gap:6px;font-size:.88rem}
-.navlinks a{color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:999px;transition:.2s}
+.navlinks{display:flex;gap:2px;font-size:.85rem;min-width:0}
+.navlinks a{color:var(--muted);text-decoration:none;padding:7px 11px;border-radius:999px;transition:.2s;white-space:nowrap}
 .navlinks a:hover{color:var(--text)}
 .navlinks a.active{color:#fff;background:rgba(59,130,246,.18);border:1px solid rgba(59,130,246,.35)}
 .langbtn{background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:999px;padding:7px 16px;cursor:pointer;font-size:.85rem;font-weight:600;transition:.2s}
@@ -52,7 +52,7 @@ nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(
 .menubtn{display:none;background:var(--card);border:1px solid var(--border);color:var(--text);
   border-radius:12px;padding:8px 13px;font-size:1.05rem;line-height:1;cursor:pointer}
 .menubtn:hover{border-color:var(--sky)}
-@media(max-width:860px){
+@media(max-width:1180px){
   .menubtn{display:block}
   .navlinks{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;gap:2px;
     background:rgba(8,9,12,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);
@@ -723,7 +723,7 @@ const T = {
   c3c:["KI-Potenzial im IT-Betrieb bleibt in den meisten Unternehmen ungenutzt.","AI potential in IT operations goes unused in most organizations."],
   c3a:["Als Evangelist GenAI-Workflows (Azure AI Foundry, OpenAI, Copilot) in Incident- und Automatisierungsprozesse integriert.","As evangelist, integrating GenAI workflows (Azure AI Foundry, OpenAI, Copilot) into incident and automation processes."],
   c3r:["GenAI ist Teil des täglichen Betriebs — Schritt für Schritt Richtung Autonomous Operations.","GenAI is part of daily operations — step by step towards autonomous operations."],
-  n_projects:["Eigenprojekte","Projects"],
+  n_projects:["Projekte","Projects"],
   k_projects:["Was ich aus eigenem Antrieb baue","What I build on my own initiative"],
   h_projects:["Eigenprojekte","Projects"],
   n_aboutme:["Über mich","About"],
@@ -990,7 +990,7 @@ addEventListener("mousemove",e=>{
 (function(){
   const stage=document.querySelector(".orbitstage"), ring=document.querySelector(".pring");
   if(!stage||!ring) return;
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  try{ if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; }catch(e){}
   stage.addEventListener("mousemove",e=>{
     const r=stage.getBoundingClientRect();
     const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
