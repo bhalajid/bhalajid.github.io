@@ -41,7 +41,10 @@ h1,h2,h3,.stat b,.bento b{font-family:'Sora',sans-serif}
 /* nav */
 nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(4,7,15,.7);border-bottom:1px solid var(--border)}
 .navin{max-width:1240px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-family:'Sora';font-weight:800;font-size:1.1rem;white-space:nowrap;flex:none}
+.logo{font-family:'Sora';font-weight:800;font-size:1.1rem;white-space:nowrap;flex:none;
+  color:var(--text);text-decoration:none;cursor:pointer;transition:opacity .2s,transform .2s;display:inline-block}
+.logo:hover{opacity:.82;transform:translateY(-1px)}
+.logo:focus-visible{outline:2px solid var(--sky);outline-offset:4px;border-radius:6px}
 .logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .navlinks{display:flex;gap:2px;font-size:.85rem;min-width:0}
 .navlinks a{color:var(--muted);text-decoration:none;padding:7px 11px;border-radius:999px;transition:.2s;white-space:nowrap}
@@ -353,7 +356,7 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
 
 <nav>
   <div class="navin">
-    <div class="logo">Balaji <span>Durai</span></div>
+    <a class="logo" href="#" id="logoLink" onclick="goTop(event)" aria-label="Top">Balaji <span>Durai</span></a>
     <div class="navlinks" id="navlinks">
       <a href="#impact" data-i18n="n_impact"></a>
       <a href="#cases" data-i18n="n_cases"></a>
@@ -906,6 +909,15 @@ function render(){
   });
 }
 function toggleLang(){ lang=1-lang; render(); startTyping(); }
+
+/* logo → back to top */
+function goTop(e){
+  if(e) e.preventDefault();
+  const nav=document.getElementById("navlinks");
+  if(nav && nav.classList.contains("open")) toggleMenu();
+  try{ window.scrollTo({top:0,behavior:"smooth"}); }catch(err){ window.scrollTo(0,0); }
+  document.querySelectorAll("#navlinks a").forEach(a=>a.classList.remove("active"));
+}
 
 /* mobile menu */
 function toggleMenu(){
