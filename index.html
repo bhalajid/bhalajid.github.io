@@ -14,6 +14,15 @@
 <meta property="og:url" content="https://bhalajid.github.io/">
 <meta property="og:image" content="https://bhalajid.github.io/profile.jpg">
 <meta name="twitter:card" content="summary">
+<script>
+/* defined early: the portrait's onerror can fire before the main script runs */
+window.PICS=["profile.jpeg","profile.png","profile.JPG","profile.JPEG","profile.PNG","me.jpg","me.jpeg","me.png"];
+window.picIdx=0;
+window.picErr=function(img){
+  if(window.picIdx<window.PICS.length){ img.src=window.PICS[window.picIdx++]; }
+  else { var w=document.getElementById("pwrap"); if(w) w.style.display="none"; }
+};
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -23,7 +32,7 @@
   --grad:linear-gradient(120deg,#ffffff,#9cc4ff 45%,#2f7bff);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;cursor:default}
 h1,h2,h3,.stat b,.bento b{font-family:'Sora',sans-serif}
 .mono{font-family:'JetBrains Mono',monospace}
@@ -162,6 +171,7 @@ html[data-theme="light"] .credpill:hover{color:#0d1220}
 
 /* sections */
 section{padding:90px 0 10px}
+section[id]{scroll-margin-top:92px}
 .kicker{color:var(--amber);font-family:'JetBrains Mono';font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;margin-bottom:10px}
 .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:36px}
 .sechead h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;letter-spacing:-1px}
@@ -211,7 +221,7 @@ section{padding:90px 0 10px}
 }
 
 /* skills */
-.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px;perspective:1200px}
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(310px,100%),1fr));gap:18px;perspective:1200px}
 .skillcard{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;transition:transform .15s ease,border-color .3s,box-shadow .3s;position:relative;overflow:hidden;transform-style:preserve-3d;will-change:transform}
 .skillcard::after{content:"";position:absolute;inset:0;background:radial-gradient(420px at var(--mx,50%) var(--my,50%),rgba(59,130,246,.12),transparent 60%);opacity:0;transition:.3s;pointer-events:none}
 .skillcard:hover::after{opacity:1}
@@ -262,14 +272,14 @@ section{padding:90px 0 10px}
 @media(max-width:560px){.crow{grid-template-columns:1fr;gap:3px}}
 html[data-theme="light"] .case{box-shadow:0 8px 30px rgba(13,18,32,.06)}
 /* about */
-.aboutgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.aboutgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px}
 
 /* research */
 .researchcard{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:32px;transition:.25s;position:relative;overflow:hidden}
 .researchcard:hover{border-color:rgba(77,159,255,.45);box-shadow:0 18px 50px rgba(0,0,0,.4)}
 .rtitle{font-size:1.28rem;font-weight:800;font-family:'Sora';line-height:1.35;margin:10px 0 10px;max-width:900px}
 .rsub{color:var(--muted);font-size:.95rem;max-width:760px}
-.rmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
+.rmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
 .rmeta b{display:block;color:var(--sky);font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;font-family:'JetBrains Mono';margin-bottom:5px}
 .rmeta span{color:var(--text);font-size:.92rem}
 .rlink{margin-top:22px;color:var(--muted);font-size:.88rem;font-style:italic;max-width:780px}
@@ -298,7 +308,7 @@ html[data-theme="light"] .researchcard{box-shadow:0 8px 30px rgba(13,18,32,.06)}
 html[data-theme="light"] .projectcard{box-shadow:0 8px 30px rgba(13,18,32,.06)}
 
 /* certs */
-.certgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.certgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));gap:14px}
 .cert{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;display:flex;gap:14px;align-items:center;transition:.25s}
 .cert:hover{transform:translateY(-5px) rotate(-.5deg);border-color:rgba(77,159,255,.5);box-shadow:0 14px 36px rgba(0,0,0,.45)}
 .cert .badge{min-width:48px;height:48px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 4px 18px rgba(47,123,255,.35)}
@@ -941,13 +951,7 @@ function toggleTheme(){
 }
 try{ applyTheme(localStorage.getItem("theme")||"dark"); }catch(e){ applyTheme("dark"); }
 
-/* photo fallback: tries common filenames before hiding the frame */
-const PICS=["profile.jpeg","profile.png","profile.JPG","profile.JPEG","profile.PNG","me.jpg","me.jpeg","me.png"];
-let picIdx=0;
-function picErr(img){
-  if(picIdx<PICS.length){ img.src=PICS[picIdx++]; }
-  else document.getElementById("pwrap").style.display="none";
-}
+/* photo fallback lives in the early <head> script so it exists before the image loads */
 
 /* typing */
 let tIdx=0,tChar=0,tDel=false,tTimer;
