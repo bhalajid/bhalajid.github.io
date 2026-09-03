@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Balaji Durai — Senior EUC &amp; Azure Platform Engineer</title>
 <meta name="description" content="Balaji Durai — Senior EUC & Azure Platform Engineer. 16+ Jahre Enterprise-Erfahrung: Citrix DaaS, Azure, AVD, AI Platform, NetScaler, IaC.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23eaf2ff%27%2F%3E%3Cstop%20offset%3D%27.45%27%20stop-color%3D%27%237db4ff%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232f7bff%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2715%27%20fill%3D%27%2308090c%27%2F%3E%3Crect%20x%3D%274%27%20y%3D%274%27%20width%3D%2756%27%20height%3D%2756%27%20rx%3D%2712%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Ctext%20x%3D%2732%27%20y%3D%2744%27%20font-family%3D%27Segoe%20UI%2CHelvetica%2CArial%2Csans-serif%27%20font-size%3D%2731%27%20font-weight%3D%27800%27%20fill%3D%27%2308090c%27%20text-anchor%3D%27middle%27%20letter-spacing%3D%27-1%27%3EBD%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="profile.jpg">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="Balaji Durai — Senior EUC &amp; Azure Platform Engineer">
+<meta property="og:description" content="16+ years building AI, cloud and end-user computing platforms for Deutsche Bank, LIDL, Kaufland and Olympus.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bhalajid.github.io/">
+<meta property="og:image" content="https://bhalajid.github.io/profile.jpg">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -46,16 +55,28 @@ nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(
 .hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:36px 0 32px}
 .herogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
 .pwrap{display:flex;justify-content:center}
+.pwrap{perspective:1100px}
 .pring{position:relative;width:320px;height:320px;border-radius:50%;padding:6px;
-  background:linear-gradient(135deg,#ffffff,#9cc4ff 40%,#2f7bff);
-  box-shadow:0 0 70px rgba(47,123,255,.35),0 24px 60px rgba(0,0,0,.5);
-  animation:float 6s ease-in-out infinite}
-.pring img{width:100%;height:100%;object-fit:cover;object-position:center 18%;border-radius:50%;display:block;
-  filter:grayscale(.25) contrast(1.1) brightness(.94) saturate(.85)}
-.pring::after{content:"";position:absolute;inset:6px;border-radius:50%;pointer-events:none;
+  background:transparent;
+  box-shadow:0 0 70px rgba(47,123,255,.30),0 24px 60px rgba(0,0,0,.5);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s;
+  transform-style:preserve-3d;will-change:transform}
+/* slow aurora sweep around the portrait */
+.pring::before{content:"";position:absolute;inset:0;border-radius:50%;z-index:0;
+  background:conic-gradient(from 0deg,#2f7bff,#7db4ff 25%,#eaf2ff 42%,#7db4ff 60%,#2f7bff 82%,#2f7bff);
+  animation:ringspin 14s linear infinite}
+@keyframes ringspin{to{transform:rotate(360deg)}}
+.pring img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 18%;
+  border-radius:50%;display:block;
+  filter:grayscale(.28) contrast(1.1) brightness(.94) saturate(.82);
+  transition:filter .45s ease}
+.pring::after{content:"";position:absolute;inset:6px;border-radius:50%;pointer-events:none;z-index:2;
   background:radial-gradient(circle at 35% 28%,transparent 52%,rgba(4,10,25,.55)),
-             linear-gradient(160deg,rgba(47,123,255,.20),rgba(8,9,12,.30))}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+             linear-gradient(160deg,rgba(47,123,255,.20),rgba(8,9,12,.30));
+  transition:opacity .45s ease}
+.orbitstage:hover .pring img{filter:grayscale(0) contrast(1.06) brightness(1) saturate(1)}
+.orbitstage:hover .pring::after{opacity:.45}
+.orbitstage:hover .pring{box-shadow:0 0 90px rgba(47,123,255,.45),0 26px 70px rgba(0,0,0,.55)}
 
 /* portrait stage — calm concentric halo */
 .orbitstage{position:relative;width:480px;height:480px;display:flex;align-items:center;justify-content:center}
@@ -82,7 +103,8 @@ html[data-theme="light"] .haloring.h2{border-color:rgba(30,79,216,.07)}
   .pring{width:170px;height:170px}
 }
 @media(prefers-reduced-motion:reduce){
-  .pring{animation:none}
+  .pring,.pring::before{animation:none}
+  .pring{transform:none !important}
 }
 .avail{display:inline-flex;width:fit-content;align-items:center;gap:8px;background:rgba(77,159,255,.07);border:1px solid rgba(77,159,255,.35);color:var(--amber);border-radius:999px;padding:6px 16px;font-size:.8rem;font-weight:600;margin-bottom:28px}
 .avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:pulse 1.8s infinite}
@@ -222,6 +244,17 @@ html[data-theme="light"] .case{box-shadow:0 8px 30px rgba(13,18,32,.06)}
 /* about */
 .aboutgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 
+/* research */
+.researchcard{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:32px;transition:.25s;position:relative;overflow:hidden}
+.researchcard:hover{border-color:rgba(77,159,255,.45);box-shadow:0 18px 50px rgba(0,0,0,.4)}
+.rtitle{font-size:1.28rem;font-weight:800;font-family:'Sora';line-height:1.35;margin:10px 0 10px;max-width:900px}
+.rsub{color:var(--muted);font-size:.95rem;max-width:760px}
+.rmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
+.rmeta b{display:block;color:var(--sky);font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;font-family:'JetBrains Mono';margin-bottom:5px}
+.rmeta span{color:var(--text);font-size:.92rem}
+.rlink{margin-top:22px;color:var(--muted);font-size:.88rem;font-style:italic;max-width:780px}
+html[data-theme="light"] .researchcard{box-shadow:0 8px 30px rgba(13,18,32,.06)}
+
 /* projects */
 .projectcard{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:32px;transition:.25s}
 .projectcard:hover{border-color:rgba(77,159,255,.4)}
@@ -311,6 +344,7 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
       <a href="#skills" data-i18n="n_skills"></a>
       <a href="#experience" data-i18n="n_exp"></a>
       <a href="#certs" data-i18n="n_certs"></a>
+      <a href="#research" data-i18n="n_research"></a>
       <a href="#aboutme" data-i18n="n_aboutme"></a>
       <a href="#contact" data-i18n="n_contact"></a>
     </div>
@@ -472,6 +506,23 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
   <div class="certgrid" id="certContainer"></div>
 </section>
 
+<section id="research" class="reveal">
+  <div class="kicker" data-i18n="k_research"></div>
+  <div class="sechead"><h2 data-i18n="h_research"></h2></div>
+  <div class="researchcard">
+    <span class="ctag" data-i18n="r_tag"></span>
+    <h3 class="rtitle" data-i18n="r_title"></h3>
+    <p class="rsub" data-i18n="r_sub"></p>
+    <div class="rmeta">
+      <div><b data-i18n="r_l_award"></b><span data-i18n="r_award"></span></div>
+      <div><b data-i18n="r_l_body"></b><span data-i18n="r_body"></span></div>
+      <div><b data-i18n="r_l_grade"></b><span data-i18n="r_grade"></span></div>
+      <div><b data-i18n="r_l_field"></b><span data-i18n="r_field"></span></div>
+    </div>
+    <p class="rlink" data-i18n="r_rel"></p>
+  </div>
+</section>
+
 <section id="aboutme" class="reveal">
   <div class="kicker" data-i18n="k_about"></div>
   <div class="sechead"><h2 data-i18n="h_aboutme"></h2></div>
@@ -525,6 +576,7 @@ const SKILLS = [
   { cat:"ai",    name:"AI Infrastructure · GPU Compute", hi:true, tags:["ai","platform","cloud"] },
   { cat:"ai",    name:"AI-assisted Automation (LLM Tooling · Copilot)", hi:false, tags:["ai","devops","sre"] },
   { cat:"ai",    name:"Retrieval-Augmented Generation (RAG)", hi:true, tags:["ai","platform","devops"] },
+  { cat:"ai",    name:"Deep Learning · Intrusion Detection (Research)", hi:false, tags:["ai","cloud"] },
   { cat:"ai",    name:"Multi-provider LLM Inference (Gemini, OpenAI, Claude)", hi:true, tags:["ai","devops"] },
   // Cloud Platform Engineering (Azure · GCP)
   { cat:"azplat", name:"Azure IaaS · Compute · Storage (AZ-104/AZ-300)", hi:true, tags:["cloud","platform"] },
@@ -695,6 +747,24 @@ const T = {
     "Stack: Postgres 15 with pgvector and pg_cron (Supabase, EU/Frankfurt) · Supabase Edge Functions in Deno/TypeScript · Python ingestion against federal XML feeds · vanilla-JS installable PWA · Gemini embeddings, multi-provider LLM inference with automatic fallback"],
   p_note:["Mit intensiver KI-Unterstützung entwickelt. Die beiden wertvollsten Fehler wurden von einem menschlichen Tester gefunden, nicht durch automatisierte Prüfung.",
     "Built with heavy AI assistance. The two most valuable defects were found by a human tester, not by any automated check."],
+  n_research:["Forschung","Research"],
+  k_research:["Forschung & Fellowship","Research & fellowship"],
+  h_research:["Forschung","Research"],
+  r_tag:["Abschlussarbeit · April 2025","Thesis · April 2025"],
+  r_title:["Adaptive Deep Learning Framework for Scalable and Real-Time Intrusion Detection in Cloud-IoT Systems",
+    "Adaptive Deep Learning Framework for Scalable and Real-Time Intrusion Detection in Cloud-IoT Systems"],
+  r_sub:["Forschungsarbeit zu adaptiven Deep-Learning-Verfahren für skalierbare Echtzeit-Angriffserkennung in Cloud- und IoT-Umgebungen — die wissenschaftliche Grundlage hinter meiner Arbeit an AI-Plattformen und sicherem Cloud-Betrieb.",
+    "Research on adaptive deep learning methods for scalable, real-time intrusion detection across cloud and IoT environments — the academic grounding behind my work on AI platforms and secure cloud operations."],
+  r_l_award:["Auszeichnung","Award"],
+  r_award:["Doctoral Graduateship / Fellow Membership","Doctoral Graduateship / Fellow Membership"],
+  r_l_body:["Verleihende Institution","Awarding body"],
+  r_body:["Council of Science and Humanities, IIIER (Chennai, Indien)","Council of Science and Humanities, IIIER (Chennai, India)"],
+  r_l_grade:["Bewertung","Result"],
+  r_grade:["First Class","First Class"],
+  r_l_field:["Fachgebiet","Field"],
+  r_field:["Artificial Intelligence","Artificial Intelligence"],
+  r_rel:["Fellow Membership einer professionellen Institution (kein deutscher Hochschulgrad) — die Forschungsarbeit fließt direkt in meine Arbeit an GenAI- und Cloud-Sicherheitsplattformen ein.",
+    "Fellow membership of a professional institution (not a German university degree) — the research feeds directly into my work on GenAI and cloud security platforms."],
   k_about:["Der Mensch dahinter","The person behind it"], h_aboutme:["Über mich","About me"],
   a_lang:["Sprachen","Languages"],
   a_l1:["Deutsch — B2","German — B2"], a_l2:["Englisch — verhandlungssicher","English — fluent"], a_l3:["Tamil — Muttersprache","Tamil — native"],
@@ -880,6 +950,19 @@ addEventListener("mousemove",e=>{
   document.getElementById("spot").style.background=
     "radial-gradient(600px at "+e.clientX+"px "+e.clientY+"px, "+(light?"rgba(30,79,216,.06)":"rgba(59,130,246,.10)")+", transparent 70%)";
 },{passive:true});
+
+/* portrait: 3D tilt following the cursor */
+(function(){
+  const stage=document.querySelector(".orbitstage"), ring=document.querySelector(".pring");
+  if(!stage||!ring) return;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  stage.addEventListener("mousemove",e=>{
+    const r=stage.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    ring.style.transform="rotateX("+(-y*13)+"deg) rotateY("+(x*13)+"deg) translateZ(18px) scale(1.03)";
+  },{passive:true});
+  stage.addEventListener("mouseleave",()=>{ ring.style.transform=""; },{passive:true});
+})();
 
 /* 3D tilt + inner glow on skill cards */
 function bindTilt(){
