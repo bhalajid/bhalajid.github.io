@@ -135,6 +135,11 @@ html[data-theme="light"] .haloring.h2{border-color:rgba(30,79,216,.07)}
   padding:6px 16px;font-size:.8rem;font-weight:600;transition:.25s}
 .credpill:hover{border-color:var(--sky);color:#fff;box-shadow:0 4px 20px rgba(47,123,255,.35);transform:translateY(-1px)}
 .credpill i{font-style:normal}
+.qpill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  background:var(--grad);color:#0a1220;border-radius:999px;padding:7px 18px;
+  font-size:.8rem;font-weight:700;transition:.25s;box-shadow:0 6px 24px rgba(47,123,255,.35)}
+.qpill:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(47,123,255,.5)}
+.qpill i{font-style:normal;font-size:.7rem;opacity:.75}
 html[data-theme="light"] .credpill{color:#1e4fd8;background:rgba(30,79,216,.08)}
 html[data-theme="light"] .credpill:hover{color:#0d1220}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
@@ -282,10 +287,16 @@ html[data-theme="light"] .case{box-shadow:0 8px 30px rgba(13,18,32,.06)}
 .rmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
 .rmeta b{display:block;color:var(--sky);font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;font-family:'JetBrains Mono';margin-bottom:5px}
 .rmeta span{color:var(--text);font-size:.92rem}
+.rmeta .rstatus{color:var(--sky);font-weight:600}
 .rlink{margin-top:22px;color:var(--muted);font-size:.88rem;font-style:italic;max-width:780px}
 html[data-theme="light"] .researchcard{box-shadow:0 8px 30px rgba(13,18,32,.06)}
 
 /* projects */
+.qmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:16px;
+  margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+.qmeta b{display:block;color:var(--sky);font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;
+  font-family:'JetBrains Mono';margin-bottom:5px}
+.qmeta span{color:var(--text);font-size:.9rem}
 .projectcard{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:32px;transition:.25s}
 .projectcard:hover{border-color:rgba(77,159,255,.4)}
 .ptitle{font-size:1.4rem;font-weight:800;margin:10px 0 6px;font-family:'Sora'}
@@ -485,6 +496,21 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
 <section id="projects" class="reveal">
   <div class="kicker" data-i18n="k_projects"></div>
   <div class="sechead"><h2 data-i18n="h_projects"></h2></div>
+  <div class="projectcard" style="margin-bottom:18px">
+    <span class="ctag" data-i18n="q_tag"></span>
+    <h3 class="ptitle">Quenora Consulting</h3>
+    <p class="ptagline" data-i18n="q_tagline"></p>
+    <div class="chips" id="qChips" style="margin:16px 0"></div>
+    <p class="pshort" data-i18n="q_short"></p>
+    <div class="qmeta">
+      <div><b data-i18n="q_l_founded"></b><span data-i18n="q_founded"></span></div>
+      <div><b data-i18n="q_l_base"></b><span data-i18n="q_base"></span></div>
+      <div><b data-i18n="q_l_model"></b><span data-i18n="q_model"></span></div>
+      <div><b data-i18n="q_l_langs"></b><span data-i18n="q_langs"></span></div>
+    </div>
+    <a class="btn ghost" style="margin-top:22px" href="https://quenora.ai" target="_blank" rel="noopener">quenora.ai ↗</a>
+  </div>
+
   <div class="projectcard">
     <span class="ctag" data-i18n="p_tag"></span>
     <h3 class="ptitle">BR Assist</h3>
@@ -553,6 +579,7 @@ html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 
       <div><b data-i18n="r_l_body"></b><span data-i18n="r_body"></span></div>
       <div><b data-i18n="r_l_grade"></b><span data-i18n="r_grade"></span></div>
       <div><b data-i18n="r_l_field"></b><span data-i18n="r_field"></span></div>
+      <div><b data-i18n="r_l_status"></b><span class="rstatus" data-i18n="r_status"></span></div>
     </div>
     <p class="rlink" data-i18n="r_rel"></p>
   </div>
@@ -677,6 +704,7 @@ let persona = "all";
 
 /* BR Assist project */
 const PSTACK = ["PostgreSQL","pgvector","Supabase Edge Functions","RAG","PWA","Multi-provider LLM"];
+const QCHIPS = ["AI Integration","Platform & Deployment Engineering","Process Automation","AI Governance","Data Engineering","Custom AI Agents","Managed AI Operations"];
 let projectOpen = false;
 function toggleProject(){
   projectOpen = !projectOpen;
@@ -740,6 +768,15 @@ const T = {
   k_projects:["Was ich aus eigenem Antrieb baue","What I build on my own initiative"],
   h_projects:["Eigenprojekte","Projects"],
   n_aboutme:["Über mich","About"],
+  q_tag:["Unternehmen · gegründet 2025","Venture · founded 2025"],
+  q_tagline:["Enterprise-KI-Beratung: Wir bringen KI und Automatisierung in die Plattformen, Workflows und Entscheidungen, auf die ein Unternehmen bereits angewiesen ist — und übergeben sie anschließend an das eigene Team.",
+    "Enterprise AI consultancy: we engineer AI and automation into the platforms, workflows and decisions a business already depends on — then hand it over to their own team."],
+  q_short:["KI-Programme scheitern selten am Modell. Sie scheitern in der Lücke zwischen einem funktionierenden Prototyp und dem Dienstagnachmittag im Betrieb — wo Daten nicht zusammenpassen, Berechtigungen fehlen und niemand das Ergebnis verantwortet. Genau diese Schicht baut Quenora.\n\nNeun Capabilities, ein sechsphasiger Ansatz mit definierter Exit-Bedingung pro Phase und eine Übergabe, die vor Projektbeginn vertraglich festgehalten wird. Kein Lock-in.",
+    "AI programmes rarely fail because the model is weak. They fail in the gap between a working prototype and a Tuesday afternoon in production — where the data won't join, the permissions don't exist and nobody owns the result. That missing layer is what Quenora builds.\n\nNine capabilities, a six-phase approach with an exit condition written into every phase, and a handover agreed before the work starts. No lock-in."],
+  q_l_founded:["Gegründet","Founded"], q_founded:["2025","2025"],
+  q_l_base:["Standort","Based"], q_base:["Bad Friedrichshall, Deutschland","Bad Friedrichshall, Germany"],
+  q_l_model:["Arbeitsweise","Model"], q_model:["Founder-led · international tätig","Founder-led · working internationally"],
+  q_l_langs:["Sprachen","Languages"], q_langs:["Deutsch · Französisch · Englisch","German · French · English"],
   p_tag:["Eigenprojekt · 2026","Personal Project · 2026"],
   p_tagline:["Ein Retrieval-Augmented-Assistent, der Fragen zum deutschen Betriebsverfassungsrecht auf Englisch oder Deutsch beantwortet — jede Aussage ist mit der Gesetzesstelle verknüpft, aus der sie stammt.",
     "A retrieval-augmented assistant that answers German works council law questions in English or German, with every claim tied to the statutory section it came from."],
@@ -785,7 +822,7 @@ const T = {
   n_research:["Forschung","Research"],
   k_research:["Forschung & Fellowship","Research & fellowship"],
   h_research:["Forschung","Research"],
-  r_tag:["Abschlussarbeit · April 2025","Thesis · April 2025"],
+  r_tag:["Thesis abgeschlossen · Verliehen April 2025","Thesis completed · Awarded April 2025"],
   r_title:["Adaptive Deep Learning Framework for Scalable and Real-Time Intrusion Detection in Cloud-IoT Systems",
     "Adaptive Deep Learning Framework for Scalable and Real-Time Intrusion Detection in Cloud-IoT Systems"],
   r_sub:["Forschungsarbeit zu adaptiven Deep-Learning-Verfahren für skalierbare Echtzeit-Angriffserkennung in Cloud- und IoT-Umgebungen — die wissenschaftliche Grundlage hinter meiner Arbeit an AI-Plattformen und sicherem Cloud-Betrieb.",
@@ -798,6 +835,8 @@ const T = {
   r_grade:["First Class","First Class"],
   r_l_field:["Fachgebiet","Field"],
   r_field:["Artificial Intelligence","Artificial Intelligence"],
+  r_l_status:["Status","Status"],
+  r_status:["✓ Thesis abgeschlossen & geprüft · ✓ Verliehen","✓ Thesis completed & examined · ✓ Awarded"],
   r_rel:["Fellow Membership einer professionellen Institution (kein deutscher Hochschulgrad) — die Forschungsarbeit fließt direkt in meine Arbeit an GenAI- und Cloud-Sicherheitsplattformen ein.",
     "Fellow membership of a professional institution (not a German university degree) — the research feeds directly into my work on GenAI and cloud security platforms."],
   k_about:["Der Mensch dahinter","The person behind it"], h_aboutme:["Über mich","About me"],
@@ -864,6 +903,8 @@ function render(){
   // BR Assist project chips + toggle label
   const psc=document.getElementById("pStackChips"); psc.innerHTML="";
   PSTACK.forEach(s=>{ const c=document.createElement("span"); c.className="chip hi"; c.textContent=s; psc.appendChild(c); });
+  const qc=document.getElementById("qChips"); qc.innerHTML="";
+  QCHIPS.forEach(s=>{ const c=document.createElement("span"); c.className="chip hi"; c.textContent=s; qc.appendChild(c); });
   document.getElementById("pToggleBtn").textContent = T[projectOpen?"p_less":"p_more"][lang] + (projectOpen?" ▴":" ▾");
 
   // marquee (duplicate for seamless loop)
