@@ -6,7 +6,7 @@ const { JSDOM, VirtualConsole } = require("jsdom");
 const fs = require("fs");
 const path = require("path");
 
-const FILE = path.join(__dirname, "..", "index.html");
+const FILE = path.join(__dirname, "..", "cv-classic.html");
 const html = fs.readFileSync(FILE, "utf8");
 const errors = [];
 const vc = new VirtualConsole();

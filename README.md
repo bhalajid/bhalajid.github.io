@@ -1,3 +1,10 @@
+## Site layout (since 5 Nov 2026)
+
+- `index.html` is the interactive portfolio (DE/EN switch, ID card, skills table, case studies). Photo is embedded.
+- `cv-classic.html` is the previous bilingual CV site, kept as a backup. Its tests in `tests/` now run against this file.
+- `portfolio.html` redirects to the homepage, so earlier links keep working.
+- Full backup of the old site: git tag `backup-old-site-2026-11-05`.
+
 # Portfolio — Setup & Update Guide
 
 ## One-time setup (GitHub Pages)

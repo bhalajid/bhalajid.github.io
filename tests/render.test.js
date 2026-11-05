@@ -8,7 +8,7 @@
 const { chromium } = require("playwright");
 const path = require("path");
 
-const FILE = "file://" + path.join(__dirname, "..", "index.html");
+const FILE = "file://" + path.join(__dirname, "..", "cv-classic.html");
 const WIDTHS = [320, 375, 414, 540, 700, 768, 860, 940, 1024, 1120, 1180, 1280, 1440, 1920, 2560];
 const BURGER_BELOW = 1180;
 

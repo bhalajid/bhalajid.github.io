@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balaji Durai — Senior EUC &amp; Azure Platform Engineer</title>
+<meta name="description" content="Balaji Durai — Senior EUC & Azure Platform Engineer. 16+ Jahre Enterprise-Erfahrung: Citrix DaaS, Azure, AVD, AI Platform, NetScaler, IaC.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23eaf2ff%27%2F%3E%3Cstop%20offset%3D%27.45%27%20stop-color%3D%27%237db4ff%27%2F%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%232f7bff%27%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2715%27%20fill%3D%27%2308090c%27%2F%3E%3Crect%20x%3D%274%27%20y%3D%274%27%20width%3D%2756%27%20height%3D%2756%27%20rx%3D%2712%27%20fill%3D%27url%28%23g%29%27%2F%3E%3Ctext%20x%3D%2732%27%20y%3D%2744%27%20font-family%3D%27Segoe%20UI%2CHelvetica%2CArial%2Csans-serif%27%20font-size%3D%2731%27%20font-weight%3D%27800%27%20fill%3D%27%2308090c%27%20text-anchor%3D%27middle%27%20letter-spacing%3D%27-1%27%3EBD%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="profile.jpg">
+<meta name="theme-color" content="#08090c">
+<meta property="og:title" content="Balaji Durai — Senior EUC &amp; Azure Platform Engineer">
+<meta property="og:description" content="16+ years building AI, cloud and end-user computing platforms for Deutsche Bank, LIDL, Kaufland and Olympus.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bhalajid.github.io/cv-classic.html">
+<meta property="og:image" content="https://bhalajid.github.io/profile.jpg">
+<meta name="twitter:card" content="summary">
+<script>
+/* defined early: the portrait's onerror can fire before the main script runs */
+window.PICS=["profile.jpeg","profile.png","profile.JPG","profile.JPEG","profile.PNG","me.jpg","me.jpeg","me.png"];
+window.picIdx=0;
+window.picErr=function(img){
+  if(window.picIdx<window.PICS.length){ img.src=window.PICS[window.picIdx++]; }
+  else { var w=document.getElementById("pwrap"); if(w) w.style.display="none"; }
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090c; --card:rgba(255,255,255,.035); --border:rgba(255,255,255,.09);
+  --text:#f2f4f8; --muted:#939aa8; --blue:#2f7bff; --sky:#7db4ff; --amber:#4d9fff; --amber2:#2f7bff;
+  --grad:linear-gradient(120deg,#ffffff,#9cc4ff 45%,#2f7bff);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;cursor:default}
+h1,h2,h3,.stat b,.bento b{font-family:'Sora',sans-serif}
+.mono{font-family:'JetBrains Mono',monospace}
+::selection{background:rgba(47,123,255,.4)}
+
+/* particle canvas + spotlight */
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+#spot{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(600px at 50% 30%,rgba(59,130,246,.10),transparent 70%)}
+
+/* scroll progress */
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:99;box-shadow:0 0 12px rgba(77,159,255,.6)}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:rgba(4,7,15,.7);border-bottom:1px solid var(--border)}
+.navin{max-width:1240px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-family:'Sora';font-weight:800;font-size:1.1rem;white-space:nowrap;flex:none;
+  color:var(--text);text-decoration:none;cursor:pointer;transition:opacity .2s,transform .2s;display:inline-block}
+.logo:hover{opacity:.82;transform:translateY(-1px)}
+.logo:focus-visible{outline:2px solid var(--sky);outline-offset:4px;border-radius:6px}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.navlinks{display:flex;gap:2px;font-size:.85rem;min-width:0}
+.navlinks a{color:var(--muted);text-decoration:none;padding:7px 11px;border-radius:999px;transition:.2s;white-space:nowrap}
+.navlinks a:hover{color:var(--text)}
+.navlinks a.active{color:#fff;background:rgba(59,130,246,.18);border:1px solid rgba(59,130,246,.35)}
+.langbtn{background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:999px;padding:7px 16px;cursor:pointer;font-size:.85rem;font-weight:600;transition:.2s}
+.langbtn:hover{border-color:var(--amber);box-shadow:0 0 18px rgba(77,159,255,.35)}
+.menubtn{display:none;background:var(--card);border:1px solid var(--border);color:var(--text);
+  border-radius:12px;padding:8px 13px;font-size:1.05rem;line-height:1;cursor:pointer}
+.menubtn:hover{border-color:var(--sky)}
+@media(max-width:1180px){
+  .menubtn{display:block}
+  .navlinks{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;gap:2px;
+    background:rgba(8,9,12,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);
+    padding:10px 20px 18px}
+  .navlinks.open{display:flex}
+  .navlinks a{padding:12px 14px;border-radius:10px;font-size:.95rem}
+  .navlinks a.active{background:rgba(47,123,255,.16)}
+  nav{position:sticky}
+  .navin{position:static}
+}
+html[data-theme="light"] .navlinks{background:rgba(255,255,255,.97)}
+
+/* hero */
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:36px 0 32px}
+.herogrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:center}
+.herogrid>*{min-width:0}
+img,svg,canvas{max-width:100%}
+.hero h1,.rtitle,.ptitle,.case h3{overflow-wrap:break-word;hyphens:auto}
+.pwrap{display:flex;justify-content:center}
+.pwrap{perspective:1100px}
+.pring{position:relative;width:68%;aspect-ratio:1;border-radius:50%;padding:6px;
+  background:transparent;
+  box-shadow:0 0 70px rgba(47,123,255,.30),0 24px 60px rgba(0,0,0,.5);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s;
+  transform-style:preserve-3d;will-change:transform}
+/* slow aurora sweep around the portrait */
+.pring::before{content:"";position:absolute;inset:0;border-radius:50%;z-index:0;
+  background:conic-gradient(from 0deg,#2f7bff,#7db4ff 25%,#eaf2ff 42%,#7db4ff 60%,#2f7bff 82%,#2f7bff);
+  animation:ringspin 14s linear infinite}
+@keyframes ringspin{to{transform:rotate(360deg)}}
+.pring img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 18%;
+  border-radius:50%;display:block;
+  filter:grayscale(.28) contrast(1.1) brightness(.94) saturate(.82);
+  transition:filter .45s ease}
+.pring::after{content:"";position:absolute;inset:6px;border-radius:50%;pointer-events:none;z-index:2;
+  background:radial-gradient(circle at 35% 28%,transparent 52%,rgba(4,10,25,.55)),
+             linear-gradient(160deg,rgba(47,123,255,.20),rgba(8,9,12,.30));
+  transition:opacity .45s ease}
+.orbitstage:hover .pring img{filter:grayscale(0) contrast(1.06) brightness(1) saturate(1)}
+.orbitstage:hover .pring::after{opacity:.45}
+.orbitstage:hover .pring{box-shadow:0 0 90px rgba(47,123,255,.45),0 26px 70px rgba(0,0,0,.55)}
+
+/* portrait stage — calm concentric halo */
+.orbitstage{position:relative;width:min(460px,100%);aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.haloring{position:absolute;border-radius:50%;pointer-events:none;aspect-ratio:1}
+.haloring.h1{width:84%;border:1px solid rgba(125,180,255,.12)}
+.haloring.h2{width:99%;border:1px solid rgba(125,180,255,.06)}
+html[data-theme="light"] .haloring.h1{border-color:rgba(30,79,216,.14)}
+html[data-theme="light"] .haloring.h2{border-color:rgba(30,79,216,.07)}
+
+@media(max-width:940px){
+  .herogrid{grid-template-columns:1fr;gap:30px;justify-items:start}
+  .pwrap{order:-1;justify-content:flex-start}
+  .orbitstage{width:min(260px,60vw)}
+  .hero{min-height:auto;padding:40px 0 30px}
+}
+@media(prefers-reduced-motion:reduce){
+  .pring,.pring::before{animation:none}
+  .pring{transform:none !important}
+}
+.avail{display:inline-flex;width:fit-content;align-items:center;gap:8px;background:rgba(77,159,255,.07);border:1px solid rgba(77,159,255,.35);color:var(--amber);border-radius:999px;padding:6px 16px;font-size:.8rem;font-weight:600;margin-bottom:28px}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:pulse 1.8s infinite}
+.badgerow{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.badgerow .avail{margin-bottom:0}
+.credpill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  background:linear-gradient(120deg,rgba(47,123,255,.16),rgba(125,180,255,.08));
+  border:1px solid rgba(47,123,255,.45);color:var(--sky);border-radius:999px;
+  padding:6px 16px;font-size:.8rem;font-weight:600;transition:.25s}
+.credpill:hover{border-color:var(--sky);color:#fff;box-shadow:0 4px 20px rgba(47,123,255,.35);transform:translateY(-1px)}
+.credpill i{font-style:normal}
+.qpill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  background:var(--grad);color:#0a1220;border-radius:999px;padding:7px 18px;
+  font-size:.8rem;font-weight:700;transition:.25s;box-shadow:0 6px 24px rgba(47,123,255,.35)}
+.qpill:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(47,123,255,.5)}
+.qpill i{font-style:normal;font-size:.7rem;opacity:.75}
+html[data-theme="light"] .credpill{color:#1e4fd8;background:rgba(30,79,216,.08)}
+html[data-theme="light"] .credpill:hover{color:#0d1220}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero .mono.small{color:var(--sky);font-size:.95rem;margin-bottom:10px}
+.hero h1{font-size:clamp(2.6rem,7.5vw,5rem);font-weight:800;line-height:1.04;letter-spacing:-2px}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rolewrap{margin-top:18px;font-size:clamp(1.1rem,2.6vw,1.6rem);font-weight:600;color:var(--muted)}
+#typed{color:#fff;border-right:2px solid var(--amber);padding-right:4px}
+.hero p.lead{margin-top:24px;max-width:620px;color:var(--muted);font-size:1.05rem}
+.cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{border-radius:14px;padding:14px 28px;font-weight:600;font-size:.95rem;text-decoration:none;transition:.25s;display:inline-flex;align-items:center;gap:8px}
+.btn.primary{background:var(--grad);color:#0a1220;box-shadow:0 8px 34px rgba(47,123,255,.35)}
+.btn.primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 44px rgba(47,123,255,.5)}
+.btn.ghost{border:1px solid var(--border);color:var(--text);background:var(--card);backdrop-filter:blur(6px)}
+.btn.ghost:hover{border-color:var(--sky);transform:translateY(-3px)}
+.herofacts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;padding-top:22px;
+  border-top:1px solid var(--border);max-width:640px}
+.herofacts>span{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:.86rem}
+.herofacts i{font-style:normal;opacity:.75;font-size:.95rem}
+@media(max-width:560px){.herofacts{gap:8px 18px;font-size:.8rem}}
+.scrollhint{margin-top:34px;color:var(--muted);font-size:.8rem;display:flex;align-items:center;gap:10px;opacity:.7}
+.scrollhint .m{width:22px;height:34px;border:2px solid var(--muted);border-radius:12px;position:relative}
+.scrollhint .m::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:3px;background:var(--amber);animation:wheel 1.6s infinite}
+@keyframes wheel{0%{transform:translateY(0);opacity:1}100%{transform:translateY(12px);opacity:0}}
+
+/* marquee */
+.marquee{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:22px 0;position:relative;background:rgba(255,255,255,.015)}
+.mtrack{display:flex;gap:64px;width:max-content;animation:scroll 28s linear infinite}
+.marquee:hover .mtrack{animation-play-state:paused}
+.mtrack span{font-family:'Sora';font-weight:700;font-size:1.15rem;color:#b9c6de;opacity:.75;white-space:nowrap;transition:.2s}
+.mtrack span:hover{opacity:1;color:var(--amber)}
+.mtrack i{color:var(--amber);font-style:normal;opacity:.5}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:90px 0 10px}
+section[id]{scroll-margin-top:92px}
+.kicker{color:var(--amber);font-family:'JetBrains Mono';font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:3px;margin-bottom:10px}
+.sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:36px}
+.sechead h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800;letter-spacing:-1px}
+.sechead::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+
+/* bento */
+.bentogrid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(130px,auto);gap:16px}
+.bento{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px;position:relative;overflow:hidden;transition:.3s;display:flex;flex-direction:column;justify-content:flex-end;gap:3px}
+.bento:hover{border-color:rgba(77,159,255,.5);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.bento .glowline{position:absolute;inset:0 0 auto 0;height:3px;background:var(--grad);opacity:0;transition:.3s}
+.bento:hover .glowline{opacity:1}
+/* hover background art */
+.bgart{position:absolute;right:-8px;bottom:-8px;width:52%;max-width:150px;color:var(--sky);opacity:0;transform:scale(.7) rotate(-8deg);transition:.45s ease;pointer-events:none}
+.bento:hover .bgart{opacity:.15;transform:scale(1) rotate(0deg)}
+.bgemoji{position:absolute;right:2px;bottom:-10px;font-size:6.5rem;line-height:1;opacity:0;transform:scale(.6) rotate(-12deg);transition:.45s ease;pointer-events:none;filter:grayscale(.5)}
+.skillcard:hover .bgemoji{opacity:.10;transform:scale(1) rotate(0deg)}
+.cert{position:relative;overflow:hidden}
+.cert .bgemoji{font-size:4.2rem;bottom:-6px}
+.cert:hover .bgemoji{opacity:.13;transform:scale(1) rotate(0deg)}
+.bento .ico{font-size:1.5rem;line-height:1;margin-bottom:auto;padding-bottom:14px}
+.bento b{font-size:1rem;line-height:1.35;overflow-wrap:break-word}
+.bento b.big{font-size:clamp(1.7rem,3.4vw,2.3rem);line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bento span{color:var(--muted);font-size:.82rem;line-height:1.45}
+.b1{grid-column:span 2;grid-row:span 2}
+.b2{grid-column:span 1;grid-row:span 1}
+.b3{grid-column:span 1;grid-row:span 2}
+.b4{grid-column:span 1}
+.b5{grid-column:span 2}
+@media(max-width:820px){
+  .bentogrid{grid-template-columns:repeat(2,1fr);grid-auto-rows:minmax(104px,auto)}
+  .b1{grid-column:span 2;grid-row:span 1}
+  .b3{grid-column:span 2;grid-row:span 1}
+  .b5{grid-column:span 2}
+  .bento .ico{padding-bottom:10px}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  section{padding:54px 0 8px}
+  .bento{padding:18px}
+  .bento b.big{font-size:1.7rem}
+  .contactcard{padding:36px 20px}
+  .hero{min-height:auto;padding:54px 0 28px}
+  .mtrack{gap:38px}
+  .hireme{padding:16px}
+  .pbtn{padding:8px 16px;font-size:.84rem}
+  .job{padding-left:26px}
+}
+
+/* skills */
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(310px,100%),1fr));gap:18px;perspective:1200px}
+.skillcard{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;transition:transform .15s ease,border-color .3s,box-shadow .3s;position:relative;overflow:hidden;transform-style:preserve-3d;will-change:transform}
+.skillcard::after{content:"";position:absolute;inset:0;background:radial-gradient(420px at var(--mx,50%) var(--my,50%),rgba(59,130,246,.12),transparent 60%);opacity:0;transition:.3s;pointer-events:none}
+.skillcard:hover::after{opacity:1}
+.skillcard:hover{border-color:rgba(77,159,255,.45);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.skillcard h3{font-size:1.05rem;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+.skillcard .ico{font-size:1.35rem}
+.skillcard .sub{color:var(--muted);font-size:.82rem;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:999px;padding:6px 14px;font-size:.84rem;color:#cdd8ec;transition:.2s;cursor:default}
+.chip:hover{border-color:var(--sky);color:#fff;transform:scale(1.06)}
+.chip.hi{background:linear-gradient(120deg,rgba(47,123,255,.32),rgba(125,180,255,.18));border-color:rgba(77,159,255,.6);color:#fff;font-weight:600}
+.legend{color:var(--muted);font-size:.82rem;margin-top:20px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--grad);margin-right:6px;vertical-align:-1px}
+.chip.dim{opacity:.25;filter:saturate(.3)}
+
+/* hire-me role switcher */
+.hireme{margin:-6px 0 30px;padding:22px;border:1px solid var(--border);border-radius:20px;background:rgba(47,123,255,.05)}
+.hlabel{display:block;color:var(--sky);font-size:.78rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.pbar{display:flex;gap:10px;flex-wrap:wrap}
+.pbtn{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted);border-radius:999px;padding:9px 22px;font-size:.9rem;font-weight:600;cursor:pointer;transition:.25s;font-family:'Sora'}
+.pbtn:hover{color:#fff;border-color:var(--sky);transform:translateY(-2px)}
+.pbtn.active{background:var(--grad);color:#0a1220;border-color:transparent;box-shadow:0 6px 24px rgba(47,123,255,.4)}
+.pline{margin-top:16px;color:var(--sky);font-size:.92rem;min-height:1.5em}
+
+/* experience */
+.timeline{position:relative;margin-left:10px}
+.timeline::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--blue),var(--amber2))}
+.job{position:relative;padding:0 0 34px 36px}
+.job::before{content:"";position:absolute;left:-6px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--amber);box-shadow:0 0 14px rgba(77,159,255,.6);transition:.3s}
+.job:hover::before{transform:scale(1.4)}
+.job .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;transition:.25s}
+.job .card:hover{border-color:rgba(59,130,246,.5);transform:translateX(6px)}
+.job h3{font-size:1.1rem}
+.job .org{color:var(--amber);font-weight:600;font-size:.93rem;margin-top:2px}
+.job .period{display:inline-block;margin-top:8px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:999px;padding:3px 12px;font-size:.76rem;color:var(--muted);font-family:'JetBrains Mono'}
+.job ul{margin:12px 0 0 18px;color:var(--muted);font-size:.92rem}
+
+/* case studies */
+.casegrid{display:grid;gap:18px}
+.case{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;transition:.25s}
+.case:hover{border-color:rgba(77,159,255,.45);transform:translateY(-3px);box-shadow:0 16px 44px rgba(0,0,0,.4)}
+.case h3{font-size:1.12rem;margin-bottom:14px}
+.ctag{display:inline-block;font-family:'JetBrains Mono';font-size:.72rem;color:var(--amber);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.crow{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--border);font-size:.93rem;align-items:baseline}
+.crow b{color:var(--sky);font-size:.74rem;text-transform:uppercase;letter-spacing:1.5px;font-family:'JetBrains Mono';font-weight:600}
+.crow span{color:var(--muted)}
+.crow .cres{color:var(--text);font-weight:600}
+@media(max-width:560px){.crow{grid-template-columns:1fr;gap:3px}}
+html[data-theme="light"] .case{box-shadow:0 8px 30px rgba(13,18,32,.06)}
+/* about */
+.aboutgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px}
+
+/* research */
+.researchcard{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:32px;transition:.25s;position:relative;overflow:hidden}
+.researchcard:hover{border-color:rgba(77,159,255,.45);box-shadow:0 18px 50px rgba(0,0,0,.4)}
+.rtitle{font-size:1.28rem;font-weight:800;font-family:'Sora';line-height:1.35;margin:10px 0 10px;max-width:900px}
+.rsub{color:var(--muted);font-size:.95rem;max-width:760px}
+.rmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
+.rmeta b{display:block;color:var(--sky);font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;font-family:'JetBrains Mono';margin-bottom:5px}
+.rmeta span{color:var(--text);font-size:.92rem}
+.rmeta .rstatus{color:var(--sky);font-weight:600}
+.rlink{margin-top:22px;color:var(--muted);font-size:.88rem;font-style:italic;max-width:780px}
+html[data-theme="light"] .researchcard{box-shadow:0 8px 30px rgba(13,18,32,.06)}
+
+/* projects */
+.qmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:16px;
+  margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+.qmeta b{display:block;color:var(--sky);font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;
+  font-family:'JetBrains Mono';margin-bottom:5px}
+.qmeta span{color:var(--text);font-size:.9rem}
+.projectcard{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:32px;transition:.25s}
+.projectcard:hover{border-color:rgba(77,159,255,.4)}
+.ptitle{font-size:1.4rem;font-weight:800;margin:10px 0 6px;font-family:'Sora'}
+.ptagline{color:var(--muted);font-size:1rem;max-width:680px;margin-bottom:6px}
+.pshort{color:var(--muted);font-size:.95rem;white-space:pre-line;max-width:760px;margin-bottom:18px}
+.pbtn2{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--sky);border-radius:999px;padding:10px 22px;font-size:.85rem;font-weight:600;cursor:pointer;transition:.25s}
+.pbtn2:hover{border-color:var(--sky);background:rgba(77,159,255,.08)}
+.pdetails{max-height:0;overflow:hidden;transition:max-height .5s ease;margin-top:0}
+.pdetails.open{max-height:6000px;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+.pdetails h4{color:var(--sky);font-size:.95rem;text-transform:uppercase;letter-spacing:1.5px;font-family:'JetBrains Mono';margin:26px 0 10px}
+.pdetails h4:first-child{margin-top:0}
+.pdetails p{color:var(--muted);font-size:.93rem;max-width:780px;white-space:pre-line}
+.pdecision{margin:14px 0}
+.pdecision b{display:block;color:var(--text);font-size:.96rem;margin-bottom:4px}
+.pdecision p{margin:0;max-width:780px}
+.plimits{margin:0 0 20px 20px;color:var(--muted);font-size:.93rem}
+.plimits li{margin-bottom:8px;max-width:760px}
+.pstackline{color:var(--muted);font-size:.82rem;margin:10px 0 16px;line-height:1.6}
+.pnote{color:var(--muted);font-size:.85rem;font-style:italic;opacity:.8}
+html[data-theme="light"] .projectcard{box-shadow:0 8px 30px rgba(13,18,32,.06)}
+
+/* certs */
+.certgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));gap:14px}
+.cert{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;display:flex;gap:14px;align-items:center;transition:.25s}
+.cert:hover{transform:translateY(-5px) rotate(-.5deg);border-color:rgba(77,159,255,.5);box-shadow:0 14px 36px rgba(0,0,0,.45)}
+.cert .badge{min-width:48px;height:48px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 4px 18px rgba(47,123,255,.35)}
+.cert b{font-size:.95rem}
+.cert span{display:block;color:var(--muted);font-size:.79rem}
+
+/* contact */
+.contactcard{background:linear-gradient(120deg,rgba(47,123,255,.14),rgba(125,180,255,.07));border:1px solid rgba(47,123,255,.35);border-radius:26px;padding:56px 40px;text-align:center;position:relative;overflow:hidden}
+.contactcard::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(47,123,255,.18);filter:blur(90px);top:-120px;right:-80px}
+.contactcard h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+.contactcard h2 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.contactcard p{color:var(--muted);max-width:540px;margin:0 auto 30px}
+.clinks{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+
+footer{color:var(--muted);font-size:.82rem;text-align:center;padding:48px 0;border-top:1px solid var(--border);margin-top:90px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* ===== PREMIUM LIGHT THEME ===== */
+html[data-theme="light"]{
+  --bg:#f6f7f9; --card:#ffffff; --border:rgba(13,18,32,.10);
+  --text:#0d1220; --muted:#5b6474; --blue:#1e4fd8; --sky:#1e4fd8; --amber:#1e4fd8;
+  --grad:linear-gradient(120deg,#0d1220,#1e4fd8 60%,#4f7df0);
+}
+html[data-theme="light"] body{background:var(--bg)}
+html[data-theme="light"] nav{background:rgba(255,255,255,.78)}
+html[data-theme="light"] .navlinks a.active{background:rgba(30,79,216,.10);color:#0d1220}
+html[data-theme="light"] .btn.primary{color:#fff;box-shadow:0 8px 28px rgba(30,79,216,.28)}
+html[data-theme="light"] .pbtn.active{color:#fff}
+html[data-theme="light"] .chip{background:rgba(13,18,32,.04);color:#333d52}
+html[data-theme="light"] .chip.hi{background:rgba(30,79,216,.10);border-color:rgba(30,79,216,.5);color:#0d1220}
+html[data-theme="light"] .bento,
+html[data-theme="light"] .skillcard,
+html[data-theme="light"] .cert,
+html[data-theme="light"] .job .card{box-shadow:0 8px 30px rgba(13,18,32,.06)}
+html[data-theme="light"] .mtrack span{color:#3a4356}
+html[data-theme="light"] .marquee{background:rgba(13,18,32,.02)}
+html[data-theme="light"] .hireme{background:rgba(30,79,216,.04)}
+html[data-theme="light"] .contactcard{background:linear-gradient(120deg,rgba(30,79,216,.08),rgba(79,125,240,.05));border-color:rgba(30,79,216,.25)}
+html[data-theme="light"] #typed{color:#0d1220}
+html[data-theme="light"] .job::before{background:var(--bg)}
+html[data-theme="light"] .avail{background:rgba(30,79,216,.06);border-color:rgba(30,79,216,.3)}
+html[data-theme="light"] .avail::before{background:#0ca678;box-shadow:0 0 10px #0ca678}
+html[data-theme="light"] .cert .badge{box-shadow:0 4px 14px rgba(30,79,216,.25)}
+html[data-theme="light"] .pring{box-shadow:0 0 60px rgba(30,79,216,.22),0 20px 50px rgba(13,18,32,.18)}
+html[data-theme="light"] .pring::after{background:radial-gradient(circle at 35% 28%,transparent 55%,rgba(240,243,248,.4)),linear-gradient(160deg,rgba(30,79,216,.10),rgba(246,247,249,.15))}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div id="spot"></div>
+<div id="prog"></div>
+
+<nav>
+  <div class="navin">
+    <a class="logo" href="#" id="logoLink" onclick="goTop(event)" aria-label="Top">Balaji <span>Durai</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="#impact" data-i18n="n_impact"></a>
+      <a href="#cases" data-i18n="n_cases"></a>
+      <a href="#projects" data-i18n="n_projects"></a>
+      <a href="#skills" data-i18n="n_skills"></a>
+      <a href="#experience" data-i18n="n_exp"></a>
+      <a href="#certs" data-i18n="n_certs"></a>
+      <a href="#research" data-i18n="n_research"></a>
+      <a href="#aboutme" data-i18n="n_aboutme"></a>
+      <a href="#contact" data-i18n="n_contact"></a>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <button class="langbtn" id="themeToggle" onclick="toggleTheme()" title="Theme">☀️</button>
+      <button class="langbtn" id="langToggle" onclick="toggleLang()">EN</button>
+      <button class="menubtn" id="menuBtn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="herogrid">
+    <div>
+      <div class="badgerow">
+        <div class="avail" data-i18n="avail"></div>
+        <a class="credpill" href="#research"><i>🎓</i><span data-i18n="cred"></span></a>
+      </div>
+      <div class="mono small">// AI · Cloud · EUC — Platform Enablement</div>
+      <h1><span data-i18n="hi"></span> <span class="grad">Balaji Durai</span></h1>
+      <div class="rolewrap"><span id="typed"></span></div>
+      <p class="lead" data-i18n="lead"></p>
+      <div class="cta">
+        <a class="btn primary" href="#contact"><span data-i18n="cta1"></span> →</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/bhalajid/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <div class="herofacts">
+        <span><i>📍</i><span data-i18n="f_loc"></span></span>
+        <span><i>🗓️</i><span data-i18n="f_exp"></span></span>
+        <span><i>🎓</i><span data-i18n="f_certs"></span></span>
+        <span><i>🌍</i><span data-i18n="f_lang"></span></span>
+        <span><i>🔬</i><span data-i18n="f_research"></span></span>
+      </div>
+    </div>
+    <div class="pwrap" id="pwrap">
+      <div class="orbitstage">
+        <div class="haloring h1"></div>
+        <div class="haloring h2"></div>
+        <div class="pring">
+          <img id="ppic" src="profile.jpg" alt="Balaji Durai" onerror="picErr(this)">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scrollhint"><div class="m"></div><span data-i18n="scroll"></span></div>
+</header>
+</div>
+
+<div class="marquee"><div class="mtrack" id="mtrack"></div></div>
+
+<div class="wrap">
+
+<section id="impact" class="reveal">
+  <div class="kicker" data-i18n="k_impact"></div>
+  <div class="sechead"><h2 data-i18n="h_impact"></h2></div>
+  <div class="bentogrid">
+    <div class="bento b1"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="20" r="6"/><circle cx="18" cy="50" r="6"/><circle cx="18" cy="80" r="6"/><circle cx="54" cy="34" r="6"/><circle cx="54" cy="66" r="6"/><circle cx="86" cy="50" r="7"/><path d="M24 20 48 34M24 50 48 34M24 50 48 66M24 80 48 66M60 34 79 48M60 66 79 52"/></svg></div>
+      <div class="ico">🧠</div>
+      <b class="big">GenAI</b><b data-i18n="bt6"></b><span data-i18n="bs6"></span></div>
+    <div class="bento b2"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="currentColor"><rect x="8" y="34" width="14" height="52" rx="2"/><rect x="30" y="48" width="14" height="38" rx="2"/><rect x="52" y="60" width="14" height="26" rx="2"/><rect x="74" y="70" width="14" height="16" rx="2"/><path d="M10 16 Q48 26 80 52" stroke="currentColor" stroke-width="4" fill="none"/><path d="M84 56 l-13 -2 7 -10 z"/></svg></div>
+      <b class="big">−60%</b><span data-i18n="bs3"></span></div>
+    <div class="bento b3"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="currentColor"><circle cx="20" cy="22" r="8"/><path d="M8 46q12-15 24 0v6H8z"/><circle cx="50" cy="22" r="8"/><path d="M38 46q12-15 24 0v6H38z"/><circle cx="80" cy="22" r="8"/><path d="M68 46q12-15 24 0v6H68z"/><circle cx="35" cy="64" r="8"/><path d="M23 88q12-15 24 0v6H23z"/><circle cx="65" cy="64" r="8"/><path d="M53 88q12-15 24 0v6H53z"/></svg></div>
+      <div class="ico">🚀</div>
+      <b class="big">80.000+</b><b data-i18n="bt1"></b><span data-i18n="bs1"></span></div>
+    <div class="bento b2"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><circle cx="50" cy="50" r="34"/><path d="M63 36a18 18 0 100 28M27 44h24M27 56h24"/></svg></div>
+      <b class="big" data-i18n="bt2"></b><span data-i18n="bs2"></span></div>
+    <div class="bento b5"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><path d="M50 12 86 30 50 48 14 30z"/><path d="M14 50l36 18 36-18M14 68l36 18 36-18"/></svg></div>
+      <div class="ico">🏗️</div>
+      <b data-i18n="bt5"></b><span data-i18n="bs5"></span></div>
+    <div class="bento b4"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"><circle cx="50" cy="50" r="35"/><path d="M50 28v24l16 10"/></svg></div>
+      <b class="big" data-count="16">0</b><span data-i18n="s_years"></span></div>
+    <div class="bento b4"><div class="glowline"></div>
+      <div class="bgart"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3"><circle cx="50" cy="38" r="20"/><circle cx="50" cy="38" r="11"/><path d="M42 56 33 88l17-10 17 10-9-32"/></svg></div>
+      <b class="big" data-count="8">0</b><span data-i18n="s_certs"></span></div>
+  </div>
+</section>
+
+<section id="cases" class="reveal">
+  <div class="kicker" data-i18n="k_cases"></div>
+  <div class="sechead"><h2 data-i18n="h_cases"></h2></div>
+  <div class="casegrid">
+    <div class="case"><span class="ctag" data-i18n="c1tag"></span><h3 data-i18n="c1t"></h3>
+      <div class="crow"><b data-i18n="l_chal"></b><span data-i18n="c1c"></span></div>
+      <div class="crow"><b data-i18n="l_act"></b><span data-i18n="c1a"></span></div>
+      <div class="crow"><b data-i18n="l_res"></b><span class="cres" data-i18n="c1r"></span></div>
+    </div>
+    <div class="case"><span class="ctag" data-i18n="c2tag"></span><h3 data-i18n="c2t"></h3>
+      <div class="crow"><b data-i18n="l_chal"></b><span data-i18n="c2c"></span></div>
+      <div class="crow"><b data-i18n="l_act"></b><span data-i18n="c2a"></span></div>
+      <div class="crow"><b data-i18n="l_res"></b><span class="cres" data-i18n="c2r"></span></div>
+    </div>
+    <div class="case"><span class="ctag" data-i18n="c3tag"></span><h3 data-i18n="c3t"></h3>
+      <div class="crow"><b data-i18n="l_chal"></b><span data-i18n="c3c"></span></div>
+      <div class="crow"><b data-i18n="l_act"></b><span data-i18n="c3a"></span></div>
+      <div class="crow"><b data-i18n="l_res"></b><span class="cres" data-i18n="c3r"></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <div class="kicker" data-i18n="k_projects"></div>
+  <div class="sechead"><h2 data-i18n="h_projects"></h2></div>
+  <div class="projectcard">
+    <span class="ctag" data-i18n="p_tag"></span>
+    <h3 class="ptitle">BR Assist</h3>
+    <p class="ptagline" data-i18n="p_tagline"></p>
+    <div class="chips" id="pStackChips" style="margin:16px 0"></div>
+    <p class="pshort" data-i18n="p_short"></p>
+    <button class="pbtn2 mono" id="pToggleBtn" onclick="toggleProject()"></button>
+    <div class="pdetails" id="pDetails">
+      <h4 data-i18n="p_h_problem"></h4>
+      <p data-i18n="p_b_problem"></p>
+      <h4 data-i18n="p_h_approach"></h4>
+      <p data-i18n="p_b_approach"></p>
+      <h4 data-i18n="p_h_decisions"></h4>
+      <div class="pdecision"><b data-i18n="p_d1t"></b><p data-i18n="p_d1b"></p></div>
+      <div class="pdecision"><b data-i18n="p_d2t"></b><p data-i18n="p_d2b"></p></div>
+      <div class="pdecision"><b data-i18n="p_d3t"></b><p data-i18n="p_d3b"></p></div>
+      <div class="pdecision"><b data-i18n="p_d4t"></b><p data-i18n="p_d4b"></p></div>
+      <h4 data-i18n="p_h_testing"></h4>
+      <p data-i18n="p_b_testing"></p>
+      <h4 data-i18n="p_h_limits"></h4>
+      <ul class="plimits">
+        <li data-i18n="p_l1"></li>
+        <li data-i18n="p_l2"></li>
+        <li data-i18n="p_l3"></li>
+        <li data-i18n="p_l4"></li>
+      </ul>
+      <p class="pstackline mono" data-i18n="p_stackline"></p>
+      <p class="pnote" data-i18n="p_note"></p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div class="kicker" data-i18n="k_skills"></div>
+  <div class="sechead"><h2 data-i18n="h_skills"></h2></div>
+  <div class="hireme">
+    <span class="hlabel mono" data-i18n="hireme"></span>
+    <div class="pbar" id="pbar"></div>
+    <p class="pline mono" id="pline"></p>
+  </div>
+  <div class="skillgrid" id="skillsContainer"></div>
+  <p class="legend"><i></i><span data-i18n="legend"></span></p>
+</section>
+
+<section id="experience" class="reveal">
+  <div class="kicker" data-i18n="k_exp"></div>
+  <div class="sechead"><h2 data-i18n="h_exp"></h2></div>
+  <div class="timeline" id="expContainer"></div>
+</section>
+
+<section id="certs" class="reveal">
+  <div class="kicker" data-i18n="k_certs"></div>
+  <div class="sechead"><h2 data-i18n="h_certs"></h2></div>
+  <div class="certgrid" id="certContainer"></div>
+</section>
+
+<section id="research" class="reveal">
+  <div class="kicker" data-i18n="k_research"></div>
+  <div class="sechead"><h2 data-i18n="h_research"></h2></div>
+  <div class="researchcard">
+    <span class="ctag" data-i18n="r_tag"></span>
+    <h3 class="rtitle" data-i18n="r_title"></h3>
+    <p class="rsub" data-i18n="r_sub"></p>
+    <div class="rmeta">
+      <div><b data-i18n="r_l_award"></b><span data-i18n="r_award"></span></div>
+      <div><b data-i18n="r_l_body"></b><span data-i18n="r_body"></span></div>
+      <div><b data-i18n="r_l_grade"></b><span data-i18n="r_grade"></span></div>
+      <div><b data-i18n="r_l_field"></b><span data-i18n="r_field"></span></div>
+      <div><b data-i18n="r_l_status"></b><span class="rstatus" data-i18n="r_status"></span></div>
+    </div>
+    <p class="rlink" data-i18n="r_rel"></p>
+  </div>
+</section>
+
+<section id="aboutme" class="reveal">
+  <div class="kicker" data-i18n="k_about"></div>
+  <div class="sechead"><h2 data-i18n="h_aboutme"></h2></div>
+  <div class="aboutgrid">
+    <div class="skillcard"><h3><span class="ico">🌍</span><span data-i18n="a_lang"></span></h3>
+      <div class="chips" style="margin-top:12px">
+        <span class="chip" data-i18n="a_l1"></span>
+        <span class="chip" data-i18n="a_l2"></span>
+        <span class="chip" data-i18n="a_l3"></span>
+      </div>
+    </div>
+    <div class="skillcard"><h3><span class="ico">💬</span><span data-i18n="a_ask"></span></h3>
+      <div class="chips" style="margin-top:12px">
+        <span class="chip" data-i18n="a_a1"></span>
+        <span class="chip" data-i18n="a_a2"></span>
+        <span class="chip" data-i18n="a_a3"></span>
+        <span class="chip" data-i18n="a_a4"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="contactcard">
+    <h2><span data-i18n="c_head1"></span> <span class="grad" data-i18n="c_head2"></span></h2>
+    <p data-i18n="c_text"></p>
+    <div class="clinks">
+      <a class="btn primary" href="mailto:bhalaji.d@hotmail.com">✉️ bhalaji.d@hotmail.com</a>
+      <a class="btn ghost" href="tel:+4915256433329">📞 +49 152 56433329</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/bhalajid/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <p style="margin-top:24px;color:var(--muted);font-size:.88rem;position:relative;z-index:1">📍 Bad Friedrichshall, Deutschland</p>
+  </div>
+</section>
+
+<footer><span data-i18n="footer"></span></footer>
+</div>
+
+<script>
+/* =====================================================================
+   ✏️  SKILL INVENTORY — EDIT HERE FOR EACH NEW APPLICATION
+   ---------------------------------------------------------------------
+   • Only real skills — never invent.
+   • hi: true  → glowing highlight chip (match to the job's keywords)
+   Groups: citrix | avd | ai | azplat | auto | infra | method
+   ===================================================================== */
+const SKILLS = [
+  // AI Platform Engineering
+  { cat:"ai",    name:"Azure AI Foundry", hi:true, tags:["ai","cloud","platform"] },
+  { cat:"ai",    name:"Azure OpenAI Service", hi:true, tags:["ai","cloud"] },
+  { cat:"ai",    name:"AI Infrastructure · GPU Compute", hi:true, tags:["ai","platform","cloud"] },
+  { cat:"ai",    name:"AI-assisted Automation (LLM Tooling · Copilot)", hi:false, tags:["ai","devops","sre"] },
+  { cat:"ai",    name:"Retrieval-Augmented Generation (RAG)", hi:true, tags:["ai","platform","devops"] },
+  { cat:"ai",    name:"Deep Learning · Intrusion Detection (Research)", hi:false, tags:["ai","cloud"] },
+  { cat:"ai",    name:"Multi-provider LLM Inference (Gemini, OpenAI, Claude)", hi:true, tags:["ai","devops"] },
+  // Cloud Platform Engineering (Azure · GCP)
+  { cat:"azplat", name:"Azure IaaS · Compute · Storage (AZ-104/AZ-300)", hi:true, tags:["cloud","platform"] },
+  { cat:"azplat", name:"Google Cloud Platform (GCP)", hi:true, tags:["cloud","devops","platform"] },
+  { cat:"azplat", name:"Azure Networking · VNet · NSG · Peering", hi:false, tags:["cloud","platform"] },
+  { cat:"azplat", name:"Entra ID / Azure AD · RBAC", hi:false, tags:["cloud","euc"] },
+  { cat:"azplat", name:"Azure Monitor · Log Analytics", hi:false, tags:["cloud","sre"] },
+  { cat:"azplat", name:"Azure Governance · Policy · Cost Mgmt", hi:false, tags:["cloud","platform"] },
+  { cat:"azplat", name:"Landing Zones · Subscription Design", hi:false, tags:["cloud","platform"] },
+  // DevOps & SRE
+  { cat:"devops", name:"Terraform (IaC)", hi:true, tags:["devops","cloud","platform","sre"] },
+  { cat:"devops", name:"Kubernetes", hi:true, tags:["devops","platform","cloud"] },
+  { cat:"devops", name:"Docker", hi:true, tags:["devops","platform"] },
+  { cat:"devops", name:"GitHub · GitHub Actions", hi:true, tags:["devops"] },
+  { cat:"devops", name:"CI/CD · Azure DevOps Pipelines", hi:false, tags:["devops","sre"] },
+  { cat:"devops", name:"SRE · Observability · Automation", hi:true, tags:["sre","devops"] },
+  { cat:"devops", name:"PostgreSQL · pgvector", hi:true, tags:["devops","ai","cloud"] },
+  { cat:"devops", name:"Supabase Edge Functions (Deno·TS)", hi:false, tags:["devops","ai","cloud"] },
+  { cat:"devops", name:"PowerShell Automation", hi:false, tags:["devops","sre","euc"] },
+  // Azure Virtual Desktop
+  { cat:"avd",   name:"Azure Virtual Desktop (AZ-140)", hi:true, tags:["euc","cloud","platform"] },
+  { cat:"avd",   name:"FSLogix Profile Container", hi:true, tags:["euc"] },
+  { cat:"avd",   name:"Host Pools · Autoscaling", hi:false, tags:["euc","cloud","sre"] },
+  { cat:"avd",   name:"Image Management (Golden Images)", hi:false, tags:["euc","devops"] },
+  // Citrix & EUC
+  { cat:"citrix", name:"Citrix DaaS / CVAD", hi:true, tags:["euc","platform"] },
+  { cat:"citrix", name:"Citrix Cloud · Connectors · MCS", hi:false, tags:["euc","cloud"] },
+  { cat:"citrix", name:"NetScaler / Citrix ADC (CCP-N)", hi:false, tags:["euc","platform"] },
+  { cat:"citrix", name:"StoreFront / Workspace", hi:false, tags:["euc"] },
+  { cat:"citrix", name:"Citrix Policies · Profile Mgmt", hi:false, tags:["euc"] },
+  // Platform & Infrastructure
+  { cat:"infra", name:"Windows Server", hi:false, tags:["euc","platform"] },
+  { cat:"infra", name:"Active Directory · GPO", hi:false, tags:["euc"] },
+  { cat:"infra", name:"Enterprise EUC Operations", hi:false, tags:["euc","sre"] },
+  // Leadership & Presales
+  { cat:"method", name:"Presales & Solution Consulting", hi:true, tags:["platform","cloud"] },
+  { cat:"method", name:"Technical Leadership · Stakeholder Mgmt", hi:false, tags:["platform"] },
+  { cat:"method", name:"ITIL v4 · Incident/Change/Problem", hi:false, tags:["sre","euc"] },
+  { cat:"method", name:"Scrum · Certified Scrum Master", hi:false, tags:["devops"] },
+];
+
+const CATS = {
+  ai:    { ico:"🧠", de:"AI Platform Engineering", en:"AI Platform Engineering", subde:"Ich bringe Intelligenz in den Betrieb", suben:"I bring intelligence into operations" },
+  azplat:{ ico:"⚙️", de:"Cloud Platform Engineering — Azure · GCP", en:"Cloud Platform Engineering — Azure · GCP", subde:"Cloud-Fundamente, die skalieren", suben:"Cloud foundations that scale" },
+  devops:{ ico:"🔁", de:"DevOps & SRE", en:"DevOps & SRE", subde:"Alles als Code — nichts von Hand", suben:"Everything as code — nothing by hand" },
+  avd:   { ico:"☁️", de:"Azure Virtual Desktop", en:"Azure Virtual Desktop", subde:"Der Arbeitsplatz, der überall funktioniert", suben:"The workplace that works everywhere" },
+  citrix:{ ico:"🖥️", de:"Citrix & EUC", en:"Citrix & EUC", subde:"Virtualisierung im Enterprise-Maßstab", suben:"Enterprise-scale virtualization" },
+  infra: { ico:"🏗️", de:"Plattform & Infrastruktur", en:"Platform & Infrastructure", subde:"Das solide Fundament", suben:"The solid foundation" },
+  method:{ ico:"🧭", de:"Leadership & Presales", en:"Leadership & Presales", subde:"Ich verkaufe, was ich baue — und baue, was ich verkaufe", suben:"I sell what I build — and build what I sell" },
+};
+
+/* "Hire me as..." personas — the role switcher */
+const PERSONAS = {
+  all:     { label:["Alle","All"], line:["Ein Profil, sechs Rollen — wählen Sie Ihre.","One profile, six roles — pick yours."] },
+  devops:  { label:["DevOps","DevOps"], line:["Terraform · GitHub Actions · Docker · Kubernetes — Infrastruktur, die sich selbst baut.","Terraform · GitHub Actions · Docker · Kubernetes — infrastructure that builds itself."] },
+  sre:     { label:["SRE","SRE"], line:["−60 % Betriebskosten bei der Deutschen Bank. Zuverlässigkeit ist mein Produkt.","−60% operations cost at Deutsche Bank. Reliability is my product."] },
+  cloud:   { label:["Cloud","Cloud"], line:["Azure-zertifiziert (AZ-104 · 300 · 140), GCP im Alltag — von Landing Zone bis Governance.","Azure certified (AZ-104 · 300 · 140), GCP daily — from landing zones to governance."] },
+  ai:      { label:["AI","AI"], line:["GenAI im Betriebsalltag — auf dem Weg zu Autonomous Operations.","GenAI in daily operations — en route to autonomous operations."] },
+  platform:{ label:["Platform","Platform"], line:["Plattformen für 80.000+ Menschen — von Null gebaut, im Maßstab betrieben.","Platforms for 80,000+ people — built from zero, run at scale."] },
+  euc:     { label:["EUC","EUC"], line:["Citrix DaaS · AVD · FSLogix — der Arbeitsplatz, der einfach funktioniert.","Citrix DaaS · AVD · FSLogix — the workplace that just works."] },
+};
+let persona = "all";
+
+/* BR Assist project */
+const PSTACK = ["PostgreSQL","pgvector","Supabase Edge Functions","RAG","PWA","Multi-provider LLM"];
+let projectOpen = false;
+function toggleProject(){
+  projectOpen = !projectOpen;
+  document.getElementById("pDetails").classList.toggle("open", projectOpen);
+  document.getElementById("pToggleBtn").textContent = T[projectOpen?"p_less":"p_more"][lang] + (projectOpen?" ▴":" ▾");
+}
+
+const EXPERIENCE = [
+  { period:"2025 – heute|2025 – present", role:"Technology Lead EUC",
+    org:"HCLTech GmbH — Kunde: Deutsche Bank|HCLTech GmbH — Client: Deutsche Bank",
+    points:["Technische Leitung der EUC-/Virtualisierungsplattformen im regulierten Bankenumfeld|Technical lead for EUC / virtualization platforms in a regulated banking environment",
+            "SRE Automation Lead — Betriebskosten um 60 % gesenkt|SRE Automation Lead — reduced operations cost by 60%",
+            "GenAI-Evangelist: Integration von Gen AI in den Betriebsalltag Richtung Autonomous Operations|GenAI evangelist: integrating Gen AI into daily operations, driving towards autonomous operations",
+            "Täglich im Einsatz: Terraform, Kubernetes, Docker, GitHub Actions, CI/CD|Daily drivers: Terraform, Kubernetes, Docker, GitHub Actions, CI/CD"] },
+  { period:"2019 – 2025|2019 – 2025", role:"Virtual Platform Consultant",
+    org:"Schwarz Digital — Kunden: LIDL, Kaufland, PreZero|Schwarz Digital — Clients: LIDL, Kaufland, PreZero",
+    points:["Platform Enablement Engineering für 80.000+ Nutzer — eine der größten Virtual-Workplace-Landschaften Europas|Platform enablement engineering for 80,000+ users — one of Europe's largest virtual workplace estates",
+            "AVD-Plattform von Null aufgebaut · Citrix DaaS Cloud-Migration · EUC-Betriebsmodell etabliert|Built AVD platform from zero · Citrix DaaS cloud migration · established EUC operations model",
+            "7-stellige Kosteneinsparungen durch Plattform-Optimierung|7-figure cost savings through platform optimization",
+            "Presales & Solution Consulting: Workshops, PoCs und Lösungsdesign für Konzernkunden|Presales & solution consulting: workshops, PoCs and solution design for enterprise clients"] },
+  { period:"2012 – 2019|2012 – 2019", role:"Infrastructure Engineer",
+    org:"Tata Consultancy Services — Kunden: Olympus Europa, Marks & Spencer|Tata Consultancy Services — Clients: Olympus Europa, Marks & Spencer",
+    points:["Enterprise-Infrastruktur- und EUC-Projekte für europäische Großkunden|Enterprise infrastructure and EUC projects for major European clients"] },
+  { period:"2009 – 2012|2009 – 2012", role:"System Engineer",
+    org:"HCL Technologies (Indien) — Kunde: Micron Industries (USA)|HCL Technologies (India) — Client: Micron Industries (USA)",
+    points:["Betrieb und Support von Windows-/Infrastrukturumgebungen|Operations and support of Windows / infrastructure environments"] },
+  { period:"2008|2008", role:"Engineer", org:"Yahoo R&D, Indien|Yahoo R&D, India", points:[] },
+];
+
+const CERTIFICATIONS = [
+  ["🎓","AZ-140","Azure Virtual Desktop Specialty"],
+  ["🎓","AZ-104","Azure Administrator Associate"],
+  ["🎓","AZ-300","Azure Architect Technologies"],
+  ["🏅","CCP-V","Citrix Certified Professional – Virtualization"],
+  ["🏅","CCP-N","Citrix Certified Professional – Networking"],
+  ["🎓","MCP","Microsoft Certified Professional"],
+  ["📘","ITIL v4","IT Service Management"],
+  ["🌀","CSM","Certified Scrum Master"],
+];
+
+const T = {
+  n_impact:["Impact","Impact"], n_cases:["Fallstudien","Case studies"], n_skills:["Kompetenzen","Skills"],
+  k_cases:["Tiefe statt Breite","Depth over breadth"], h_cases:["Fallstudien","Case studies"],
+  l_chal:["Ausgangslage","Challenge"], l_act:["Mein Beitrag","What I did"], l_res:["Ergebnis","Result"],
+  c1tag:["Deutsche Bank · 2025 – heute","Deutsche Bank · 2025 – present"],
+  c1t:["SRE & Automatisierung im regulierten Bankenumfeld","SRE & automation in a regulated banking environment"],
+  c1c:["Hoher manueller Betriebsaufwand in einer stark regulierten Enterprise-EUC-Landschaft.","High manual operations effort across a heavily regulated enterprise EUC estate."],
+  c1a:["SRE-Prinzipien eingeführt; Automatisierung mit Terraform, Kubernetes, Docker, GitHub Actions und LLM-Tooling aufgebaut.","Introduced SRE principles; built automation with Terraform, Kubernetes, Docker, GitHub Actions and LLM tooling."],
+  c1r:["−60 % Betriebskosten — und der Weg zu Autonomous Operations ist geebnet.","−60% operations cost — and the road to autonomous operations is paved."],
+  c2tag:["Schwarz Gruppe · 2019 – 2025","Schwarz Group · 2019 – 2025"],
+  c2t:["Platform Enablement für 80.000+ Menschen","Platform enablement for 80,000+ people"],
+  c2c:["Europas größte Handelsgruppe brauchte einen skalierbaren, sicheren virtuellen Arbeitsplatz für LIDL, Kaufland & PreZero.","Europe's largest retail group needed a scalable, secure virtual workplace for LIDL, Kaufland & PreZero."],
+  c2a:["Citrix-DaaS- und Azure-Plattformen konzipiert, migriert und betrieben — inklusive AVD-Aufbau von Null und Presales-Workshops/PoCs.","Designed, migrated and operated Citrix DaaS and Azure platforms — including building AVD from zero and presales workshops/PoCs."],
+  c2r:["80.000+ Menschen arbeiten täglich auf den Plattformen — bei 7-stelligen Einsparungen.","80,000+ people work on the platforms every day — with 7-figure savings."],
+  c3tag:["Laufend","Ongoing"],
+  c3t:["GenAI in den Betriebsalltag bringen","Bringing GenAI into daily operations"],
+  c3c:["KI-Potenzial im IT-Betrieb bleibt in den meisten Unternehmen ungenutzt.","AI potential in IT operations goes unused in most organizations."],
+  c3a:["Als Evangelist GenAI-Workflows (Azure AI Foundry, OpenAI, Copilot) in Incident- und Automatisierungsprozesse integriert.","As evangelist, integrating GenAI workflows (Azure AI Foundry, OpenAI, Copilot) into incident and automation processes."],
+  c3r:["GenAI ist Teil des täglichen Betriebs — Schritt für Schritt Richtung Autonomous Operations.","GenAI is part of daily operations — step by step towards autonomous operations."],
+  n_projects:["Projekte","Projects"],
+  k_projects:["Was ich aus eigenem Antrieb baue","What I build on my own initiative"],
+  h_projects:["Eigenprojekte","Projects"],
+  n_aboutme:["Über mich","About"],
+  p_tag:["Eigenprojekt · 2026","Personal Project · 2026"],
+  p_tagline:["Ein Retrieval-Augmented-Assistent, der Fragen zum deutschen Betriebsverfassungsrecht auf Englisch oder Deutsch beantwortet — jede Aussage ist mit der Gesetzesstelle verknüpft, aus der sie stammt.",
+    "A retrieval-augmented assistant that answers German works council law questions in English or German, with every claim tied to the statutory section it came from."],
+  p_short:["Betriebsratsmitglieder haben echte gesetzliche Befugnisse — aber selten eine juristische Ausbildung. Das Gesetz ist öffentlich, aber unübersichtlich, und für fünf der zwölf relevanten Gesetze gibt es keine offizielle englische Übersetzung.\n\nBR Assist indexiert rund 1.200 Gesetzesvorschriften aus zwölf Bundesgesetzen sowie rund 700 Entscheidungen des Bundesarbeitsgerichts in Postgres mit pgvector. Eine Frage wird eingebettet und mit diesem Korpus abgeglichen — nur die gefundenen Textstellen werden dem Modell übergeben. So entstehen Antworten aus dem Gesetzestext statt aus dem Trainingswissen, und jede Quellenangabe verlinkt auf den Originaltext zur Überprüfung.\n\nGebaut als PWA auf Supabase Edge Functions, mit semantischem Antwort-Cache und einer Fünf-Provider-Inferenzkette. Getestet mit einem aktiven Betriebsratsmitglied, dessen Feedback zwei Fehler aufdeckte, die automatisierte Tests nicht gefunden hatten.",
+    "Works council members have real legal powers and rarely any legal training. The statute is public but dense, and five of the twelve relevant acts have no official English translation at all.\n\nBR Assist indexes ~1,200 statutory provisions across twelve federal acts and ~700 Federal Labour Court decisions in Postgres with pgvector. A question is embedded, matched against that corpus, and only the retrieved passages are given to the model — so answers are written from the law rather than recalled from training, and every citation links back to the official text for the reader to check.\n\nBuilt as a PWA on Supabase edge functions, with a semantic answer cache and a five-provider inference chain. Tested with a serving works council member, whose feedback found two defects that automated testing had not."],
+  p_more:["Vollständige Case Study lesen","Read the full case study"],
+  p_less:["Weniger anzeigen","Show less"],
+  p_h_problem:["Das Problem","The problem"],
+  p_b_problem:["Ein deutscher Betriebsrat hat echte gesetzliche Mitbestimmungsrechte — bei Arbeitszeit, Überwachungstechnik, Versetzungen und Kündigungen. Die Mitglieder, die diese Rechte ausüben, sind meist von Kolleg:innen gewählte Angestellte ohne juristische Ausbildung und mit einem eigenen Vollzeitjob.\n\nDas Gesetz ist öffentlich, aber sperrig. Allein das Betriebsverfassungsgesetz umfasst 130 Paragraphen; §87 Abs. 1 listet vierzehn einzeln mitbestimmungspflichtige Themen auf. Die falsche Vorschrift zu erwischen ist kein akademischer Fehler — die Frist zur Anfechtung einer Kündigung beträgt drei Wochen, und wird sie versäumt, ist der Anspruch verwirkt.\n\nEine allgemeine Chat-KI zu fragen ist schlimmer als nutzlos: Sie liefert flüssiges, selbstbewusstes deutsches Arbeitsrecht, das stimmen kann oder auch nicht — und wer es liest, hat keine Möglichkeit, das zu erkennen.",
+    "A German works council has genuine statutory power — co-determination over working hours, monitoring technology, transfers and dismissals. The members exercising it are usually employees elected by colleagues, with no legal training and a full-time job elsewhere.\n\nThe law is public but unfriendly. The Works Constitution Act alone runs to 130 sections; §87 (1) has fourteen separately co-determined subjects. Getting the wrong provision is not an academic error — the deadline to challenge a dismissal is three weeks, and missing it forfeits the claim.\n\nAsking a general chatbot is worse than useless: it produces fluent, confident German labour law that may or may not be real, and the reader has no way to tell."],
+  p_h_approach:["Der Ansatz","The approach"],
+  p_b_approach:["Retrieval statt Erinnerung. Das Modell antwortet nie aus dem, was es im Training gelernt hat.\n\nGesetzestexte werden aus den offiziellen XML-Feeds des Bundes eingelesen, auf Absatzebene zerlegt, eingebettet und in Postgres mit pgvector gespeichert. Bei einer Anfrage wird die Frage eingebettet und mit diesem Korpus abgeglichen; nur die gefundenen Textstellen erreichen das Modell — mit der Anweisung, keine Vorschrift zu zitieren, die ihm nicht vorgelegt wurde.\n\nJede Antwort trägt ihre Fundstellen, und jede Fundstelle verlinkt auf den Originaltext. Das Versprechen ist nicht, dass das Modell recht hat — sondern dass sich jede Aussage mit einem Klick überprüfen lässt.",
+    "Retrieval, not recall. The model never answers from what it learned in training.\n\nStatutory text is ingested from the federal government's own XML feeds, chunked at paragraph level, embedded, and stored in Postgres with pgvector. At query time the question is embedded and matched against that corpus; only the retrieved passages reach the model, with instructions that it may not cite a section it was not given.\n\nEvery answer carries its sections, and every section links to the official text. The guarantee offered is not that the model is right — it is that any claim can be checked in one click."],
+  p_h_decisions:["Entscheidungen, die eine Erklärung wert sind","Decisions worth explaining"],
+  p_d1t:["Zerlegung auf Absatzebene — ausgelöst durch einen echten Fehler.","Paragraph-level chunking, driven by a real defect."],
+  p_d1b:["Paragraphen wurden zunächst vollständig gespeichert. Ein Betriebsratsmitglied meldete, dass Fragen zu Fortbildungsansprüchen §37 Abs. 3 lieferten, aber Abs. 6 und 7 fehlten — genau die Ansprüche, um die es eigentlich ging. Der Paragraph war lang, das Ende wurde vor Erreichen des Modells abgeschnitten, und die Vorschrift wurde nie gesehen. Die Zerlegung nach Absätzen — und bei langen nummerierten Listen nach einzelnen Punkten — behob das. Der Splitter prüft die Reihenfolge statt nach Mustern zu suchen, weil juristische Texte voller Querverweise sind, die ein einfacher regulärer Ausdruck fälschlich als Absatzmarker liest.",
+    "Sections were first stored whole. A works council member reported that questions about training rights returned §37 (3) and missed §37 (6) and (7) — the entitlements that actually mattered. The section was long, the tail was truncated before it reached the model, and the provision was never seen. Splitting by paragraph, and splitting long numbered lists per item, fixed it. The splitter validates sequence rather than pattern-matching, because legal text is dense with cross-references that a naive regex mistakes for paragraph markers."],
+  p_d2t:["Rechtsprechung in einer eigenen Tabelle.","Case law in a separate table."],
+  p_d2b:["Der naheliegende Ansatz ist eine Tabelle mit einer Typ-Spalte. Er scheitert konkret daran, dass Gerichtsurteile den Gesetzestext oft ausführlich zitieren — in einem gemeinsamen Vektorraum kann ein Urteil dadurch die zitierte Vorschrift selbst verdrängen. Gefragt wird nach §87 — geliefert werden stattdessen drei Urteile, die §87 diskutieren. Zwei Tabellen geben zwei getrennte Kontingente, sodass die gesetzliche Grundlage immer vorhanden ist und Rechtsprechung sie nur ergänzen kann.",
+    "The obvious design is one table with a type column. It fails specifically: court decisions quote the statute at length, so in a single vector space a ruling can outrank the section it is quoting and displace it — the user asks about §87 and receives three cases discussing §87 instead. Two tables give two budgets, so the statutory foundation is always present and case law can only supplement it."],
+  p_d3t:["Herkunft als eigenständige Spalte.","Provenance as a first-class column."],
+  p_d3b:["Sieben Gesetze haben eine offizielle englische Übersetzung, fünf nicht. Für diese fünf wird das deutsche Original gespeichert und zur Antwortzeit übersetzt — gekennzeichnet als Arbeitsübersetzung, wobei der deutsche Text als verbindlich benannt wird. Das wird auf drei Wegen erzwungen, weil eine reine Prompt-Anweisung nicht ausreichte: Der Hinweis ist an jede Textstelle angehängt, der Prompt verbietet das Wort „offiziell“, und eine serverseitige Prüfung ergänzt den Hinweis, falls das Modell ihn weglässt. Es hat einmal seine eigene maschinelle Übersetzung einer Einspruchsfrist als offiziell bezeichnet — das gefährlichste, was dieses System tun könnte.",
+    "Seven acts have official English translations; five do not. For those five the German original is stored and translated at answer time — and labelled as a working translation, with the German text named as binding. This is enforced three ways, because a prompt instruction alone failed: the warning is attached to each passage, the prompt forbids the word \"official\", and a server-side check appends the caveat if the model omits it. It once described its own machine translation of a filing deadline as official, which is the single most dangerous thing this system could do."],
+  p_d4t:["Kein ANN-Index.","No ANN index."],
+  p_d4b:["Bei dieser Korpusgröße ist ein exakter Scan schnell und exakt. Ein approximativer Index würde Genauigkeit gegen eine Ersparnis eintauschen, die es gar nicht gibt. Dazu eine Lehre aus der Praxis: Ein IVFFlat-Index, der auf einer leeren Tabelle erstellt wurde, liefert für jede Anfrage stillschweigend null Ergebnisse — das kostete einen halben Tag Fehlersuche bei einer korrekten Abfrage auf korrekt geladenen Daten.",
+    "At this corpus size exact scan is fast and exact. An approximate index would trade correctness for a saving that does not exist. There is also a scar: an IVFFlat index built on an empty table returns zero rows for every query, silently, which cost half a day of debugging a correct query against correctly loaded data."],
+  p_h_testing:["Tests","Testing"],
+  p_b_testing:["Eine automatisierte Testsuite mit 23 Fragen prüft erwartete Fundstellen, Kernfakten, Antwortsprache und — wichtig — dass das Tool bei Fragen außerhalb seines Abdeckungsbereichs ablehnt, statt zu improvisieren. Ein zweites Skript stellt allen Inferenz-Anbietern dieselben Fragen und vergleicht die Zitatüberschneidung — so wurden Unterschiede zwischen den Modellen sichtbar.\n\nDie beiden nützlichsten Fehler fand keines von beiden. Sie kamen von einem aktiven Betriebsratsmitglied mit Testing-Hintergrund: die fehlenden Fortbildungsvorschriften, und später, dass §37 Abs. 7 vor Abs. 6 angezeigt wurde, weil das Retrieval nach Ähnlichkeit statt nach gesetzlicher Reihenfolge sortierte.",
+    "An automated suite of 23 questions checks expected sections, key facts, answer language, and — importantly — that the tool refuses questions outside its coverage rather than improvising. A second script asks every inference provider the same questions and reports citation overlap, which is how model-to-model variation became visible.\n\nNeither found the two most useful defects. Those came from a serving works council member with a testing background: the missing training provisions, and later that §37 (7) was being presented before §37 (6) because retrieval ranked by similarity rather than statutory order."],
+  p_h_limits:["Ehrliche Grenzen","Honest limitations"],
+  p_l1:["Rechtsprechung nur vom Bundesarbeitsgericht, ab 2010. Keine Landesarbeitsgerichte oder untere Instanzen — dort spielt sich aber ein Großteil der praktischen Betriebsrats-Streitfälle ab.",
+    "Case law is Federal Labour Court only, from 2010. No state or local court rulings, which is where much practical works council litigation sits."],
+  p_l2:["Keine Änderungsverfolgung. Gesetzestexte werden als Momentaufnahme eingelesen; nichts erkennt bislang, wenn der gespeicherte Text veraltet ist.",
+    "No amendment tracking. Statutes are ingested as a snapshot; nothing yet detects that the stored text has gone stale."],
+  p_l3:["Die Antwortqualität schwankt je nachdem, welcher Inferenz-Anbieter die Anfrage bedient hat.",
+    "Answer quality varies with which inference provider served the request."],
+  p_l4:["Läuft auf kostenlosen Kontingenten — ausreichend für die Größe eines Gremiums, aber nicht tragfähig, wenn es ohne bezahlte Inferenz einer ganzen Belegschaft geöffnet würde.",
+    "Runs on free tiers, which is sufficient at committee scale and would not survive being opened to a whole workforce without paying for inference."],
+  p_stackline:["Stack: Postgres 15 mit pgvector und pg_cron (Supabase, EU/Frankfurt) · Supabase Edge Functions in Deno/TypeScript · Python-Ingestion gegen XML-Feeds des Bundes · installierbare PWA in Vanilla JS · Gemini-Embeddings, Multi-Provider-LLM-Inferenz mit automatischem Fallback",
+    "Stack: Postgres 15 with pgvector and pg_cron (Supabase, EU/Frankfurt) · Supabase Edge Functions in Deno/TypeScript · Python ingestion against federal XML feeds · vanilla-JS installable PWA · Gemini embeddings, multi-provider LLM inference with automatic fallback"],
+  p_note:["Mit intensiver KI-Unterstützung entwickelt. Die beiden wertvollsten Fehler wurden von einem menschlichen Tester gefunden, nicht durch automatisierte Prüfung.",
+    "Built with heavy AI assistance. The two most valuable defects were found by a human tester, not by any automated check."],
+  n_research:["Forschung","Research"],
+  k_research:["Forschung & Fellowship","Research & fellowship"],
+  h_research:["Forschung","Research"],
+  r_tag:["Thesis abgeschlossen · Verliehen 2026","Thesis completed · Awarded 2026"],
+  r_title:["Adaptive Deep Learning Framework for Scalable and Real-Time Intrusion Detection in Cloud-IoT Systems",
+    "Adaptive Deep Learning Framework for Scalable and Real-Time Intrusion Detection in Cloud-IoT Systems"],
+  r_sub:["Forschungsarbeit zu adaptiven Deep-Learning-Verfahren für skalierbare Echtzeit-Angriffserkennung in Cloud- und IoT-Umgebungen — die wissenschaftliche Grundlage hinter meiner Arbeit an AI-Plattformen und sicherem Cloud-Betrieb.",
+    "Research on adaptive deep learning methods for scalable, real-time intrusion detection across cloud and IoT environments — the academic grounding behind my work on AI platforms and secure cloud operations."],
+  r_l_award:["Auszeichnung","Award"],
+  r_award:["Doctoral Graduateship / Fellow Membership","Doctoral Graduateship / Fellow Membership"],
+  r_l_body:["Verleihende Institution","Awarding body"],
+  r_body:["Council of Science and Humanities, IIIER (Chennai, Indien)","Council of Science and Humanities, IIIER (Chennai, India)"],
+  r_l_grade:["Bewertung","Result"],
+  r_grade:["First Class","First Class"],
+  r_l_field:["Fachgebiet","Field"],
+  r_field:["Artificial Intelligence","Artificial Intelligence"],
+  r_l_status:["Status","Status"],
+  r_status:["✓ Thesis abgeschlossen & geprüft · ✓ Verliehen","✓ Thesis completed & examined · ✓ Awarded"],
+  r_rel:["Fellow Membership einer professionellen Institution (kein deutscher Hochschulgrad) — die Forschungsarbeit fließt direkt in meine Arbeit an GenAI- und Cloud-Sicherheitsplattformen ein.",
+    "Fellow membership of a professional institution (not a German university degree) — the research feeds directly into my work on GenAI and cloud security platforms."],
+  k_about:["Der Mensch dahinter","The person behind it"], h_aboutme:["Über mich","About me"],
+  a_lang:["Sprachen","Languages"],
+  a_l1:["Deutsch — B2","German — B2"], a_l2:["Englisch — verhandlungssicher","English — fluent"], a_l3:["Tamil — Muttersprache","Tamil — native"],
+  a_ask:["Fragen Sie mich nach …","Ask me about …"],
+  a_a1:["GenAI im IT-Betrieb","GenAI in IT operations"], a_a2:["Citrix-zu-AVD-Migrationen","Citrix-to-AVD migrations"],
+  a_a3:["Cloud-Kostenoptimierung","Cloud cost optimization"], a_a4:["SRE & Automatisierung","SRE & automation"], n_exp:["Erfahrung","Experience"], n_certs:["Zertifikate","Certifications"], n_contact:["Kontakt","Contact"],
+  avail:["Offen für neue Herausforderungen","Open to new opportunities"],
+  hi:["Hallo, ich bin","Hi, I'm"],
+  lead:["Ich betreibe keine Server — ich sorge dafür, dass 80.000 Menschen jeden Morgen einfach arbeiten können. Ich spare Millionen, bevor der CFO danach fragt. Und ich bringe GenAI dorthin, wo echte Arbeit passiert.",
+        "I don't run servers — I make sure 80,000 people can simply start working every morning. I save millions before the CFO has to ask. And I bring GenAI to where real work happens."],
+  cta1:["Kontakt aufnehmen","Get in touch"],
+  f_loc:["Bad Friedrichshall · Deutschland","Bad Friedrichshall · Germany"],
+  f_exp:["16+ Jahre Enterprise-Erfahrung","16+ years enterprise experience"],
+  f_certs:["8 Zertifizierungen · Azure · Citrix · ITIL","8 certifications · Azure · Citrix · ITIL"],
+  f_lang:["Deutsch B2 · Englisch fließend","German B2 · English fluent"],
+  f_research:["Forschung: Deep Learning für Intrusion Detection","Research: deep learning for intrusion detection"],
+  cred:["Fellow Membership in AI · Forschung 2026","Fellow Membership in AI · Research 2026"],
+  scroll:["Scrollen zum Entdecken","Scroll to explore"],
+  k_impact:["Meine Geschichte in Zahlen","My story in numbers"], h_impact:["Was ich für Menschen bewege","What I make possible"],
+  bt1:["Menschen arbeiten täglich auf meinen Plattformen","people run their business on my platforms — daily"],
+  bs1:["Platform Enablement Engineering für LIDL, Kaufland & PreZero — eine der größten Virtual-Workplace-Landschaften Europas","Platform enablement engineering for LIDL, Kaufland & PreZero — one of Europe's largest virtual workplace estates"],
+  bt2:["7-stellig","7-figure"],
+  bs2:["Einsparungen, die im Vorstand ankamen — durch Plattform-Optimierung","Savings the board actually noticed — through platform optimization"],
+  bs3:["Ich mache CFOs glücklich: −60 % Betriebskosten durch SRE-Automatisierung @ Deutsche Bank","I make CFOs smile: −60% operations cost through SRE automation @ Deutsche Bank"],
+  bt5:["Ich baue Plattformen, wo vorher nichts war","I build platforms where there was nothing"],
+  bs5:["AVD von Null · Citrix DaaS Cloud-Migration · EUC-Betriebsmodelle & Teams etabliert","AVD from zero · Citrix DaaS cloud migration · EUC operating models & teams established"],
+  bt6:["Ich mache KI zum Arbeitskollegen","I turn AI into a colleague"],
+  bs6:["GenAI-Transformation-Evangelist @ Deutsche Bank — GenAI im Betriebsalltag, unterwegs zu Autonomous Operations","GenAI transformation evangelist @ Deutsche Bank — GenAI in daily operations, en route to autonomous operations"],
+  s_years:["Jahre Erfahrung","Years experience"], s_certs:["Zertifizierungen","Certifications"],
+  k_skills:["Was ich mitbringe","What I bring"], h_skills:["Kompetenzen","Skills"],
+  hireme:["Stellen Sie mich ein als …","Hire me as …"],
+  legend:["„Alle“ zeigt das komplette Profil. Wählen Sie eine Rolle — dann leuchten genau die Skills auf, die Sie suchen.","“All” shows the complete profile. Pick a role — and exactly the skills you're hiring for light up."],
+  k_exp:["Der Weg hierher","The road here"], h_exp:["Berufserfahrung","Experience"],
+  k_certs:["Schwarz auf Weiß","In black and white"], h_certs:["Zertifizierungen","Certifications"],
+  c_head1:["Lassen Sie uns","Let's build"], c_head2:["etwas bauen.","something."],
+  c_text:["Ob AI-Plattform, Kubernetes-Landschaft, SRE-Transformation, Cloud-Design oder der Arbeitsplatz für 80.000 Menschen — ich freue mich auf Ihre Nachricht.",
+          "Whether it's an AI platform, a Kubernetes estate, an SRE transformation, cloud design or the workplace for 80,000 people — I'd love to hear from you."],
+  footer:["© 2026 Balaji Durai — Alle Angaben entsprechen meinem tatsächlichen Werdegang.",
+          "© 2026 Balaji Durai — All information reflects my actual career history."],
+};
+
+const ROLES = [
+  ["AI & Cloud Platform Engineer","AI & Cloud Platform Engineer"],
+  ["DevOps & SRE Engineer","DevOps & SRE Engineer"],
+  ["GenAI Transformation Evangelist","GenAI Transformation Evangelist"],
+  ["Platform Enablement Engineer","Platform Enablement Engineer"],
+  ["Citrix DaaS & AVD Experte","Citrix DaaS & AVD Expert"],
+  ["Technology Lead","Technology Lead"],
+];
+
+const CLIENTS = ["Deutsche Bank","LIDL","Kaufland","PreZero","Olympus","Marks & Spencer","Micron","Yahoo","Schwarz Digital"];
+
+let lang = 0;
+
+function render(){
+  document.documentElement.lang = lang===0?"de":"en";
+  document.getElementById("langToggle").textContent = lang===0?"EN":"DE";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k=el.getAttribute("data-i18n"); if(T[k]) el.textContent=T[k][lang];
+  });
+
+  // BR Assist project chips + toggle label
+  const psc=document.getElementById("pStackChips"); psc.innerHTML="";
+  PSTACK.forEach(s=>{ const c=document.createElement("span"); c.className="chip hi"; c.textContent=s; psc.appendChild(c); });
+  document.getElementById("pToggleBtn").textContent = T[projectOpen?"p_less":"p_more"][lang] + (projectOpen?" ▴":" ▾");
+
+  // marquee (duplicate for seamless loop)
+  const mt=document.getElementById("mtrack");
+  const seq=CLIENTS.map(c=>"<span>"+c+"</span><i>✦</i>").join("");
+  mt.innerHTML=seq+seq;
+
+  // skills
+  const sc=document.getElementById("skillsContainer"); sc.innerHTML="";
+  Object.keys(CATS).forEach(cat=>{
+    const items=SKILLS.filter(s=>s.cat===cat); if(!items.length) return;
+    const c=CATS[cat];
+    const card=document.createElement("div"); card.className="skillcard tilt";
+    card.innerHTML='<span class="bgemoji">'+c.ico+'</span><h3><span class="ico">'+c.ico+'</span>'+(lang===0?c.de:c.en)+'</h3><div class="sub">'+(lang===0?c.subde:c.suben)+'</div>';
+    const chips=document.createElement("div"); chips.className="chips";
+    items.forEach(s=>{
+      const ch=document.createElement("span");
+      let cls="chip";
+      if(persona!=="all"){ cls+=(s.tags||[]).includes(persona)?" hi":" dim"; }
+      ch.className=cls; ch.textContent=s.name; chips.appendChild(ch);
+    });
+    card.appendChild(chips); sc.appendChild(card);
+  });
+  bindTilt();
+
+  // persona bar
+  const pb=document.getElementById("pbar"); pb.innerHTML="";
+  Object.keys(PERSONAS).forEach(k=>{
+    const b=document.createElement("button");
+    b.className="pbtn"+(persona===k?" active":"");
+    b.textContent=PERSONAS[k].label[lang];
+    b.onclick=()=>{ persona=k; render(); };
+    pb.appendChild(b);
+  });
+  document.getElementById("pline").textContent="› "+PERSONAS[persona].line[lang];
+
+  // experience
+  const ec=document.getElementById("expContainer"); ec.innerHTML="";
+  EXPERIENCE.forEach(j=>{
+    const d=document.createElement("div"); d.className="job";
+    const pts=j.points.map(p=>"<li>"+p.split("|")[lang]+"</li>").join("");
+    d.innerHTML='<div class="card"><h3>'+j.role+'</h3><div class="org">'+j.org.split("|")[lang]+
+      '</div><span class="period">'+j.period.split("|")[lang]+'</span>'+(pts?"<ul>"+pts+"</ul>":"")+'</div>';
+    ec.appendChild(d);
+  });
+
+  // certs
+  const cc=document.getElementById("certContainer"); cc.innerHTML="";
+  CERTIFICATIONS.forEach(([ico,code,name])=>{
+    const d=document.createElement("div"); d.className="cert";
+    d.innerHTML='<span class="bgemoji">'+ico+'</span><div class="badge">'+ico+'</div><div><b>'+code+'</b><span>'+name+'</span></div>';
+    cc.appendChild(d);
+  });
+}
+function toggleLang(){ lang=1-lang; render(); startTyping(); }
+
+/* logo → back to top */
+function goTop(e){
+  if(e) e.preventDefault();
+  const nav=document.getElementById("navlinks");
+  if(nav && nav.classList.contains("open")) toggleMenu();
+  try{ window.scrollTo({top:0,behavior:"smooth"}); }catch(err){ window.scrollTo(0,0); }
+  document.querySelectorAll("#navlinks a").forEach(a=>a.classList.remove("active"));
+}
+
+/* mobile menu */
+function toggleMenu(){
+  const nav=document.getElementById("navlinks"), btn=document.getElementById("menuBtn");
+  const open=nav.classList.toggle("open");
+  btn.setAttribute("aria-expanded", open?"true":"false");
+  btn.textContent = open ? "✕" : "☰";
+}
+document.getElementById("navlinks").addEventListener("click",e=>{
+  if(e.target.tagName==="A" && document.getElementById("navlinks").classList.contains("open")) toggleMenu();
+});
+
+/* theme toggle (dark ⇄ light) */
+function applyTheme(t){
+  document.documentElement.dataset.theme=t;
+  document.getElementById("themeToggle").textContent = t==="light" ? "🌙" : "☀️";
+}
+function toggleTheme(){
+  const t=document.documentElement.dataset.theme==="light"?"dark":"light";
+  applyTheme(t); try{localStorage.setItem("theme",t);}catch(e){}
+}
+try{ applyTheme(localStorage.getItem("theme")||"dark"); }catch(e){ applyTheme("dark"); }
+
+/* photo fallback lives in the early <head> script so it exists before the image loads */
+
+/* typing */
+let tIdx=0,tChar=0,tDel=false,tTimer;
+function startTyping(){ clearTimeout(tTimer); tIdx=0;tChar=0;tDel=false; typeTick(); }
+function typeTick(){
+  const el=document.getElementById("typed"), word=ROLES[tIdx][lang];
+  el.textContent=word.slice(0,tChar);
+  if(!tDel){ tChar++; if(tChar>word.length){ tDel=true; tTimer=setTimeout(typeTick,1900); return; } }
+  else { tChar--; if(tChar===0){ tDel=false; tIdx=(tIdx+1)%ROLES.length; } }
+  tTimer=setTimeout(typeTick, tDel?30:60);
+}
+
+/* counters (run when visible) */
+let counted=false;
+function animateCounters(){
+  if(counted) return; counted=true;
+  document.querySelectorAll("[data-count]").forEach(el=>{
+    const target=+el.getAttribute("data-count"); let cur=0;
+    const step=()=>{ cur+=Math.max(1,Math.ceil(target/40));
+      if(cur>=target){ el.textContent=target+"+"; } else { el.textContent=cur; requestAnimationFrame(step);} };
+    step();
+  });
+}
+
+/* reveal + counters + nav highlight */
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){ e.target.classList.add("on"); if(e.target.id==="impact") animateCounters(); }
+}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+const secObs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    document.querySelectorAll("#navlinks a").forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id));
+  }
+}),{threshold:.4});
+document.querySelectorAll("section[id]").forEach(s=>secObs.observe(s));
+
+/* scroll progress */
+addEventListener("scroll",()=>{
+  const h=document.documentElement;
+  document.getElementById("prog").style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+"%";
+},{passive:true});
+
+/* spotlight follows mouse (theme-aware) */
+addEventListener("mousemove",e=>{
+  const light=document.documentElement.dataset.theme==="light";
+  document.getElementById("spot").style.background=
+    "radial-gradient(600px at "+e.clientX+"px "+e.clientY+"px, "+(light?"rgba(30,79,216,.06)":"rgba(59,130,246,.10)")+", transparent 70%)";
+},{passive:true});
+
+/* portrait: 3D tilt following the cursor */
+(function(){
+  const stage=document.querySelector(".orbitstage"), ring=document.querySelector(".pring");
+  if(!stage||!ring) return;
+  try{ if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; }catch(e){}
+  stage.addEventListener("mousemove",e=>{
+    const r=stage.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    ring.style.transform="rotateX("+(-y*13)+"deg) rotateY("+(x*13)+"deg) translateZ(18px) scale(1.03)";
+  },{passive:true});
+  stage.addEventListener("mouseleave",()=>{ ring.style.transform=""; },{passive:true});
+})();
+
+/* 3D tilt + inner glow on skill cards */
+function bindTilt(){
+  document.querySelectorAll(".tilt").forEach(card=>{
+    card.onmousemove=e=>{
+      const r=card.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top;
+      card.style.setProperty("--mx",(x/r.width*100)+"%");
+      card.style.setProperty("--my",(y/r.height*100)+"%");
+      const rx=((y/r.height)-.5)*-7, ry=((x/r.width)-.5)*7;
+      card.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg) translateZ(0)";
+    };
+    card.onmouseleave=()=>{ card.style.transform="rotateX(0) rotateY(0)"; };
+  });
+}
+
+/* particle constellation */
+const cv=document.getElementById("stars"), ctx=cv.getContext("2d");
+let W,H,pts=[],mouse={x:-999,y:-999};
+function resize(){ W=cv.width=innerWidth; H=cv.height=innerHeight;
+  const n=Math.min(190,Math.max(42,Math.floor(W*H/11000)));
+  pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.4}));
+}
+addEventListener("resize",resize); resize();
+addEventListener("mousemove",e=>{mouse.x=e.clientX;mouse.y=e.clientY;},{passive:true});
+/* touch = finger acts as the mouse for particles + spotlight */
+addEventListener("touchmove",e=>{const t=e.touches[0];mouse.x=t.clientX;mouse.y=t.clientY;
+  const light=document.documentElement.dataset.theme==="light";
+  document.getElementById("spot").style.background=
+    "radial-gradient(500px at "+t.clientX+"px "+t.clientY+"px, "+(light?"rgba(30,79,216,.06)":"rgba(59,130,246,.10)")+", transparent 70%)";
+},{passive:true});
+addEventListener("touchend",()=>{mouse.x=-999;mouse.y=-999;},{passive:true});
+(function loop(){
+  ctx.clearRect(0,0,W,H);
+  const light=document.documentElement.dataset.theme==="light";
+  const nearDot=light?"rgba(30,79,216,.85)":"rgba(255,255,255,.95)";
+  const farDot=light?"rgba(30,79,216,.30)":"rgba(125,180,255,.5)";
+  const lineRGB=light?"30,79,216":"77,159,255";
+  const linkRGB=light?"30,79,216":"125,180,255";
+  pts.forEach(p=>{
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
+    const dm=Math.hypot(p.x-mouse.x,p.y-mouse.y);
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7);
+    ctx.fillStyle=dm<160?nearDot:farDot; ctx.fill();
+    if(dm<160){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y);
+      ctx.strokeStyle="rgba("+lineRGB+","+(0.3*(1-dm/160))+")"; ctx.stroke(); }
+  });
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+    const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+    if(d<110){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+      ctx.strokeStyle="rgba("+linkRGB+","+((light?0.10:0.14)*(1-d/110))+")"; ctx.stroke(); }
+  }
+  requestAnimationFrame(loop);
+})();
+
+render(); startTyping();
+</script>
+</body>
+</html>
