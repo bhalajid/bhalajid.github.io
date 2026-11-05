@@ -158,7 +158,7 @@ section{padding-block:clamp(72px,10vw,120px)}
 .detail p{margin:0;color:var(--muted);font-size:14px}
 
 /* work accordion */
-.acc{display:flex;gap:12px;margin-top:40px;min-height:470px}
+.acc{display:flex;gap:12px;margin-top:40px;min-height:600px}
 .panel{position:relative;flex:0 0 74px;border-radius:24px;background:var(--card);border:1px solid var(--line);overflow:hidden;cursor:pointer;transition:flex .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
 .panel.open{flex:1 1 auto;cursor:default;box-shadow:var(--shadow)}
 .panel .vt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:22px 0;transition:opacity .3s;background:none;border:0;width:100%;font:inherit;color:inherit;cursor:pointer}
@@ -313,6 +313,35 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:12px;font-family:var
 .doc-pill span{background:var(--navy);color:var(--on-navy);border-radius:999px;padding:3px 10px;font-weight:700;font-size:11.5px}
 .doc-rib{margin:8px auto 0;width:max-content;max-width:90%;text-align:center;font:500 9.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--navy);color:var(--on-navy)}
 .client.doc span::before{content:none}
+
+/* work detail */
+.panel .vt{z-index:2}
+.panel:not(.open) .pbody{pointer-events:none;visibility:hidden}
+.panel.open .pbody{visibility:visible}
+.panel:not(.open):hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.panel{transition:flex .7s cubic-bezier(.2,.8,.2,1),box-shadow .3s,transform .3s}
+.panel .vt:hover b{transform:scale(1.15)}
+.panel .vt b{transition:transform .2s}
+.pbody{grid-template-columns:1.25fr 1fr;align-items:start;min-width:720px}
+.pbody .sum{color:var(--ink);font-size:16px}
+.ptabs{display:flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:999px;background:var(--card2);border:1px solid var(--line);width:max-content;max-width:100%;margin:6px 0 14px}
+.ptab{border:0;background:transparent;color:var(--muted);font:600 12.5px var(--f-display);padding:7px 14px;border-radius:999px;cursor:pointer}
+.ptab.on{background:var(--navy);color:var(--on-navy)}
+.ppane{min-height:210px;margin-bottom:16px}
+.pp p{font-size:14.5px;margin:0 0 10px;color:var(--muted)}
+.pp .ul1{display:grid;grid-template-columns:1fr;gap:8px;font-size:14px;color:var(--muted);margin:0}
+.pp .ul1 b,.pp b.hl{color:var(--ink)}
+.pp .muted-s{font-size:12.5px;font-style:italic}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.stats b{display:block;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.04em;line-height:1;font-weight:800}
+.stats small{font:500 10px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:8px;position:relative}
+.flow li{display:flex;align-items:center;gap:12px;font-weight:600;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;position:relative}
+.pbody .flow li::before{content:none}
+.flow li span{width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--on-navy);display:grid;place-items:center;font:500 11px var(--f-mono);flex:none}
+.flow li:not(:last-child)::after{content:"";position:absolute;left:23px;bottom:-9px;width:2px;height:9px;background:var(--line)}
+@media (max-width:980px){.pbody{min-width:0;grid-template-columns:1fr}.ppane{min-height:0}}
 </style>
 
 <header class="top">
@@ -448,7 +477,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:12px;font-family:var
   <div class="wrap">
     <div class="eyebrow"><b>03</b><i></i>Work</div>
     <h2 class="big">Things I've <span class="serif">built.</span></h2>
-    <p class="lead" style="margin-top:14px">Case studies from the job and one personal project. Click a panel to open it.</p>
+    <p class="lead" style="margin-top:14px">Case studies from the job and one personal project. Click a panel to open it, then use the tabs for the full story.</p>
     <div class="acc" id="acc"></div>
   </div>
 </section>
@@ -640,33 +669,63 @@ fams.forEach(([name,cls],f)=>{
 show(0);
 
 /* ---- work accordion ---- */
-const ring=(v,label)=>`<div class="ring"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="var(--line)" stroke-width="4"/><circle cx="20" cy="20" r="16" fill="none" stroke="var(--navy)" stroke-width="4" stroke-linecap="round" stroke-dasharray="${(Math.abs(v)/100*100.5).toFixed(1)} 100.5"/></svg><div class="v">${v<0?'−'+(-v):v}<small>${label}</small></div></div>`;
-const log=(st,t)=>`<div class="logline"><span class="dot ${st}"></span><span>${t}</span></div>`;
 const projects=[
- {t:'SRE Automation',k:'Deutsche Bank · 2025 – present',d:'High manual effort across a heavily regulated EUC estate. I introduced SRE principles and built the automation to remove it.',
-  b:['SRE principles introduced','Self-healing runbooks','Terraform & Kubernetes','GitHub Actions CI/CD','LLM tooling in the loop','Road to autonomous ops'],
-  tags:['Terraform','Kubernetes','Docker','GitHub Actions','PowerShell'],link:null,
-  v:`<div class="vlabel">Operations cost · indexed</div><div class="bars">${[100,96,92,85,78,70,61,55,49,44,41,40].map((h,i)=>`<i class="${i<3?'hi':''}" style="height:${h}%"></i>`).join('')}</div>${log('ok','Self-heal: profile reset · 0 tickets')}${ring(-60,'OPS COST %')}`},
- {t:'80,000-User Platform',k:'Schwarz Group · 2019 – 2025',d:'Europe\'s largest retail group needed a scalable, secure virtual workplace for LIDL, Kaufland and PreZero. I designed, migrated and operated it.',
-  b:['AVD built from zero','Citrix DaaS cloud migration','EUC operating model','7-figure savings','Presales workshops & PoCs','Solution design'],
-  tags:['Citrix DaaS','AVD','Azure','FSLogix','NetScaler'],link:null,
-  v:`<div class="vlabel">Daily users by brand</div>${log('ok','LIDL · logons healthy')}${log('ok','Kaufland · logons healthy')}${log('ok','PreZero · logons healthy')}${log('','Cost optimization · 7-figure')}${ring(80,'K USERS')}`},
- {t:'GenAI in Operations',k:'Ongoing · Evangelist',d:'Most organizations leave AI potential in IT operations unused. I integrate GenAI workflows into incident and automation processes, step by step.',
-  b:['Azure AI Foundry','Azure OpenAI','Copilot workflows','Incident summarization','Automation assist','Autonomous-ops roadmap'],
-  tags:['Azure AI Foundry','OpenAI','Copilot','LLM tooling'],link:null,
-  v:`<div class="vlabel">Incident · AI assist</div>${log('warn','INC · logon slowness · 42 users')}${log('ok','AI summary drafted · 6 s')}${log('ok','Likely cause: profile lock')}${log('ok','Runbook suggested → approved')}${ring(70,'AUTOMATED')}`},
- {t:'BR Assist',k:'Personal project · 2026 · RAG',d:'A retrieval-augmented assistant that answers German works council law questions in English or German, with every claim tied to the statutory section it came from.',
-  b:['~1,200 statutory provisions','12 federal acts','~700 Federal Labour Court rulings','Paragraph-level chunking','5-provider inference chain','Tested by a works council member'],
-  tags:['PostgreSQL','pgvector','Supabase Edge','RAG','PWA','Multi-LLM'],link:null,
-  v:`<div class="vlabel">Query trace</div>${log('','Question embedded · Gemini')}${log('ok','Matched §37 (6), §37 (7) BetrVG')}${log('ok','Answer cites 3 sections · linked')}${log('warn','Working translation · German binding')}${ring(23,'TESTS')}`}
+ {t:'SRE Automation',k:'Deutsche Bank · 2025 – present',
+  d:'Running a regulated banking EUC estate meant high manual effort for every routine fix. I introduced SRE practice and automated the toil away.',
+  tabs:{
+   'Challenge':`<p>The Citrix DaaS on Azure estate was run largely by hand. Profile faults, unregistered machines, image rollouts and reboots all needed an engineer, and every production change had to pass CAB, UAT and a phased rollout.</p><p>The tooling also had to work inside strict bank constraints: PowerShell 5.1, controlled privileged access and no shortcuts around change control.</p>`,
+   'What I did':`<ul class="ul1"><li>Introduced SRE principles: toil measurement, runbooks first, then automation.</li><li>Built self-healing for FSLogix profiles: health checks at logon, automatic repair and a guided profile reset.</li><li>Built monitoring for the Azure Files shares behind the profiles: a live dashboard, a 24-hour report and a health agent on every host.</li><li>Orchestrated image rollouts and weekly reboots with throttling, bilingual user notices and validation reports.</li><li>Moved delivery to code: Terraform, GitHub Actions, Docker and Kubernetes, with LLM tooling in the loop.</li></ul>`,
+   'Result':`<p><b class="hl">Operations cost down 60%.</b> Recurring incidents now fix themselves or arrive with a diagnosis attached, and changes ship through the same CAB process with less effort.</p><p>The work is the base of the bank's road to autonomous operations.</p>`},
+  stats:[['−60%','Operations cost'],['IaC','Terraform · CI/CD'],['PS 5.1','Bank-safe tooling'],['CAB','Every change approved']],
+  flow:['Detect','Diagnose','Self-heal','Report'],
+  tags:['Terraform','Kubernetes','Docker','GitHub Actions','PowerShell','FSLogix','Azure Files']},
+ {t:'80,000-User Platform',k:'Schwarz Group · 2019 – 2025',
+  d:"Europe's largest retail group needed one scalable, secure virtual workplace for LIDL, Kaufland and PreZero.",
+  tabs:{
+   'Challenge':`<p>Three large businesses, tens of thousands of store, warehouse and office staff, and a virtual workplace that had to be available every morning in every country.</p><p>The estate had to move to the cloud without disrupting the people using it.</p>`,
+   'What I did':`<ul class="ul1"><li>Designed, migrated and operated Citrix DaaS and Azure platforms.</li><li>Built the Azure Virtual Desktop platform from zero.</li><li>Led the Citrix DaaS migration to the cloud.</li><li>Set up the EUC operating model and the team around it.</li><li>Ran presales workshops, proofs of concept and solution designs.</li></ul>`,
+   'Result':`<p><b class="hl">80,000+ people</b> work on these platforms every day, one of Europe's largest virtual workplace estates.</p><p>Platform optimization delivered <b class="hl">7-figure savings</b> that the board noticed.</p>`},
+  stats:[['80K+','Daily users'],['3','Brands served'],['7-fig','Savings'],['0 → 1','AVD from zero']],
+  flow:['Design','Migrate','Operate','Optimize'],
+  tags:['Citrix DaaS','AVD','Azure','FSLogix','NetScaler','Presales']},
+ {t:'GenAI in Operations',k:'Ongoing · GenAI evangelist',
+  d:'Most organizations leave the potential of AI in IT operations unused. I am bringing GenAI into the daily work of an operations team.',
+  tabs:{
+   'Challenge':`<p>Engineers spend much of an incident reading logs, searching old tickets and writing updates. That work is repetitive, and in a regulated environment any AI that helps has to stay inside approved platforms.</p>`,
+   'What I did':`<ul class="ul1"><li>Integrated GenAI workflows into incident and automation processes.</li><li>Used Azure AI Foundry, Azure OpenAI and Copilot within enterprise controls.</li><li>Paired AI suggestions with existing runbooks so a human approves every action.</li><li>Promote adoption across the team as GenAI evangelist.</li></ul>`,
+   'Result':`<p><b class="hl">GenAI is part of daily operations.</b> Step by step, the team is moving from manual response towards autonomous operations.</p>`},
+  stats:[['AI','Foundry · OpenAI'],['Copilot','In the workflow'],['Human','Approves actions'],['Next','Autonomous ops']],
+  flow:['Incident','AI summary','Runbook match','Automate'],
+  tags:['Azure AI Foundry','Azure OpenAI','Copilot','LLM tooling']},
+ {t:'BR Assist',k:'Personal project · 2026 · RAG',
+  d:'A retrieval-augmented assistant that answers German works council law questions in English or German, with every claim tied to the statutory section it came from.',
+  tabs:{
+   'Problem':`<p>Works council members have real statutory powers over working hours, monitoring technology, transfers and dismissals, but rarely any legal training. The law is public but dense, and five of the twelve relevant acts have no official English translation.</p><p>A general chatbot produces fluent labour law that may or may not be real, and the reader cannot tell.</p>`,
+   'Approach':`<p><b class="hl">Retrieval, not recall.</b> Statutes are ingested from the federal government's XML feeds, chunked at paragraph level, embedded and stored in Postgres with pgvector. Only the retrieved passages reach the model, and it may not cite a section it was not given.</p><p>Every answer links each section back to the official text, so any claim can be checked in one click.</p>`,
+   'Decisions':`<ul class="ul1"><li><b>Paragraph-level chunks:</b> a tester found §37 (6) and (7) missing because long sections were truncated. Splitting per paragraph fixed it.</li><li><b>Case law in its own table:</b> so rulings that quote a section cannot crowd out the section itself.</li><li><b>Provenance column:</b> machine translations are labelled as working translations, enforced in three places.</li><li><b>No ANN index:</b> at this size an exact scan is fast and exact.</li></ul>`,
+   'Testing':`<p>An automated suite of <b class="hl">23 questions</b> checks expected sections, key facts, answer language and that out-of-scope questions are refused. A second script compares citations across all inference providers.</p><p>The two most useful defects came from a serving works council member, not from automated tests.</p><p class="muted-s">Limits: Federal Labour Court rulings only (from 2010), no amendment tracking yet, runs on free tiers.</p>`},
+  stats:[['~1,200','Statutory provisions'],['12','Federal acts'],['~700','Court rulings'],['23','Automated tests']],
+  flow:['Question','Embed','Retrieve §','Cited answer'],
+  tags:['PostgreSQL','pgvector','Supabase Edge','Deno · TS','Python','RAG','PWA','Multi-LLM']}
 ];
 const acc=$('#acc');
+function openPanel(el){acc.querySelectorAll('.panel').forEach(x=>{x.classList.toggle('open',x===el);x.querySelector('.vt').setAttribute('aria-expanded',x===el)});}
 projects.forEach((p,i)=>{
   const el=document.createElement('article');el.className='panel'+(i===0?' open':'');
-  const cta=p.link?`<a class="btn dark" href="${p.link[1]}" target="_blank" rel="noopener">${p.link[0]}</a>`:`<a class="btn dark" href="#contact">Ask me about it →</a>`;
-  el.innerHTML=`<button class="vt" aria-label="Open ${p.t}"><small>${String(i+1).padStart(2,'0')}</small><span>${p.t}</span><b>+</b></button>
-  <div class="pbody"><div><div class="kick">${String(i+1).padStart(2,'0')} · ${p.k}</div><h3>${p.t}</h3><p>${p.d}</p><ul>${p.b.map(x=>`<li>${x}</li>`).join('')}</ul><div class="tags">${p.tags.map(x=>`<span>${x}</span>`).join('')}</div>${cta}</div><div class="viz">${p.v}</div></div>`;
-  el.querySelector('.vt').addEventListener('click',()=>{acc.querySelectorAll('.panel').forEach(x=>x.classList.remove('open'));el.classList.add('open')});
+  const names=Object.keys(p.tabs);
+  el.innerHTML=`<button class="vt" aria-expanded="${i===0}" aria-label="Open ${p.t}"><small>${String(i+1).padStart(2,'0')}</small><span>${p.t}</span><b>+</b></button>
+  <div class="pbody"><div class="pleft"><div class="kick">${String(i+1).padStart(2,'0')} · ${p.k}</div><h3>${p.t}</h3><p class="sum">${p.d}</p>
+   <div class="ptabs" role="tablist">${names.map((n,k)=>`<button role="tab" class="ptab${k===0?' on':''}" aria-selected="${k===0}" data-k="${k}">${n}</button>`).join('')}</div>
+   <div class="ppane">${names.map((n,k)=>`<div class="pp" role="tabpanel" ${k?'hidden':''}>${p.tabs[n]}</div>`).join('')}</div>
+   <div class="tags">${p.tags.map(x=>`<span>${x}</span>`).join('')}</div>
+   <a class="btn dark" href="#contact">Ask me about it →</a></div>
+  <div class="viz"><div class="vlabel">At a glance</div>
+   <div class="stats">${p.stats.map(([v,l])=>`<div><b>${v}</b><small>${l}</small></div>`).join('')}</div>
+   <div class="vlabel">How it works</div>
+   <ol class="flow">${p.flow.map((f,k)=>`<li><span>${k+1}</span>${f}</li>`).join('')}</ol></div></div>`;
+  el.querySelector('.vt').addEventListener('click',()=>openPanel(el));
+  const tabs=[...el.querySelectorAll('.ptab')],panes=[...el.querySelectorAll('.pp')];
+  tabs.forEach((b,k)=>b.addEventListener('click',()=>{tabs.forEach((x,j)=>{x.classList.toggle('on',j===k);x.setAttribute('aria-selected',j===k)});panes.forEach((x,j)=>x.hidden=j!==k)}));
   acc.appendChild(el);
 });
 
