@@ -47,7 +47,7 @@ t("nav: every anchor resolves", [...d.querySelectorAll("#navlinks a")].every(a =
 t("nav: every section reachable", [...d.querySelectorAll("section[id]")].every(s => [...d.querySelectorAll("#navlinks a")].some(a => a.getAttribute("href") === "#" + s.id)));
 t("7 achievement boxes", d.querySelectorAll(".bento").length === 7);
 t("3 case studies", d.querySelectorAll(".case").length === 3);
-t("2 projects (Quenora + BR Assist)", d.querySelectorAll(".projectcard").length === 2);
+t("1 project (BR Assist)", d.querySelectorAll(".projectcard").length === 1);
 t("7 skill cards", d.querySelectorAll("#skills .skillcard").length === 7);
 t("5 experience entries", d.querySelectorAll(".job").length === 5);
 t("8 certifications", d.querySelectorAll(".cert").length === 8);
@@ -97,10 +97,10 @@ const hrefs = [...d.querySelectorAll("a[href]")].map(a => a.getAttribute("href")
 t("email link correct", hrefs.includes("mailto:bhalaji.d@hotmail.com"));
 t("phone link correct", hrefs.includes("tel:+4915256433329"));
 t("linkedin link present", hrefs.some(h => h.includes("linkedin.com/in/bhalajid")));
-t("quenora link present", hrefs.some(h => h.includes("quenora.ai")));
+t("no Quenora anywhere", !/quenora/i.test(d.documentElement.outerHTML));
 t("hero: 2 badges (availability + fellowship)", d.querySelectorAll(".badgerow > *").length===2);
 t("hero: no founder pill (kept out of hero by choice)", !d.querySelector(".qpill"));
-t("Quenora lives in Projects, not hero", !!d.querySelector("#projects") && d.querySelector("#projects").textContent.includes("Quenora"));
+
 t("external links use noopener", [...d.querySelectorAll('a[target="_blank"]')].every(a => (a.getAttribute("rel")||"").includes("noopener")));
 t("no empty/# links besides logo", hrefs.filter(h => h === "#").length <= 1);
 t("favicon present", !!d.querySelector('link[rel="icon"]'));
